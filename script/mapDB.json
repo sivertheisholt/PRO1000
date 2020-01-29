@@ -1,0 +1,11 @@
+{
+  "calculate_zoom": true,
+  "storymap": {
+    "language": "en",
+    "calculate_zoom": true,
+    "map_type": "osm:standard",
+    "map_as_image": false,
+    "font_css": "stock:amatic-andika",
+    "slides": []
+  }
+}
