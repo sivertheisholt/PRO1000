@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <a href="../index.html">Home</a>
       <a class="active" href="../php/login.php">Login</a>
       <a href="../php/register.php">Register</a>
-      <a href="index.html">Test4</a>
+      <a href="../recommendations.html">Recommendations</a>
     </div>
 
     <!--Login form!-->
