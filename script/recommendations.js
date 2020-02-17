@@ -7,7 +7,10 @@ function startup(){
 
 function currentDate() {
     var d = new Date();
-    date.innerHTML = "Date: " + d.getDate() +"."+d.getMonth()+"."+d.getFullYear();
+    var dato = d.getDate();
+    var month = d.getMonth()+1;
+    var year = d.getFullYear();
+    date.innerHTML = "Date: " + dato +"."+month+"."+year;
 }
 
 var locations = [

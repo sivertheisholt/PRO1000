@@ -67,6 +67,9 @@ a:hover {
     overflow: hidden;
     text-align: center;
 }
+.rec_box:hover {
+  box-shadow: 0 0 10px #9ecaed;
+}
 .rec_box h1 {
     margin: 0;
     font-size: 1em;
