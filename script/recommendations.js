@@ -1,8 +1,11 @@
 window.onload = startup;
 
 function startup(){
-    write_rec2();
+  //  random();
+    write_rec2(6);
     currentDate();
+    document.getElementById("tredager").onclick = tredager;
+    document.getElementById("femdager").onclick = femdager;
 }
 
 function currentDate() {
@@ -97,27 +100,37 @@ function write_rec() {
     }
 
    /* rec_1.innerHTML = "<img src=\"storage/Barcelona Cathedral.jpg\" class='img'><h1> test </h1>"; */
-
-
 }
+
 var image;
 var name;
 var number;
-
 var numberArray = [];
+
+function random() {
+    numberArray = [];
 while(numberArray.length < 6){
     var r = Math.floor(Math.random() * 14) + 0;
     if(numberArray.indexOf(r) === -1) numberArray.push(r);
 }
 console.log(numberArray);
+}
 
-function write_rec2() {
-    for (let i = 0; i < 6; i++) {
+function write_rec2(antall) {
+    rec_container.innerHTML = "";
+    random();
+    for (let i = 0; i < antall; i++) {
      number = numberArray[i];
      image = locations[number]["image"];
      name = locations[number]["name"];
      rec_container.innerHTML += '<div class="rec_box"><img src=\"'+image+'\" class="img"><h1>'+name+'</h1></div>';
-    }
+    }}
 
-
+function tredager() {
+    write_rec2(3);
 }
+
+function femdager() {
+    write_rec2(5);
+}
+
