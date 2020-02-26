@@ -8,4 +8,4 @@ COPY . /var/www/
 
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 
-EXPOSE 8005
+EXPOSE 80
