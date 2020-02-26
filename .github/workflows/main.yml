@@ -20,5 +20,5 @@ jobs:
         echo 'Running build'
         docker build . -f ./docker-action/Dockerfile -t pro1000
         docker tag pro1000 233518/pro1000
-        echo 'pushing image'
+        echo 'pushing image to dockerhub'
         docker push 233518/pro1000
