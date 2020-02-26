@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  PRO1000_Job:
+    runs-on: [ubuntu-16.04]
+    steps:
+    - uses: actions/checkout@v1
+    - name: PRO1000
+      env:
+        DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
+        DOCKER_HUB_PW: ${{ secrets.DOCKER_HUB_PW }}
+      run: |
+        echo 'docker login'
+        docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_PW
+        echo 'Running build'
+        docker build . -f ./docker-action/dockerfile -t pro1000
+        docker tag pro1000 233518/pro1000
+        echo 'pushing image'
+        docker push 233518/pro1000
