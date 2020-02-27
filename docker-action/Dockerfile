@@ -1,10 +1,10 @@
 FROM ubuntu:latest
 
-RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update
 
 RUN apt-get -y install apache2
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php7.0
+RUN apt-get -y install libapache2-mod-php7.0
 RUN apt-get -y install php7.0-mysql
 RUN apt-get clean
 
