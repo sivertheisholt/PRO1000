@@ -1,12 +1,13 @@
-FROM centos:latest
+FROM ubuntu:latest
 
-MAINTAINER Group08
+RUN apt-get update
 
-RUN yum -y install httpd
+RUN apt-get install apache2 && apt-get clean
+
+COPY ports.conf /etc/apache2
+COPY 000-default.conf /etc/apache2/sites-enabled
 
 COPY . /var/www/
 
-RUN ss -plnt sport eq :80
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
-
 EXPOSE 80
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
