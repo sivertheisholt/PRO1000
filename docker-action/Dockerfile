@@ -2,15 +2,15 @@ FROM ubuntu:latest
 
 RUN apt-get update
 
-RUN apt-get -y install apache2
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php7.0
-RUN apt-get -y install libapache2-mod-php7.0
-RUN apt-get -y install php7.0-mysql
+
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 php-mysql libapache2-mod-php mysql-server
+
 RUN apt-get clean
 
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork 
-RUN a2enmod php7.0
+RUN a2enmod php7.2
 
 COPY apache2.conf /etc/apache2
 COPY ports.conf /etc/apache2
