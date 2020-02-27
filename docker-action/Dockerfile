@@ -1,9 +1,16 @@
 FROM ubuntu:latest
 
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update
 
-RUN apt-get -y install apache2 && DEBIAN_FRONTEND=noninteractive apt-get -y install php7.0 && apt-get -y install libapache2-mod-php7.0 && apt-get clean
-RUN a2dismod mpm_event && a2enmod mpm_prefork && a2enmod php7.0
+RUN apt-get -y install apache2
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php7.0
+RUN apt-get -y install php7.0-mysql
+RUN apt-get clean
+
+RUN a2dismod mpm_event
+RUN a2enmod mpm_prefork 
+RUN a2enmod php7.0
 
 COPY apache2.conf /etc/apache2
 COPY ports.conf /etc/apache2
