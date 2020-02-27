@@ -9,5 +9,5 @@ COPY 000-default.conf /etc/apache2/sites-enabled
 
 COPY . /var/www/
 
-EXPOSE 80
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+EXPOSE 8005
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
