@@ -24,12 +24,6 @@ a {
 	padding:15px;
 }
 
-#navigation {
-    max-width: 480px;
-    margin: 0 auto;
-    padding:10px 10px 10px 10px;
-    position: relative;
-}
 #active {
     text-decoration: underline;
 }
