@@ -20,7 +20,7 @@ function currentDate() {
 var locations = [
     {
         name: 'Basilica of the Sagrada Familia',
-        image: {img_0:'./storage/Basilica of the Sagrada Familia.jpg', img_1:'./storage/test.jpg'},
+        image: {img_0:'./storage/Basilica of the Sagrada Familia.jpg', img_1:'./storage/test.jpg', img_2:'./storage/test2.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
