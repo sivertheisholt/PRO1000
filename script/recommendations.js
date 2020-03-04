@@ -8,6 +8,8 @@ function startup(){
     document.getElementById("femdager").onclick = femdager;
     document.getElementById("overlay").onclick = overlayOff;
    // document.getElementById("rec_1").onclick = overlayOn;
+
+
 }
 
 function currentDate() {
@@ -21,91 +23,91 @@ function currentDate() {
 var locations = [
     {
         name: 'Basilica of the Sagrada Familia',
-        image: './storage/Basilica of the Sagrada Familia.jpg',
+        image: {img_1:'./storage/Basilica of the Sagrada Familia.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Casa Batllo',
-        image: './storage/Casa Batllo.jpg',
+        image: {img_1:'./storage/Casa Batllo.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Gothic Quarter (Barri Gotic)',
-        image: './storage/othic Quarter (Barri Gotic).jpg',
+        image: {img_1:'./storage/othic Quarter (Barri Gotic).jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Palace of Catalan Music',
-        image: './storage/Palace of Catalan Music.jpg',
+        image: {img_1:'./storage/Palace of Catalan Music.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Casa Mila - La Pedrera',
-        image: './storage/Casa Mila - La Pedrera.jpg',
+        image: {img_1:'./storage/Casa Mila - La Pedrera.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Mercat de la Boqueria',
-        image: './storage/Mercat de la Boqueria.jpg',
+        image: {img_1:'./storage/Mercat de la Boqueria.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Camp Nou',
-        image: './storage/Camp Nou.jpg',
+        image: {img_1:'./storage/Camp Nou.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Basilica de Santa Maria del Mar',
-        image: './storage/Basilica de Santa Maria del Mar.jpg',
+        image: {img_1:'./storage/Basilica de Santa Maria del Mar.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'The Magic Fountain',
-        image: './storage/The Magic Fountain.jpg',
+        image: {img_1:'./storage/The Magic Fountain.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Recinte Modernista de Sant Pau',
-        image: './storage/Recinte Modernista de Sant Pau.jpg',
+        image: {img_1:'./storage/Recinte Modernista de Sant Pau.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: "Museu Nacional d'Art de Catalunya - MNAC",
-        image: "./storage/Museu Nacional d'Art de Catalunya - MNAC.jpg",
+        image: {img_1:"./storage/Museu Nacional d'Art de Catalunya - MNAC.jpg", img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Barcelona Cathedral',
-        image: './storage/Barcelona Cathedral.jpg',
+        image: {img_1:'./storage/Barcelona Cathedral.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Palau Guell',
-        image: './storage/Palau Guell.jpg',
+        image: {img_1:'./storage/Palau Guell.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Parc de Montjuic',
-        image: './storage/Parc de Montjuic.jpg',
+        image: {img_1:'./storage/Parc de Montjuic.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     },
     {
         name: 'Casa Vicens',
-        image: './storage/Casa Vicens.jpg',
+        image: {img_1:'./storage/Casa Vicens.jpg', img_2:'./storage/test.jpg'},
         website: '',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a nunc eu leo aliquet cursus non nec nibh. Quisque ultrices quam eu augue euismod, eu mollis augue tempus. Nam ac enim volutpat, semper leo quis, varius elit. Phasellus imperdiet tristique blandit. In at quam eleifend, rhoncus tellus id, ornare ante.'
     }
@@ -140,7 +142,7 @@ function write_rec2(antall) {
     random();
     for (let i = 0; i < antall; i++) {
      number = numberArray[i];
-     image = locations[number]["image"];
+     image = locations[number]["image"]["img_1"];
      name = locations[number]["name"];
      rec_container.innerHTML += '<div class="rec_box" onclick="overlayOn('+number+')"><img src=\"'+image+'\" class="img"><h1>'+name+'</h1></div>';
     }}
@@ -153,15 +155,48 @@ function femdager() {
     write_rec2(5);
 }
 
+
+
+var bilde_nr = 0;
+var bilder = new Array();
+
 function overlayOn(id) {
+    bilder = locations[id]["image"];
+    console.log(bilder);
     image = locations[id]["image"];
     name = locations[id]["name"];
     text = locations[id]["text"];
     document.getElementById("overlay").style.display = "block";
-    overlayText.innerHTML = '<h1>'+name+'</h1><img width="700px" src=\"'+image+'\"><p>'+text+'</p>';
+    //overlayText.innerHTML = '<h1>'+name+'</h1><img width="700px" src=\"'+image+'\"><p>'+text+'</p>';
+    overlayText.innerHTML = '<h1>'+name+'</h1><div id="slider_innhold"><h1 id="tilbake_knapp" class="bilde_knapp" onclick="tilbake()">🠄</h1><h1 id="neste_knapp" class="bilde_knapp" onclick="neste()">🠆</h1><div id="bilde_slider"></div></div><p>'+text+'</p>';
+   skriv_bilde();
 }
 
 function overlayOff() {
     document.getElementById("overlay").style.display = "none";
     overlayText.innerHTML = "";
+}
+
+
+
+function neste() {
+    if (bilde_nr == bilder.length-1) {
+        bilde_nr = 0;
+    } else {
+        bilde_nr++;
+    }
+    skriv_bilde();
+}
+
+function tilbake() {
+      if (bilde_nr == 0) {
+        bilde_nr = bilder.length-1;
+    } else {
+        bilde_nr--;
+    }
+    skriv_bilde();
+}
+
+function skriv_bilde() {
+    bilde_slider.innerHTML = '<img src= \"'+bilder[bilde_nr]+'\"  id="img_slider">';
 }
