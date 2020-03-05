@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="container">
     <div class="video__wrapper">
         <video width="480" height="800" autoplay loop muted>
-            <source src="../storage/mobile/login_background.mp4" type="video/mp4" />
+            <source src="../storage/mobile/background.mp4" type="video/mp4" />
         </video>
     </div>
         <h2>Top attractions in Barcelona</h2>
