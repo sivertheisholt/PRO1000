@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - Alpha
+      - DockerTest
 
 jobs:
   PRO1000_Job:
