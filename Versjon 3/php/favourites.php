@@ -3,7 +3,6 @@
 session_start();
 $currentUser = "";
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 } else {
   header("location: ../php/login.php");
@@ -16,18 +15,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   $currentUser = $_SESSION["username"];
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoryMap/Account Page</title>
+    <title>StoryMap/Account Page/Your favourites</title>
     <!--CSS Links-->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/hamburger.css">
     <link rel="stylesheet" href="../css/accountpage_mobile.css">
+    <script type="text/javascript" src="../script/yourFavourites.js"></script>
 </head>
 <body>
 <!--Hamburger meny!-->
@@ -56,21 +54,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <a href="../php/recommendations.php">Recommendations</a>
   </div>
 
-<div id="content">
-    <h1> Dashboard</h1>
+<div id="content"> <h1> Your favourites </h1>
 
 <div id="overview">
-        <p> <a href="password.php" style="color: white"> Change password </li> </a> </p>
-        
-        <p> <a href="favourites.php" style="color: white"> Your favourites </li> </a> </p>
-        
-        <p> <a href="information.php" style="color: white"> Your information </li> </a> </p>
-        <p> <a href="../php/admin.php" style="color: white"> Admin page </li> </a> </p>
-        <p> <a href="../php/adminEdit.php" style="color: white"> Admin page edit </li> </a> </p>
+    <p><a id="yourFavourites"> Click to see your favourite attractions </a>
         <br>
+        <br>
+        
 <div id="footer">
     <footer>
-        <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>    
+        <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>
+        <p id="date"></p>      
     </footer>
 </div>
 </div>

@@ -14,8 +14,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //Storymap load info from database
 require_once "../php/config.php";
 
-//Initialize arrays
-$lat = []; 
+$lat = array(); 
 $lon = []; 
 $text = []; 
 $headline = []; 
@@ -23,60 +22,57 @@ $url = [];
 $caption = []; 
 $credit = []; 
 
-//Put data in arrays
 for ($x = 1; $x <= 16; $x++) {
     $sql = "SELECT storymap_slides_location_lat FROM attractions WHERE storymap_slides_ID = $x";
     $resultlat = $link->query($sql);
     if (!mysqli_num_rows($resultlat)==0 ) { 
       while($row = mysqli_fetch_array($resultlat)){
         $lat[] = $row["storymap_slides_location_lat"];
-      }
+        }
     }
     $sql = "SELECT storymap_slides_location_lon FROM attractions WHERE storymap_slides_ID =$x";
     $resultlon = $link->query($sql);
     if (!mysqli_num_rows($resultlon)==0) { 
-      while($row = mysqli_fetch_array($resultlon)){
-        $lon[] = $row["storymap_slides_location_lon"];
+    while($row = mysqli_fetch_array($resultlon)){
+      $lon[] = $row["storymap_slides_location_lon"];
       }
     }
     $sql = "SELECT storymap_slides_text_headline FROM attractions WHERE storymap_slides_ID = $x";
     $resultheadline = $link->query($sql);
     if (!mysqli_num_rows($resultheadline)==0) {
-      while($row = mysqli_fetch_array($resultheadline)){
-        $headline[] = $row["storymap_slides_text_headline"];
+    while($row = mysqli_fetch_array($resultheadline)){
+      $headline[] = $row["storymap_slides_text_headline"];
       }
     }
     $sql = "SELECT storymap_slides_text_text FROM attractions WHERE storymap_slides_ID = $x";
     $resulttext = $link->query($sql);
     if (!mysqli_num_rows($resulttext)==0) {
-      while($row = mysqli_fetch_array($resulttext)){
-        $text[] = $row["storymap_slides_text_text"];
+    while($row = mysqli_fetch_array($resulttext)){
+      $text[] = $row["storymap_slides_text_text"];
       }
     }
     $sql = "SELECT storymap_slides_media_url FROM attractions WHERE storymap_slides_ID = $x";
     $resulturl = $link->query($sql);
     if (!mysqli_num_rows($resulturl)==0) {
-      while($row = mysqli_fetch_array($resulturl)){
-        $url[] = $row["storymap_slides_media_url"];
+    while($row = mysqli_fetch_array($resulturl)){
+      $url[] = $row["storymap_slides_media_url"];
       }
     }
     $sql = "SELECT storymap_slides_media_caption FROM attractions WHERE storymap_slides_ID = $x";
     $resultcaption = $link->query($sql);
     if (!mysqli_num_rows($resultcaption)==0) {
-      while($row = mysqli_fetch_array($resultcaption)){
-        $caption[] = $row["storymap_slides_media_caption"];
+    while($row = mysqli_fetch_array($resultcaption)){
+      $caption[] = $row["storymap_slides_media_caption"];
       }
     }
     $sql = "SELECT storymap_slides_media_credit FROM attractions WHERE storymap_slides_ID = $x";
     $resultcredit = $link->query($sql);
     if (!mysqli_num_rows($resultcredit)==0) {
-      while($row = mysqli_fetch_array($resultcredit)){
-        $credit[] = $row["storymap_slides_media_credit"];
+    while($row = mysqli_fetch_array($resultcredit)){
+      $credit[] = $row["storymap_slides_media_credit"];
       }
     }
 }
-
-//Encode to json
 $code_lat = json_encode($lat);
 $code_lon = json_encode($lon);
 $code_text = json_encode($text);
@@ -132,24 +128,22 @@ mysqli_close($link);
   <!--The storymap-->
   <div id="map" style="width: 100%; height: 720px; z-index: 0;"></div>
 
-  <!--Storymap scripts-->
-  <script
-    type="text/javascript"
-    src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"
-  ></script>
-  <script>
+    <!--Storymap scripts-->
+    <script
+      type="text/javascript"
+      src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"
+    ></script>
+    <script>
+    var lat = <?php echo $code_lat; ?>;
+    var lon = <?php echo $code_lon; ?>;
+    var text = <?php echo $code_text; ?>;
+    var headline = <?php echo $code_headline; ?>;
+    var url = <?php echo $code_url; ?>;
+    var caption = <?php echo $code_caption; ?>;
+    var credit = <?php echo $code_credit; ?>;
 
-  //Get array from php
-  var lat = <?php echo $code_lat; ?>;
-  var lon = <?php echo $code_lon; ?>;
-  var text = <?php echo $code_text; ?>;
-  var headline = <?php echo $code_headline; ?>;
-  var url = <?php echo $code_url; ?>;
-  var caption = <?php echo $code_caption; ?>;
-  var credit = <?php echo $code_credit; ?>;
-
-  //Storymap data path, contains slides info and storymap configurations
-  var storymap_data = {
+    //Storymap data path, contains slides info and storymap configurations
+    var storymap_data = {
   "calculate_zoom": true,
   "storymap": {
     "language": "en",
@@ -422,7 +416,6 @@ mysqli_close($link);
     //Storymap extra options
     var storymap_options = {};
 
-    //Load storymap
     var storymap = new VCO.StoryMap('map', storymap_data, storymap_options);
     window.onresize = function (event) {
         storymap.updateDisplay(); // this isn't automatic

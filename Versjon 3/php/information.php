@@ -3,7 +3,6 @@
 session_start();
 $currentUser = "";
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 } else {
   header("location: ../php/login.php");
@@ -16,14 +15,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   $currentUser = $_SESSION["username"];
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoryMap/Account Page</title>
+    <title>StoryMap/Account Page/Change password</title>
     <!--CSS Links-->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/hamburger.css">
@@ -57,20 +54,35 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </div>
 
 <div id="content">
-    <h1> Dashboard</h1>
+    <h1> Your information </h1>
 
 <div id="overview">
-        <p> <a href="password.php" style="color: white"> Change password </li> </a> </p>
-        
-        <p> <a href="favourites.php" style="color: white"> Your favourites </li> </a> </p>
-        
-        <p> <a href="information.php" style="color: white"> Your information </li> </a> </p>
-        <p> <a href="../php/admin.php" style="color: white"> Admin page </li> </a> </p>
-        <p> <a href="../php/adminEdit.php" style="color: white"> Admin page edit </li> </a> </p>
+
+  <form action="/action_page.php">
+
+  <label for="fname">First Name:</label>
+  <input type="text" id="fname" name="fname" value="André" size="25"><br><br>
+
+  <label for="lname">Last Name:</label>
+  <input type="text" id="lname" name="lname" value="Seljåsen" size="25"><br><br>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" value="andreseljasen" size="25"><br><br>
+
+  <label for="email">E-Mail: &nbsp; &nbsp; &nbsp;</label>
+  <input type="text" id="email" name="email"value="andreseljasen@hotmail.com" size="25"><br><br>
+
+  <input type="submit" value="Save">
+  <br>
+  <br>
+
+</form>
+
         <br>
 <div id="footer">
     <footer>
-        <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>    
+        <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>
+        <p id="date"></p>      
     </footer>
 </div>
 </div>

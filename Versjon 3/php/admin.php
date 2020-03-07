@@ -27,13 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $caption = $_POST["caption"];
     $credit = $_POST["credit"];
 
-    $sql = "INSERT INTO attractions (storymap_slides_location_lat, 
-    storymap_slides_location_lon, 
-    storymap_slides_text_headline, 
-    storymap_slides_text_text, 
-    storymap_slides_media_url, 
-    storymap_slides_media_caption, 
-    storymap_slides_media_credit)
+    $sql = "INSERT INTO attractions (storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit)
     VALUES ('$lat', '$lon', '$headline', '$text', '$url', '$caption', '$credit')";
 
     if ($link->query($sql) === TRUE) {

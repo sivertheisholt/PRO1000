@@ -66,7 +66,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         
         <p> <a href="information.php" style="color: white"> Your information </li> </a> </p>
         <p> <a href="../php/admin.php" style="color: white"> Admin page </li> </a> </p>
-        <p> <a href="../php/adminEdit.php" style="color: white"> Admin page edit </li> </a> </p>
         <br>
 <div id="footer">
     <footer>
