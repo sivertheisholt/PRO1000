@@ -4,8 +4,9 @@ function startup(){
   //  random();
     write_rec(15);
     currentDate();
-    document.getElementById("tredager").onclick = tredager;
-    document.getElementById("femdager").onclick = femdager;
+    document.getElementById("threedays").onclick = three_days;
+    document.getElementById("fivedays").onclick = five_days;
+    document.getElementById("all").onclick = all;
     //document.getElementById("overlay").onclick = overlayOff;
 }
 
@@ -127,7 +128,7 @@ console.log(numberArray);
 }
 
 function write_rec(antall) {    //skriver inn recommendations til html
-    rec_container.innerHTML = "";   //blir tømt pga tredager() og femdager()
+    rec_container.innerHTML = "";   //blir tømt pga three_days() og five_days()
     random();
     for (let i = 0; i < antall; i++) {
      number = numberArray[i]; 
@@ -137,11 +138,15 @@ function write_rec(antall) {    //skriver inn recommendations til html
      rec_container.innerHTML += '<div class="rec_box" onclick="overlayOn('+number+')"><img src=\"'+image+'\" class="img"><h1>'+name+'</h1></div>';  
     }}
 
-function tredager() {
-    write_rec(3); //skriver inn bare 3 attraksjon, kan evt lage et valgt set, og ha flere atraksjoner, samme med femdager()
+function all() {
+    write_rec(15);
 }
 
-function femdager() {
+function three_days() {
+    write_rec(3); //skriver inn bare 3 attraksjon, kan evt lage et valgt set, og ha flere atraksjoner, samme med five_days()
+}
+
+function five_days() {
     write_rec(5);
 }
 
@@ -160,36 +165,45 @@ function overlayOn(id) { //id tilsvarer posisjonen i locations arrayet elementet
     text = locations[id]["text"]; //tekst som skrives inn i overlayet
     document.getElementById("overlay").style.display = "block"; //gjøre overlay elementet synlig
     //skriver inn all html koden inn i overlayetText elementet
-    overlayText.innerHTML = '<h1 class="bilde_knapp" id="exit" onclick="overlayOff()">X</h1><h1>'+name+'</h1><div id="slider_innhold"><h1 id="tilbake_knapp" class="bilde_knapp" onclick="tilbake()">🠄</h1><h1 id="neste_knapp" class="bilde_knapp" onclick="neste()">🠆</h1><div id="bilde_slider"></div></div><p>'+text+'</p>';
-   skriv_bilde(); //tilkaller skriv_bilde() funksjonen
+    overlayText.innerHTML = '<h1 class="img_btn" id="exit" onclick="overlayOff()">X</h1><h1>'+name+'</h1><div id="slider_content"><h1 id="back_btn" class="img_btn" onclick="back()">🠄</h1><h1 id="next_btn" class="img_btn" onclick="next()">🠆</h1><div id="slider"></div></div><p>'+text+'</p>';
+   write_image(); //tilkaller write_image() funksjonen
+   disable_scroll();
+}
+
+function disable_scroll() {
+    document.body.style.overflow = "hidden";
+}
+function enable_scroll() {
+    document.body.style.overflow = "visible";
 }
 
 function overlayOff() {
     document.getElementById("overlay").style.display = "none"; //gjemmer overlayet
     overlayText.innerHTML = "";
+    enable_scroll();
 }
 
 
-function neste() {
+function next() {
     if (img_nr == size-1) {
         img_nr = 0;
     } else {
         img_nr++;
     }
-    skriv_bilde();
+    write_image();
 }
 
-function tilbake() {
+function back() {
       if (img_nr == 0) {
         img_nr = size-1;
     } else {
         img_nr--;
     }
-    skriv_bilde();
+    write_image();
 }
 
-function skriv_bilde() { //skriver inn bilde til slideren
-    bilde_slider.innerHTML = '<img src= \"'+images["img_"+img_nr]+'\"  id="img_slider">';
+function write_image() { //skriver inn bilde til slideren
+    slider.innerHTML = '<img src= \"'+images["img_"+img_nr]+'\"  id="img_slider">';
 }
 
 

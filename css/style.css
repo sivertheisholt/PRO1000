@@ -6,6 +6,10 @@ body, html {
     color:rgb(226, 222, 223);
     font-family: 'PT Sans', sans-serif;
 }
+header {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 
 a {
     color:rgb(60, 180, 250);
@@ -97,7 +101,7 @@ a {
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
   z-index: 2;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
 #overlayText{
@@ -112,6 +116,8 @@ a {
   width: 900px;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+  
+  
 }
 
 #img_slider {
@@ -124,21 +130,21 @@ a {
   object-fit: contain;
 }
 
-#tilbake_knapp {
+#back_btn {
   position: absolute;
   top: 40%;
   left: 3%;
 }
 
-#neste_knapp {
+#next_btn {
   position: absolute;
   top: 40%;
-  left: 92%;
+  right: 3%;
 }
-#slider_innhold {
+#slider_content {
   position: relative;
 }
-.bilde_knapp {
+.img_btn {
   background-color: grey;
   border-radius: 50%;
   height: 50px;
@@ -148,8 +154,13 @@ a {
   opacity: 40%;
   user-select: none;
 }
+.img_btn:hover {
+  background-color: #96918c;
+box-shadow: 0 0 5px black;
+}
 #exit{
-  float: right;
+  position: absolute;
+  right: 3%;
 }
 
 
@@ -188,8 +199,7 @@ p {
     display: block;
     margin: 0 auto;
     margin-top: 20px;
-    border-left: 0;
-    border-right: 0;
+
   }
   .rec_box h1 {
     font-size: 23px;
@@ -199,18 +209,30 @@ p {
     position: relative;
     width: 100%;
 }
-#overlayText {
-  width: 100%;
-  height: 85%;
+  .img_btn {
+    background-color: black;
+    opacity: 70%;
 }
-#overlayText img { 
- width: 100%;
+
+  #img_slider {
+    border: 0;
+    width: 100%;
+    height: auto;
+
+  }
+  #overlayText {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
 }
+
 }
 
 @media screen and (max-width: 550px) {
   .rec_box {
 width: 100%;
+border-left: 0;
+border-right: 0;
   }
   .rec_box img {
     width: 100%;
