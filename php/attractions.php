@@ -55,9 +55,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <a href="../php/attractions.php">Recommendations</a>
   </div>
 
-<div id="content">
+  <div id="content">
     <h1>Attractions</h1>
-    <p id = "rec_days"><a id="tredager">3 dager</a> | <a id="femdager">5 dager</a></p>
+    <p id = "rec_days"><a id="all">All</a> | <a id="threedays">3 days</a> | <a id="fivedays">5 days</a></p>
     <div id ="overlay"><div id="overlayText"></div></div>
 <div id="rec_container">
 </div>
