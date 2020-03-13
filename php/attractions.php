@@ -144,6 +144,7 @@ mysqli_close($link);
   var images = <?php echo $code_images; ?>;
 
   create_array(headline, image, text);
+  create_image_array(image, images);
 </script>
 </body>
 </html>

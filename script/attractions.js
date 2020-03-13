@@ -1,4 +1,4 @@
-window.onload = startup;
+    window.onload = startup;
 
 function startup(){
   //  random();
@@ -25,14 +25,29 @@ function create_array(headline, image, text) {
             var temp = {
                 "name": headline[i],
                 "text": text[i],
-                "image": { "img_0": image[i], "img_1": image[i+1]} //help
+                "image": image[i]
         }
       locations.push(temp);
     }
-console.log(image);
 }
 
-    
+var slider_img = []; //spaghetti
+function create_image_array(image, imgs) {
+    console.log(imgs);
+    for (let i = 0; i < image.length-1; i++) { //setter inn alle image filstiene, 
+        slider_img[i] = [image[i+1]]; //hopper over den første som er overview bilde til storymap
+    }
+    for (let i = 0; i < image.length+1; i++) {
+        if (imgs[i] != undefined) { //hvis arrayet er definert
+            var complete = slider_img[i-2].concat(imgs[i]); //'merger' arrayet sammen med det fra forrige loop (images[8] hører til posisjon 6 pga databasen starter på 1 og arrayet starter 0 så det må bli -2)
+            slider_img[i-2] = complete; //setter det som nåvæerende array i riktig posisjon
+        }
+    }
+    console.log(slider_img);
+}
+
+
+  
 
 
 var locations_test = [
@@ -149,7 +164,7 @@ function write_rec(antall) {    //skriver inn recommendations til html
     random();
     for (let i = 0; i < antall; i++) {
      number = numberArray[i]; 
-     image = locations[number]["image"]["img_0"]; //img_0 er den som skal vises i recommendation boksene
+     image = locations[number]["image"]; //img_0 er den som skal vises i recommendation boksene
      name = locations[number]["name"];
      //skriver inn alle boksene, onclick funksjonen med 'number' er viktig for å vite hvilken attraksjon den tilhører
      rec_container.innerHTML += '<div class="rec_box" onclick="overlayOn('+number+')"><img src=\"'+image+'\" class="img"><h1>'+name+'</h1></div>';  
@@ -171,12 +186,15 @@ function five_days() {
 
 var img_nr = 0;
 var size = 0;
+var identity = 0;
 var images = new Array();
 
 function overlayOn(id) { //id tilsvarer posisjonen i locations arrayet elementet som ble trykket på tilhører
+    identity = id;
     img_nr = 0;   //resetter bilde nr som blir vist når man trykker på en atraksjon igjen
-    images = locations[id]["image"];    //
-    size = Object.keys(images).length; //finner lengden av antall objekter i images array
+    images = slider_img[id];    //
+    size = slider_img[id].length; //finner lengden av antall objekter i images array
+    console.log(size + "" + images);
 
     name = locations[id]["name"]; //navnet som skrives inn i overlayet
     text = locations[id]["text"]; //tekst som skrives inn i overlayet
@@ -220,8 +238,7 @@ function back() {
 }
 
 function write_image() { //skriver inn bilde til slideren
-    slider.innerHTML = '<img src= \"'+images["img_"+img_nr]+'\"  id="img_slider">';
+    slider.innerHTML = '<img src= \"'+slider_img[identity][+img_nr]+'\"  id="img_slider">';
 }
-
 
 
