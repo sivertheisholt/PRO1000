@@ -18,6 +18,13 @@ require_once "../php/config.php";
 $headline = []; 
 $image = []; 
 $text = []; 
+$extraPictures = array();
+$counterMain = 2;
+$counterSub = 0;
+
+//Get number of attractions
+$rowAttractions = mysqli_fetch_array($link->query("SELECT COUNT(*) AS Number FROM attractions"));
+$numberOfAttractions = $rowAttractions["Number"];
 
 //Put data in arrays
 for ($x = 1; $x <= 16; $x++) {
@@ -44,12 +51,25 @@ for ($x = 1; $x <= 16; $x++) {
     }
 }
 
+//Get multiple pictures, multidimentional array
+while ($numberOfAttractions >= $counterMain) {
+  $sql = "SELECT storymap_slides_media_url FROM attractionspicture WHERE storymap_slides_ID = $counterMain";
+  $result = $link->query($sql);
+  if (!mysqli_num_rows($result)==0) {
+    while($row = mysqli_fetch_array($result)){
+      $extraPictures[$counterMain][$counterSub] = $row['storymap_slides_media_url']; //The array is structures as this: $extraPictures[ID of attraction][Picture index]
+      $counterSub++;
+    }
+  }
+  $counterMain++;
+  $counterSub = 0;
+}
+
 //Encode to json
 $code_headline = json_encode($headline);
 $code_image = json_encode($image);
 $code_text = json_encode($text);
-
-
+$code_images = json_encode($extraPictures);
 
 mysqli_close($link);
 
@@ -119,6 +139,9 @@ mysqli_close($link);
   var headline = <?php echo $code_headline; ?>;
   var image = <?php echo $code_image; ?>;
   var text = <?php echo $code_text; ?>;
+
+  //This is for the multidimentional images array
+  var images = <?php echo $code_images; ?>;
 
   create_array(headline, image, text);
 </script>
