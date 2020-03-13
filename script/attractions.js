@@ -18,7 +18,24 @@ function currentDate() {
     date.innerHTML = "Date: " + dato +"."+month+"."+year;
 }
 
-var locations = [
+
+var locations = [];
+function create_array(headline, image, text) {
+        for (let i = 1; i < headline.length; i++) {
+            var temp = {
+                "name": headline[i],
+                "text": text[i],
+                "image": { "img_0": image[i], "img_1": image[i+1]} //help
+        }
+      locations.push(temp);
+    }
+console.log(image);
+}
+
+    
+
+
+var locations_test = [
     {
         name: 'Basilica of the Sagrada Familia',
         image: {img_0:'../storage/attractions/Basilica of the Sagrada Familia.jpg', img_1:'../storage/attractions/test.jpg', img_2:'../storage/test2.jpg'},

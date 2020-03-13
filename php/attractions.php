@@ -10,6 +10,49 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 } else {
   $currentUser = $_SESSION["username"];
 }
+
+//Storymap load info from database
+require_once "../php/config.php";
+
+//Initialize arrays
+$headline = []; 
+$image = []; 
+$text = []; 
+
+//Put data in arrays
+for ($x = 1; $x <= 16; $x++) {
+    $sql = "SELECT storymap_slides_text_headline FROM attractions WHERE storymap_slides_ID = $x";
+    $resultheadline = $link->query($sql);
+    if (!mysqli_num_rows($resultheadline)==0) {
+      while($row = mysqli_fetch_array($resultheadline)){
+        $headline[] = $row["storymap_slides_text_headline"];
+      }
+    }
+    $sql = "SELECT storymap_slides_media_url FROM attractions WHERE storymap_slides_ID = $x";
+    $resultimage = $link->query($sql);
+    if (!mysqli_num_rows($resultimage)==0) {
+      while($row = mysqli_fetch_array($resultimage)){
+        $image[] = $row["storymap_slides_media_url"];
+      }
+    }
+    $sql = "SELECT storymap_slides_text_text FROM attractions WHERE storymap_slides_ID = $x";
+    $resulttext = $link->query($sql);
+    if (!mysqli_num_rows($resulttext)==0) {
+      while($row = mysqli_fetch_array($resulttext)){
+        $text[] = $row["storymap_slides_text_text"];
+      }
+    }
+}
+
+//Encode to json
+$code_headline = json_encode($headline);
+$code_image = json_encode($image);
+$code_text = json_encode($text);
+
+
+
+mysqli_close($link);
+
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +112,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <p id="date"></p>      
     </footer>
 </div>
-</div>   
+</div> 
+
+<script>
+  //Get array from php
+  var headline = <?php echo $code_headline; ?>;
+  var image = <?php echo $code_image; ?>;
+  var text = <?php echo $code_text; ?>;
+
+  create_array(headline, image, text);
+</script>
 </body>
 </html>
