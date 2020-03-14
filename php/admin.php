@@ -42,8 +42,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "Error: " . $sql . "<br>" . $link->error;
     }
 }
-?>
 
+mysqli_close($link);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -80,10 +81,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <!--Form edit attraction!-->
 <div class="attractionsEdit">
     <form action="#" method="post">
-        Attraction lat: <input type="text" name="lat" require><br>
-        Attraction lon: <input type="text" name="lon" require><br>
-        Attraction headline: <input type="text" name="headline" require><br>
-        Attraction text: <input type="text" name="text" require><br>
+        Attraction lat: <input type="text" name="lat" required><br>
+        Attraction lon: <input type="text" name="lon" required><br>
+        Attraction headline: <input type="text" name="headline" required><br>
+        Attraction text: <input type="text" name="text" required><br>
         Attraction url: <input type="text" name="url"><br>
         Attraction caption: <input type="text" name="caption"><br>
         Attraction credit: <input type="text" name="credit"><br>

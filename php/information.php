@@ -2,7 +2,9 @@
 // Initialize the session
 session_start();
 $currentUser = "";
+require_once "config.php";
 
+//Checks if user is logged in, if not return to login page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 } else {
   header("location: ../php/login.php");
@@ -14,6 +16,40 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 } else {
   $currentUser = $_SESSION["username"];
 }
+
+$id = $_SESSION["id"];
+$firstname = "";
+$lastname = "";
+$email = "";
+
+//Get user data
+//Firstname
+$sql = "SELECT firstname FROM users WHERE id = $id";
+$resultfirstname = $link->query($sql);
+if (!mysqli_num_rows($resultfirstname)==0 ) { 
+  while($row = mysqli_fetch_array($resultfirstname)){
+    $firstname = $row["firstname"];
+  }
+}
+
+//Lastname
+$sql = "SELECT lastname FROM users WHERE id = $id";
+$resultlastname = $link->query($sql);
+if (!mysqli_num_rows($resultlastname)==0 ) { 
+  while($row = mysqli_fetch_array($resultlastname)){
+    $lastname = $row["lastname"];
+  }
+}
+
+//email
+$sql = "SELECT email FROM users WHERE id =  $id";
+$resultemail = $link->query($sql);
+if (!mysqli_num_rows($resultemail)==0 ) { 
+  while($row = mysqli_fetch_array($resultemail)){
+    $email = $row["email"];
+  }
+}
+mysqli_close($link);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,27 +87,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <div id="overview">
 
-  <form action="/action_page.php">
+  <form action="accountpageHandler.php" method="post">
 
   <label for="fname">First Name:</label>
-  <input type="text" id="fname" name="fname" value="André" size="25"><br><br>
+  <input type ="text" id="firstname" name="firstname" value='<?php echo $firstname?>' size="25"><br><br>
 
   <label for="lname">Last Name:</label>
-  <input type="text" id="lname" name="lname" value="Seljåsen" size="25"><br><br>
-
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" value="andreseljasen" size="25"><br><br>
+  <input type ="text" id="lastname" name="lastname" value='<?php echo $lastname;?>' size="25"><br><br>
 
   <label for="email">E-Mail: &nbsp; &nbsp; &nbsp;</label>
-  <input type="text" id="email" name="email"value="andreseljasen@hotmail.com" size="25"><br><br>
+  <input type ="text" id="email" name="email" value='<?php echo $email;?>' size="25"><br><br>
 
-  <input type="submit" value="Save">
-  <br>
-  <br>
+  <input type="submit" value="Save"><br><br>
 
 </form>
-
-        <br>
 <div id="footer">
     <footer>
         <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>
