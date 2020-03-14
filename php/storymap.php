@@ -122,13 +122,6 @@ mysqli_close($link);
       </div>
     </div>
   </div>
-  <!--Navigation bar!-->
-  <div class="topnav">
-    <a class="active" href="storymap.php">Home</a>
-    <a href="../php/login.php">Login</a>
-    <a href="../php/register.php">Register</a>
-    <a href="../php/attractions.php">Recommendations</a>
-  </div>
   <!--The storymap-->
   <div id="map" style="width: 100%; height: 720px; z-index: 0;"></div>
 

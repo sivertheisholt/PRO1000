@@ -135,14 +135,6 @@ mysqli_close($link);
     </div>
   </div>
 
-  <!--Navigation bar!-->
-  <div class="topnav">
-    <a class="active" href="../php/storymap.php">Home</a>
-    <a href="../php/login.php">Login</a>
-    <a href="../php/register.php">Register</a>
-    <a href="../php/recommendations.php">Recommendations</a>
-  </div>
-
   <!--Form edit/delete attraction!-->
   <div class="attractionsEdit">
     <form action="#" method="post">

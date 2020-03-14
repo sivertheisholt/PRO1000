@@ -110,13 +110,6 @@ mysqli_close($link);
       </div>
     </div>
   </div>
-  <!--Navigation bar!-->
-  <div class="topnav">
-    <a class="active" href="storymap.php">Home</a>
-    <a href="../php/login.php">Login</a>
-    <a href="../php/register.php">Register</a>
-    <a href="../php/attractions.php">Recommendations</a>
-  </div>
 
   <div id="content">
     <h1>Attractions</h1>
