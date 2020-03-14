@@ -5,5 +5,6 @@ CREATE TABLE users (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
-	email VARCHAR(100)
+	email VARCHAR(100),
+    admin TINYINT(1)
 );
