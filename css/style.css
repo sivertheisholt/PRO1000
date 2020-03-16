@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-body, html {
-    height: 100%;
-    margin: 0 0 0 0;
-    background-color:rgb(51, 51, 51);
-    color:rgb(226, 222, 223);
-    font-family: 'PT Sans', sans-serif;
-}
 header {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-
 
 a {
     color:rgb(60, 180, 250);
@@ -39,12 +31,14 @@ a {
     border-radius:7px;
     margin:0 auto;
     margin-bottom:20px;
+    height: calc(100vh - 50px);
 }
 #content {
     width: 770px;
     margin: 0 auto;
     padding:10px 10px 10px 10px;
     position: relative;
+    height: calc(100vh - 50px);
 }
 
 #header {

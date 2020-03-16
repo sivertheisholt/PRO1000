@@ -28,12 +28,12 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
+    <!--CSS Links-->
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
-    <link rel="stylesheet" href="../css/accountpage_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
 </head>
 <body>
 <div id="main">
-    <a href="../php/storymap.php"> <img src="../storage/mobile/hom.png" alt="logo" height="50"> </a>
 <div id="header">
 <header><?php echo $username?>'s Account</header>
 </div>
@@ -46,13 +46,13 @@ if ($result->num_rows > 0) {
     <h1> Dashboard</h1>
 
 <div id="overview">
-        <p> <a href="password.php" style="color: black"> Change password </li> </a> </p>
+        <p> <a href="password.php"> Change password </li> </a> </p>
         
-        <p> <a href="favourites.php" style="color: black"> Your favourites </li> </a> </p>
+        <p> <a href="favourites.php"> Your favourites </li> </a> </p>
         
-        <p> <a href="information.php" style="color: black"> Your information </li> </a> </p>
+        <p> <a href="information.php"> Your information </li> </a> </p>
 
-        <p><a href="logout.php">log out </a></p>
+        <p><a href="logout.php">log out</a></p>
         <br>
 <div id="footer">
     <footer>

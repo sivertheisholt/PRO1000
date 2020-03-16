@@ -133,9 +133,9 @@ mysqli_close($link);
       "language": "en",
       "calculate_zoom": true,
       "map_type": "osm:standard",
-      "map_background_color": "gray",
+      "map_background_color": "#373737",
       "map_as_image": false,
-      "font_css": "stock:amatic-andika",
+      "font_css": "'PT Sans', sans-serif",
       "slides": [
         {
           "type": "overview",

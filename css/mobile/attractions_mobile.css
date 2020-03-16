@@ -1,0 +1,11 @@
+@media only screen and (max-width: 480px) {
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+    body, html{
+        margin: 0;
+        min-height: 100vh;
+        background-color: #373737;
+        color:rgb(226, 222, 223);
+        height: 100%;
+        font-family: 'PT Sans', sans-serif;
+    }
+}

@@ -75,8 +75,9 @@ mysqli_close($link);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS Links-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/attractions_mobile.css">
     <script type="text/javascript" src="../script/attractions.js"></script>
 </head>
 <body>
@@ -93,8 +94,6 @@ mysqli_close($link);
 
 <div id="footer">
     <footer>
-        <p><a href="" target="_blank">test</a></p>
-        <p><a href="" target="_blank">test_2</a></p>
         <p id="date"></p>      
     </footer>
 </div>

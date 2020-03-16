@@ -1,13 +1,13 @@
 @media only screen and (max-width: 480px) {
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-
-body, html {
+body, html{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #373737;
+    color:rgb(226, 222, 223);
     height: 100%;
-    margin: 0 auto;
-    color:rgb(75, 75, 75);
     font-family: 'PT Sans', sans-serif;
-    max-width: 480px;
 }
 
 a {
@@ -27,7 +27,6 @@ a {
     text-decoration: underline;
 }
 #main {
-    background-image: linear-gradient(90deg, rgba(193,164,140,1) 0%, rgba(255,255,255,1) 100%);
     font-size: 19px;
     max-width:480px;
     border:1px;
@@ -48,7 +47,7 @@ a {
 #header {
   padding-top: 0px;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(226, 222, 223);
   font-size: 30px;
   margin-bottom: 10px;
 }
