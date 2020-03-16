@@ -18,7 +18,6 @@ function currentDate() {
     date.innerHTML = "Date: " + dato +"."+month+"."+year;
 }
 
-
 var locations = [];
 function create_array(headline, image, text) {
         for (let i = 1; i < headline.length; i++) {

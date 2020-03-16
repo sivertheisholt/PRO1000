@@ -1,15 +1,6 @@
 <?php
 // Initialize the session
 session_start();
-$currentUser = "";
-$loginornot = "";
-
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  $currentUser = "Login";
-  $loginornot = "login.php";
-} else {
-  $currentUser = $_SESSION["username"];
-}
 
 //Storymap load info from database
 require_once "../php/config.php";
@@ -88,337 +79,332 @@ $code_credit = json_encode($credit);
 
 mysqli_close($link);
 ?>
+
+
 <!DOCTYPE html>
 <html>
+  <!-- Start of HEAD section -->
   <head>
     <title>PRO1000</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--CSS Links-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/hamburger.css">
+    <link rel="stylesheet" href="../css/mobile/storymap_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link
       rel="stylesheet"
       href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css"
     />
   </head>
+  <!-- Start of BODY section -->
   <body>
-    <!--Hamburger meny!-->
-    <div class="menu-wrap">
-    <input type="checkbox" class="toggler">
-    <div class="hamburger"><div></div></div>
-    <div class="menu">
-      <div>
-        <div>
-          <ul>
-            <li><a href="../php/storymap.php">Home</a></li>
-            <li><a href="../php/attractions.php">Attractions</a></li>
-            <li><a href="../php/" + $loginornot><?php echo htmlspecialchars($currentUser); ?></a></li>
-            <li><a href="../php/logout.php">Logout</a></li>
-            <li><a href="../php/about.php">About</a></li>
-          </ul>
-        </div>
-      </div>
+    <!-- Storymap -->
+    <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <a class ="active" href="../php/storymap.php">Home</a>
+      <a href="../php/attractions.php">Attractions</a>
+      <a href="../php/about.php">About</a>
+      <a href="../php/accountpage.php">Account</a>
     </div>
-  </div>
-  <!--The storymap-->
-  <div id="map" style="width: 100%; height: 720px; z-index: 0;"></div>
 
-  <!--Storymap scripts-->
-  <script
-    type="text/javascript"
-    src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"
-  ></script>
-  <script>
+  <!--Storymap external script-->
+    <script
+      type="text/javascript"
+      src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"
+    ></script>
 
-  //Get array from php
-  var lat = <?php echo $code_lat; ?>;
-  var lon = <?php echo $code_lon; ?>;
-  var text = <?php echo $code_text; ?>;
-  var headline = <?php echo $code_headline; ?>;
-  var url = <?php echo $code_url; ?>;
-  var caption = <?php echo $code_caption; ?>;
-  var credit = <?php echo $code_credit; ?>;
+  <!--Storymap script-->
+    <script>
 
-  //Storymap data path, contains slides info and storymap configurations
-  var storymap_data = {
-  "calculate_zoom": true,
-  "storymap": {
-    "language": "en",
+      //Get array from php
+      var lat = <?php echo $code_lat; ?>;
+      var lon = <?php echo $code_lon; ?>;
+      var text = <?php echo $code_text; ?>;
+      var headline = <?php echo $code_headline; ?>;
+      var url = <?php echo $code_url; ?>;
+      var caption = <?php echo $code_caption; ?>;
+      var credit = <?php echo $code_credit; ?>;
+
+    //Storymap data path, contains slides info and storymap configurations
+    var storymap_data = {
     "calculate_zoom": true,
-    "map_type": "osm:standard",
-    "map_background_color": "gray",
-    "map_as_image": false,
-    "font_css": "stock:amatic-andika",
-    "slides": [
-      {
-        "type": "overview",
-        "location": {
-          "lat": Number(lat[0]),
-          "lon": Number(lon[0])
+    "storymap": {
+      "language": "en",
+      "calculate_zoom": true,
+      "map_type": "osm:standard",
+      "map_background_color": "gray",
+      "map_as_image": false,
+      "font_css": "stock:amatic-andika",
+      "slides": [
+        {
+          "type": "overview",
+          "location": {
+            "lat": Number(lat[0]),
+            "lon": Number(lon[0])
+          },
+          "text": {
+            "headline": headline[0],
+            "text": text[0]
+          },
+          "media": {
+            "url": url[0],
+            "caption": caption[0],
+            "credit": credit[0]
+          }
         },
-        "text": {
-          "headline": headline[0],
-          "text": text[0]
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[1]),
+            "lon": Number(lon[1])
+          },
+          "text": {
+            "headline": headline[1],
+            "text": text[1]
+          },
+          "media": {
+            "url": url[1],
+            "caption": caption[1],
+            "credit": credit[1]
+          }
         },
-        "media": {
-          "url": url[0],
-          "caption": caption[0],
-          "credit": credit[0]
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[2]),
+            "lon": Number(lon[2])
+          },
+          "text": {
+            "headline": headline[2],
+            "text": text[2]
+          },
+          "media": {
+            "url": url[2],
+            "caption": caption[2],
+            "credit": credit[2]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[3]),
+            "lon": Number(lon[3])
+          },
+          "text": {
+            "headline": headline[3],
+            "text": text[3]
+          },
+          "media": {
+            "url": url[3],
+            "caption": caption[3],
+            "credit": credit[3]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[4]),
+            "lon": Number(lon[4])
+          },
+          "text": {
+            "headline": headline[4],
+            "text": text[4]
+          },
+          "media": {
+            "url": url[4],
+            "caption": caption[4],
+            "credit": credit[4]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[5]),
+            "lon": Number(lon[5])
+          },
+          "text": {
+            "headline": headline[5],
+            "text": text[5]
+          },
+          "media": {
+            "url": url[5],
+            "caption": caption[5],
+            "credit": credit[5]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[6]),
+            "lon": Number(lon[6])
+          },
+          "text": {
+            "headline": headline[6],
+            "text": text[6]
+          },
+          "media": {
+            "url": url[6],
+            "caption": caption[6],
+            "credit": credit[6]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[7]),
+            "lon": Number(lon[7])
+          },
+          "text": {
+            "headline": headline[7],
+            "text": text[7]
+          },
+          "media": {
+            "url": url[7],
+            "caption": caption[7],
+            "credit": credit[7]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[8]),
+            "lon": Number(lon[8])
+          },
+          "text": {
+            "headline": headline[8],
+            "text": text[8]
+          },
+          "media": {
+            "url": url[8],
+            "caption": caption[8],
+            "credit": credit[8]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[9]),
+            "lon": Number(lon[9])
+          },
+          "text": {
+            "headline": headline[9],
+            "text": text[9]
+          },
+          "media": {
+            "url": url[9],
+            "caption": caption[9],
+            "credit": credit[9]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[10]),
+            "lon": Number(lon[10])
+          },
+          "text": {
+            "headline": headline[10],
+            "text": text[10]
+          },
+          "media": {
+            "url": url[10],
+            "caption": caption[10],
+            "credit": credit[10]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[11]),
+            "lon": Number(lon[11])
+          },
+          "text": {
+            "headline": headline[11],
+            "text": text[11]
+          },
+          "media": {
+            "url": url[11],
+            "caption": caption[11],
+            "credit": credit[11]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[12]),
+            "lon": Number(lon[12])
+          },
+          "text": {
+            "headline": headline[12],
+            "text": text[12]
+          },
+          "media": {
+            "url": url[12],
+            "caption": caption[12],
+            "credit": credit[12]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[13]),
+            "lon": Number(lon[13])
+          },
+          "text": {
+            "headline": headline[13],
+            "text": text[13]
+          },
+          "media": {
+            "url": url[13],
+            "caption": caption[13],
+            "credit": credit[13]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[14]),
+            "lon": Number(lon[14])
+          },
+          "text": {
+            "headline": headline[14],
+            "text": text[14]
+          },
+          "media": {
+            "url": url[14],
+            "caption": caption[14],
+            "credit": credit[14]
+          }
+        },
+        {
+          "type": "slide",
+          "location": {
+            "lat": Number(lat[15]),
+            "lon": Number(lon[15])
+          },
+          "text": {
+            "headline": headline[15],
+            "text": text[15]
+          },
+          "media": {
+            "url": url[15],
+            "caption": caption[15],
+            "credit": credit[15]
+          }
         }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[1]),
-          "lon": Number(lon[1])
-        },
-        "text": {
-          "headline": headline[1],
-          "text": text[1]
-        },
-        "media": {
-          "url": url[1],
-          "caption": caption[1],
-          "credit": credit[1]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[2]),
-          "lon": Number(lon[2])
-        },
-        "text": {
-          "headline": headline[2],
-          "text": text[2]
-        },
-        "media": {
-          "url": url[2],
-          "caption": caption[2],
-          "credit": credit[2]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[3]),
-          "lon": Number(lon[3])
-        },
-        "text": {
-          "headline": headline[3],
-          "text": text[3]
-        },
-        "media": {
-          "url": url[3],
-          "caption": caption[3],
-          "credit": credit[3]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[4]),
-          "lon": Number(lon[4])
-        },
-        "text": {
-          "headline": headline[4],
-          "text": text[4]
-        },
-        "media": {
-          "url": url[4],
-          "caption": caption[4],
-          "credit": credit[4]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[5]),
-          "lon": Number(lon[5])
-        },
-        "text": {
-          "headline": headline[5],
-          "text": text[5]
-        },
-        "media": {
-          "url": url[5],
-          "caption": caption[5],
-          "credit": credit[5]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[6]),
-          "lon": Number(lon[6])
-        },
-        "text": {
-          "headline": headline[6],
-          "text": text[6]
-        },
-        "media": {
-          "url": url[6],
-          "caption": caption[6],
-          "credit": credit[6]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[7]),
-          "lon": Number(lon[7])
-        },
-        "text": {
-          "headline": headline[7],
-          "text": text[7]
-        },
-        "media": {
-          "url": url[7],
-          "caption": caption[7],
-          "credit": credit[7]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[8]),
-          "lon": Number(lon[8])
-        },
-        "text": {
-          "headline": headline[8],
-          "text": text[8]
-        },
-        "media": {
-          "url": url[8],
-          "caption": caption[8],
-          "credit": credit[8]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[9]),
-          "lon": Number(lon[9])
-        },
-        "text": {
-          "headline": headline[9],
-          "text": text[9]
-        },
-        "media": {
-          "url": url[9],
-          "caption": caption[9],
-          "credit": credit[9]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[10]),
-          "lon": Number(lon[10])
-        },
-        "text": {
-          "headline": headline[10],
-          "text": text[10]
-        },
-        "media": {
-          "url": url[10],
-          "caption": caption[10],
-          "credit": credit[10]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[11]),
-          "lon": Number(lon[11])
-        },
-        "text": {
-          "headline": headline[11],
-          "text": text[11]
-        },
-        "media": {
-          "url": url[11],
-          "caption": caption[11],
-          "credit": credit[11]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[12]),
-          "lon": Number(lon[12])
-        },
-        "text": {
-          "headline": headline[12],
-          "text": text[12]
-        },
-        "media": {
-          "url": url[12],
-          "caption": caption[12],
-          "credit": credit[12]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[13]),
-          "lon": Number(lon[13])
-        },
-        "text": {
-          "headline": headline[13],
-          "text": text[13]
-        },
-        "media": {
-          "url": url[13],
-          "caption": caption[13],
-          "credit": credit[13]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[14]),
-          "lon": Number(lon[14])
-        },
-        "text": {
-          "headline": headline[14],
-          "text": text[14]
-        },
-        "media": {
-          "url": url[14],
-          "caption": caption[14],
-          "credit": credit[14]
-        }
-      },
-      {
-        "type": "slide",
-        "location": {
-          "lat": Number(lat[15]),
-          "lon": Number(lon[15])
-        },
-        "text": {
-          "headline": headline[15],
-          "text": text[15]
-        },
-        "media": {
-          "url": url[15],
-          "caption": caption[15],
-          "credit": credit[15]
-        }
-      }
-    ]
-  }
-};
-
-    //Storymap extra options
-    var storymap_options = {};
-
-    //Load storymap
-    var storymap = new VCO.StoryMap('map', storymap_data, storymap_options);
-    window.onresize = function (event) {
-        storymap.updateDisplay(); // this isn't automatic
+      ]
     }
+  };
+
+      //Storymap extra options
+      var storymap_options = {};
+
+      //Load storymap
+      var storymap = new VCO.StoryMap('map', storymap_data, storymap_options);
+      window.onresize = function (event) {
+          storymap.updateDisplay(); // this isn't automatic
+      }
     </script>
   </body>
 </html>

@@ -4,13 +4,6 @@ session_start();
 $currentUser = "";
 $loginornot = "";
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  $currentUser = "Login";
-  $loginornot = "login.php";
-} else {
-  $currentUser = $_SESSION["username"];
-}
-
 //Storymap load info from database
 require_once "../php/config.php";
 
@@ -83,34 +76,14 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS Links-->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/hamburger.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <script type="text/javascript" src="../script/attractions.js"></script>
 </head>
 <body>
 <div id="main">
 <div id="header">
-<header>Barcelona</header>	
+<header>Barcelona</header>
 </div>
-<!--Hamburger meny!-->
-<div class="menu-wrap">
-    <input type="checkbox" class="toggler">
-    <div class="hamburger"><div></div></div>
-    <div class="menu">
-      <div>
-        <div>
-          <ul>
-            <li><a href="../php/storymap.php">Home</a></li>
-            <li><a href="../php/attractions.php">Attractions</a></li>
-            <li><a href="../php/login.php"><?php echo htmlspecialchars($currentUser); ?></a></li>
-            <li><a href="../php/logout.php">Logout</a></li>
-            <li><a href="../php/about.php">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div id="content">
     <h1>Attractions</h1>
     <p id = "rec_days"><a id="all">All</a> | <a id="threedays">3 days</a> | <a id="fivedays">5 days</a></p>
@@ -125,7 +98,14 @@ mysqli_close($link);
         <p id="date"></p>      
     </footer>
 </div>
-</div> 
+</div>
+<!-- Navigation bar -->
+<div class="navbar">
+  <a href="../php/storymap.php">Home</a>
+  <a class ="active" href="../php/attractions.php">Attractions</a>
+  <a href="../php/about.php">About</a>
+  <a href="../php/accountpage.php">Account</a>
+</div>
 
 <script>
   //Get array from php
