@@ -97,7 +97,6 @@ mysqli_close($link);
     <!--CSS Links-->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/hamburger.css">
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css" />
     <link
       rel="stylesheet"
       href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css"

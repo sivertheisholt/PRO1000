@@ -1,22 +1,23 @@
 <?php
-// Initialize the session
 session_start();
-$currentUser = "";
+require_once "config.php";
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-} else {
-  header("location: ../php/login.php");
-  exit;
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+    header("location: register.php");
+    exit;
 }
+$user_id = $_SESSION["id"];
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  $currentUser = "Login";
+$getsql = "SELECT username FROM users WHERE id = '$user_id'";
+$result = $link->query($getsql);
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+      $username = $row['username'];
+  }
 } else {
-  $currentUser = $_SESSION["username"];
+  echo "0 results";
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,46 +25,35 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
-    <!--CSS Links-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/hamburger.css">
+
     <link rel="stylesheet" href="../css/accountpage_mobile.css">
 </head>
 <body>
-<!--Hamburger meny!-->
-<div class="menu-wrap">
-    <input type="checkbox" class="toggler">
-    <div class="hamburger"><div></div></div>
-    <div class="menu">
-      <div>
-        <div>
-          <ul>
-            <li><a href="../php/storymap.php">Home</a></li>
-            <li><a href="../php/attractions.php">Attractions</a></li>
-            <li><a href="../php/accountpage.php"><?php echo htmlspecialchars($currentUser); ?></a></li>
-            <li><a href="../php/logout.php">Logout</a></li>
-            <li><a href="../php/about.php">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div id="main">
+    <a href="../php/storymap.php"> <img src="../storage/mobile/hom.png" alt="logo" height="50"> </a>
+<div id="header">
+<header><?php echo $username?>'s Account</header>
+</div>
+<div id="navigation">
+    <nav>
+    </nav>
+</div>
 
 <div id="content">
     <h1> Dashboard</h1>
 
 <div id="overview">
-        <p> <a href="password.php" style="color: white"> Change password </li> </a> </p>
+        <p> <a href="password.php" style="color: black"> Change password </li> </a> </p>
         
-        <p> <a href="favourites.php" style="color: white"> Your favourites </li> </a> </p>
+        <p> <a href="favourites.php" style="color: black"> Your favourites </li> </a> </p>
         
-        <p> <a href="information.php" style="color: white"> Your information </li> </a> </p>
-        <p> <a href="../php/admin.php" style="color: white"> Admin page </li> </a> </p>
-        <p> <a href="../php/adminEdit.php" style="color: white"> Admin page edit </li> </a> </p>
+        <p> <a href="information.php" style="color: black"> Your information </li> </a> </p>
+
+        <p><a href="logout.php">log out </a></p>
         <br>
 <div id="footer">
     <footer>
-        <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>    
+        <p> <a href="contact.html" style="color: white"> Contact us!</li> </a> </p>    
     </footer>
 </div>
 </div>

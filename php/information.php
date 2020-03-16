@@ -1,55 +1,84 @@
 <?php
-// Initialize the session
 session_start();
-$currentUser = "";
 require_once "config.php";
 
-//Checks if user is logged in, if not return to login page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+    header("location: register.php");
+    exit;
+}
+
+$first_name = $last_name = $username = $email = "";
+$first_name_err = $last_name_err = $email_err = $username_err = "";
+$user_id = $_SESSION["id"];
+
+$getsql = "SELECT first_name, last_name, username, email FROM users WHERE id = '$user_id'";
+$result = $link->query($getsql);
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+      $first_name = $row['first_name'];
+      $last_name = $row['last_name'];
+      $username = $row['username'];
+      $email = $row['email'];
+  }
 } else {
-  header("location: ../php/login.php");
-  exit;
+  echo "0 results";
 }
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  $currentUser = "Login";
-} else {
-  $currentUser = $_SESSION["username"];
-}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if (!preg_match("/^[A-Za-z]+$/", $_POST['first_name'])){
+        $first_name_err = "Only letters allowed";
+    } else {
+        $sql = "UPDATE users
+          SET first_name = (?)
+          WHERE id = '$user_id'";
+        $stmt = mysqli_prepare($link,$sql);
+        mysqli_stmt_bind_param($stmt, "s", $_POST["first_name"]);
+        if(mysqli_stmt_execute($stmt));{
+            mysqli_stmt_store_result($stmt);
+            mysqli_stmt_close($stmt);
+        }
+      }
 
-$id = $_SESSION["id"];
-$firstname = "";
-$lastname = "";
-$email = "";
-
-//Get user data
-//Firstname
-$sql = "SELECT firstname FROM users WHERE id = $id";
-$resultfirstname = $link->query($sql);
-if (!mysqli_num_rows($resultfirstname)==0 ) { 
-  while($row = mysqli_fetch_array($resultfirstname)){
-    $firstname = $row["firstname"];
-  }
+    if (!preg_match("/^[A-Za-z]+$/", $_POST['last_name'])){
+      $last_name_err = "Only letters allowed";
+    } else {
+      $sql = "UPDATE users
+        SET last_name = (?)
+        WHERE id = '$user_id'";
+      $stmt = mysqli_prepare($link,$sql);
+      mysqli_stmt_bind_param($stmt, "s", $_POST["last_name"]);
+      if(mysqli_stmt_execute($stmt));{
+          mysqli_stmt_store_result($stmt);
+          mysqli_stmt_close($stmt);
+        }
+      }
+      if (!preg_match("/^[A-Za-z0-9]+$/", $_POST['username'])){
+        $username_err = "Only letters and numbers allowed";
+      } else {
+        $sql = "UPDATE users
+          SET username = (?)
+          WHERE id = '$user_id'";
+        $stmt = mysqli_prepare($link,$sql);
+        mysqli_stmt_bind_param($stmt, "s", $_POST["username"]);
+        if(mysqli_stmt_execute($stmt));{
+            mysqli_stmt_store_result($stmt);
+            mysqli_stmt_close($stmt);
+          }
+        }
+      if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        $email_err = "Invalid email format";
+      } else {
+        $sql = "UPDATE users
+          SET email = (?)
+          WHERE id = '$user_id'";
+        $stmt = mysqli_prepare($link,$sql);
+        mysqli_stmt_bind_param($stmt, "s", $_POST["email"]);
+        if(mysqli_stmt_execute($stmt));{
+            mysqli_stmt_store_result($stmt);
+            mysqli_stmt_close($stmt);
+        }
+      }
 }
-
-//Lastname
-$sql = "SELECT lastname FROM users WHERE id = $id";
-$resultlastname = $link->query($sql);
-if (!mysqli_num_rows($resultlastname)==0 ) { 
-  while($row = mysqli_fetch_array($resultlastname)){
-    $lastname = $row["lastname"];
-  }
-}
-
-//email
-$sql = "SELECT email FROM users WHERE id =  $id";
-$resultemail = $link->query($sql);
-if (!mysqli_num_rows($resultemail)==0 ) { 
-  while($row = mysqli_fetch_array($resultemail)){
-    $email = $row["email"];
-  }
-}
-mysqli_close($link);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,57 +86,63 @@ mysqli_close($link);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page/Change password</title>
-    <!--CSS Links-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/hamburger.css">
     <link rel="stylesheet" href="../css/accountpage_mobile.css">
 </head>
 <body>
-<!--Hamburger meny!-->
-<div class="menu-wrap">
-    <input type="checkbox" class="toggler">
-    <div class="hamburger"><div></div></div>
-    <div class="menu">
+  <div id="main">
+  <div class="logo_wrapper">
+      <a href="accountpage.php"> <img src="img/back.svg" alt="logo" height="50"> </a>
+      <a href="accountpage.php"> <img src="stoymaplogo2.png" alt="logo" height="70" style="float:right";> </a>
+      </div>
+  <div id="header">
+    <header><?php echo $username?>'s Account</header>	
+  </div>
+  <div id="navigation">
+    <nav>
+    </nav>
+  </div>
+  <div id="content">
+    <h1> Your information </h1>
+  <div class="container">
+    <div class="form_wrapper">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+      <div class="input_box_wrapper">
+        <label for="firstname">First Name:</label>
+        <input type="text" class="input_box" name="first_name" value="<?php echo $first_name?>">
+      </div>
       <div>
-        <div>
-          <ul>
-            <li><a href="../php/storymap.php">Home</a></li>
-            <li><a href="../php/attractions.php">Attractions</a></li>
-            <li><a href="../php/accountpage.php"><?php echo htmlspecialchars($currentUser); ?></a></li>
-            <li><a href="../php/logout.php">Logout</a></li>
-            <li><a href="../php/about.php">About</a></li>
-          </ul>
-        </div>
+        <span class="error_msg"><?php echo $first_name_err; ?></span>
+      </div>
+      <div class="input_box_wrapper">
+        <label for="lastname">Last Name:</label>
+        <input type="text" class="input_box" name="last_name" value="<?php echo $last_name?>">
+      </div>
+      <div>
+        <span class="error_msg"><?php echo $last_name_err; ?></span>
+      </div>
+      <div class="input_box_wrapper">
+        <label for="username">Username:</label>
+        <input type="text" class="input_box" name="username" value="<?php echo $username?>">
+      </div>
+      <div>
+        <span class="error_msg"><?php echo $username_err; ?></span>
+      </div>
+      <div class="input_box_wrapper">
+        <label for="email">E-Mail:</label>
+        <input type="text" class="input_box" name="email" value="<?php echo $email?>">
+      </div>
+      <div>
+        <span class="error_msg"><?php echo $email_err; ?></span>
+      </div>
+        <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
+    </form>
+</div>
+      <div id="footer">
+          <footer>
+              <p><a href="contact.html"> Contact us!</li> </a></p>    
+          </footer>
+      </div>
       </div>
     </div>
-  </div>
-
-<div id="content">
-    <h1> Your information </h1>
-
-<div id="overview">
-
-  <form action="accountpageHandler.php" method="post">
-
-  <label for="fname">First Name:</label>
-  <input type ="text" id="firstname" name="firstname" value='<?php echo $firstname?>' size="25"><br><br>
-
-  <label for="lname">Last Name:</label>
-  <input type ="text" id="lastname" name="lastname" value='<?php echo $lastname;?>' size="25"><br><br>
-
-  <label for="email">E-Mail: &nbsp; &nbsp; &nbsp;</label>
-  <input type ="text" id="email" name="email" value='<?php echo $email;?>' size="25"><br><br>
-
-  <input type="submit" value="Save"><br><br>
-
-</form>
-<div id="footer">
-    <footer>
-        <p> <a href="contact.php" style="color: white"> Contact us!</li> </a> </p>
-        <p id="date"></p>      
-    </footer>
-</div>
-</div>
-</div>  
-</body>
+  </body>
 </html>
