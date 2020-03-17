@@ -83,23 +83,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StoryMap/Account Page/Change password</title>
-
-        <link rel="stylesheet" href="../css/accountpage_mobile.css">
-    </head>
-    <body>
-        <div id="main">
-                <a href="accountpage.php"> <img src="img/back.svg" alt="logo" height="50"> </a>
-                <a href="accountpage.php"> <img src="img/hom.png" alt="logo" height="50" style="float:right;"> </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryMap/Account Page/Change password</title>
+    <!--CSS Links-->
+    <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
+</head>
+<body>
+    <div id="main">
         <div id="header">
             <header><?php echo $username?>'s Account</header>	
         </div>
         <div id="navigation">
-            <nav>
-            </nav>
         </div>
         <div id="content">
             <h1> Change password</h1>
@@ -132,6 +129,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </footer>
                 </div>
             </div>
-        </div>  
+        </div>
+        <!-- Navigation bar -->
+        <div class="navbar">
+            <a href="../php/storymap.php">Home</a>
+            <a href="../php/attractions.php">Attractions</a>
+            <a href="../php/about.php">About</a>
+            <a class ="active" href="../php/accountpage.php">Account</a>
+        </div>
     </body>
 </html>
