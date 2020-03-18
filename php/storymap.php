@@ -133,7 +133,7 @@ mysqli_close($link);
       "language": "en",
       "calculate_zoom": true,
       "map_type": "osm:standard",
-      "map_background_color": "#373737",
+      "map_background_color": "white",
       "map_as_image": false,
       "font_css": "'PT Sans', sans-serif",
       "slides": [

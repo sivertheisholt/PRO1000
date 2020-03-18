@@ -34,9 +34,9 @@ if ($result->num_rows > 0) {
 </head>
 <body>
     <div id="main">
-    <img class="banner_img" src="storymapbanner.png"></img>
+    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
         <div id="header">
-        <header><?php echo $username?>'s Account</header>
+        <header><?php echo $_SESSION["username"]?>'s Account</header>
         </div>
         <div id="content">
             <h1> Dashboard</h1>
@@ -44,6 +44,8 @@ if ($result->num_rows > 0) {
                     <p><a href="password.php"> Change password </li> </a> </p>
                     <p><a href="favourites.php"> Your favourites </li> </a> </p>
                     <p><a href="information.php"> Your information </li> </a> </p>
+                    <p><a href="admin.php"> Admin Add </li> </a> </p>
+                    <p><a href="adminEdit.php"> Admin Edit </li> </a> </p>
                     <p class="back_button"><a href="logout.php">Logout</a></p>
                 <div id="footer">
                     <footer>

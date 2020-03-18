@@ -94,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div id="main">
-    <img class="banner_img" src="storymapbanner.png"></img>
+    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
         <div id="header">
             <header><?php echo $username?>'s Account</header>	
         </div>

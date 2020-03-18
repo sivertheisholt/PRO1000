@@ -114,6 +114,8 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/accountpage_mobile.css">
 </head>
 <body>
+<div id="main">
+  <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
   <!--Form edit/delete attraction!-->
   <div class="attractionsEdit">
     <form action="#" method="post">
@@ -133,13 +135,7 @@ mysqli_close($link);
       <input type="button" onclick="submitForm('adminDeleteHandler.php')" value="Delete"/>
     </form>
   <div>
-  <script> 
-    function submitForm(action) {
-      var form = document.getElementById('attractionsHandler');
-      form.action = action;
-      form.submit();
-    }
-    </script>
+</div>
 <!-- Navigation bar -->
 <div class="navbar">
   <a href="../php/storymap.php">Home</a>
@@ -147,5 +143,12 @@ mysqli_close($link);
   <a href="../php/about.php">About</a>
   <a class ="active" href="../php/accountpage.php">Account</a>
 </div>
+<script> 
+  function submitForm(action) {
+    var form = document.getElementById('attractionsHandler');
+    form.action = action;
+    form.submit();
+  }
+</script>
 </body>
 </html>

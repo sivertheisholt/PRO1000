@@ -22,7 +22,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     WHERE storymap_slides_ID = $id";
   
     if ($link->query($sql) === TRUE) {
-      echo "New record created successfully";
+      header("location: ../php/accountpage.php");
+      exit;
     } else {
       echo "Error: " . $sql . "<br>" . $link->error;
     }
