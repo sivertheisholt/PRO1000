@@ -2,6 +2,7 @@
 // Initialize the session
 session_start();
  
+
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -93,10 +94,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div id="main">
+    <img class="banner_img" src="storymapbanner.png"></img>
         <div id="header">
             <header><?php echo $username?>'s Account</header>	
-        </div>
-        <div id="navigation">
         </div>
         <div id="content">
             <h1> Change password</h1>
@@ -119,13 +119,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <span class="error_msg"><?php echo $confirm_password_err; ?></span>
                                 </div>
                                 <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
-                                <a href="accountpage.php">Back</a>
+                                <p class="back_button"><a href="accountpage.php">Back</a></p>
                         </form>
                 </div>   
                 <div id="footer">
                     <footer>
-                        <p> <a href="contact.html" style="color: white"> Contact us!</li> </a> </p>
-                        <p id="date"></p>      
+                        <p><a href="contact.html"> Contact us!</a></p>     
                     </footer>
                 </div>
             </div>
