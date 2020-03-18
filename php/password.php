@@ -107,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="new_password <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
                                 <div class="input_box_wrapper">
                                     <label>New Password: </label>
-                                    <input type="new_password" name="new_password" class="input_box" value="<?php echo $new_password; ?>">
+                                    <input type="password" name="new_password" class="input_box" value="<?php echo $new_password; ?>">
                                 </div>
                                     <span class="error_msg"><?php echo $new_password_err; ?></span>
                                 </div>
