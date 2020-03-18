@@ -1,0 +1,58 @@
+Here you can see the storymap with the top 15 attractions from tripadvisor.
+All the attractions are stored in a database and loaded into the storymap.
+
+	/* Scroll on attractions */
+
+The style for the webpage is finished, but not implementet into the prototype yet.
+We have a standard navigation bar on the bottom, after researching and looking for statistics on user friendliness
+The bottom navigation bar gives around 30% less miss clicks because of the comfort zone on mobile.
+We will use a hamburger meny on the desktop version.
+
+	/* Move to Attractions */
+
+On the attractions tab we have all the attractions stored in the database. It's also randomized,
+so each time the attractions will be ordered randomly. We might order it by name later. 
+
+	/* Clicking on  All | 3 days | 5 days */
+
+By clicking on the 3 days or 5 days we will get a randomized trip suggestion of either 3 days or 5 days.
+About page is 90% done, so we didn't implement that one yet.
+
+	/* Move to account */
+
+This is the login screen. We need to fix the visibility of the buttons here. When you log in,
+you will be redirected to the storymap page again.
+	
+	/* Click on new user */
+
+Here you can register a user, we have a full login/register system up and running.
+
+	/* Move back to login  and login with pro1000 */
+	/* Move to account */
+
+This is the account page.
+On the top we can see the username of the user
+Then we have the list of different functions for the user
+
+	/* Click on change password */
+
+Here the user can change the password.
+
+	/* Change password to pro2000 */
+
+This will log out the user, and require it to log back in.
+
+	/* Log back in */
+	/* Go back to account */
+¨
+Your favourites are not implementet yet and does not work
+	
+	/* Go to your information */
+Your information is located here, and can be changed.
+By clicking the save button it will save the information to the database
+
+	/* Go back */
+	/* Go to Admin edit */
+The admin part was done pretty quickly, because it was so
+
+
