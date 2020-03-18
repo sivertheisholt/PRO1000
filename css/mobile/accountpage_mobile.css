@@ -1,17 +1,16 @@
 @media only screen and (max-width: 480px) {
 
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+    @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 body, html{
     margin: 0;
-    min-height: 100vh;
-    background-color: #373737;
-    color:rgb(226, 222, 223);
+    background: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     height: 100%;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 a {
-    color:rgb(60, 180, 250);
+    color:rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -26,6 +25,7 @@ a {
 #active {
     text-decoration: underline;
 }
+
 #main {
     font-size: 19px;
     max-width:480px;
@@ -35,6 +35,7 @@ a {
     margin-bottom:20px;
     height: 100%;
 }
+
 #content {
 	border-top: solid 1px;
     max-width: 100%;
@@ -47,9 +48,9 @@ a {
 #header {
   padding-top: 0px;
   text-align: center;
-  color: rgb(226, 222, 223);
+  color: rgb(0, 0, 0);
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .logo_wrapper {
@@ -65,6 +66,9 @@ a {
 #footer {
     border-top: solid 1px;
     border-bottom: solid 1px;
+    margin-top: 50px;
+    color: black;
+    margin-bottom: 100px;
 }
 
 .error_msg{
@@ -73,11 +77,11 @@ a {
 
 .input_box {
     margin-top: 10px;
-    width: 150px;
+    width: 120px;
     margin-bottom: 10px;
     border-radius: 15px;
     height: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(221, 221, 221);
 }
 
 .submit_button {
@@ -95,8 +99,31 @@ a {
 	padding:7px 19px;
 	text-decoration:none;
     text-shadow:0px 1px 0px #528009;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     margin-top: 25px;
+}
+
+.back_button {
+	box-shadow:inset 0px 5px 17px 0px #ff0000;
+	background:linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
+	background-color:#be2600;
+	border-radius:10px;
+	border:1px solid #ca0707;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	padding:7px 19px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #ff0000;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+.back_button a{
+    color: white;
 }
 
 .input_box_wrapper {
@@ -113,12 +140,19 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 label{
     display: inline-block;
     width: 120px;
 }
+
 input {
   display: inline-block;
   padding: 0 10px;
+}
+
+.banner_img{
+    width:90%;
+    height: 50px;
 }
 }
