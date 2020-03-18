@@ -53,32 +53,11 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
     <!--CSS Links-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/hamburger.css">
-    <link rel="stylesheet" href="../css/accountpage_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
+    <link rel="stylesheet" href="../css/mobile/accountpage_mobile.css">
 </head>
 <body>
-<!--Hamburger meny!-->
-<div class="menu-wrap">
-    <input type="checkbox" class="toggler">
-    <div class="hamburger"><div></div></div>
-    <div class="menu">
-      <div>
-        <div>
-          <ul>
-            <li><a href="../php/storymap.php">Home</a></li>
-            <li><a href="../php/attractions.php">Attractions</a></li>
-            <li><a href="../php/" + $loginornot><?php echo htmlspecialchars($currentUser); ?></a></li>
-            <li><a href="../php/logout.php">Logout</a></li>
-            <li><a href="../php/about.php">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Form edit attraction!-->
+<!--Form edit attraction!-->
 <div class="attractionsEdit">
     <form action="#" method="post">
         Attraction lat: <input type="text" name="lat" required><br>
@@ -91,5 +70,12 @@ mysqli_close($link);
     <input type="submit">
 </form>
 <div>
+<!-- Navigation bar -->
+<div class="navbar">
+  <a href="../php/storymap.php">Home</a>
+  <a href="../php/attractions.php">Attractions</a>
+  <a href="../php/about.php">About</a>
+  <a class ="active" href="../php/accountpage.php">Account</a>
+</div>
 </body>
 </html>

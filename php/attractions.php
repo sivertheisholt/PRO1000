@@ -99,7 +99,7 @@ mysqli_close($link);
 </div>
 </div>
 <!-- Navigation bar -->
-<div class="navbar">
+<div class="navbar" style="font-family: Arial, Helvetica, sans-serif;">
   <a href="../php/storymap.php">Home</a>
   <a class ="active" href="../php/attractions.php">Attractions</a>
   <a href="../php/about.php">About</a>

@@ -101,7 +101,7 @@ mysqli_close($link);
     <!-- Storymap -->
     <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
     <!-- Navigation bar -->
-    <div class="navbar">
+    <div class="navbar" style="font-family: Arial, Helvetica, sans-serif;">
       <a class ="active" href="../php/storymap.php">Home</a>
       <a href="../php/attractions.php">Attractions</a>
       <a href="../php/about.php">About</a>

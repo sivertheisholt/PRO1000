@@ -52,6 +52,10 @@ if ($result->num_rows > 0) {
         
         <p> <a href="information.php"> Your information </li> </a> </p>
 
+        <p> <a href="adminEdit.php"> Admin Edit </li> </a> </p>
+
+        <p> <a href="admin.php"> Admin Add </li> </a> </p>
+
         <p><a href="logout.php">log out</a></p>
         <br>
 <div id="footer">
@@ -62,7 +66,7 @@ if ($result->num_rows > 0) {
 </div>
 </div>
 <!-- Navigation bar -->
-<div class="navbar">
+<div class="navbar" style="font-family: Arial, Helvetica, sans-serif;">
   <a href="../php/storymap.php">Home</a>
   <a href="../php/attractions.php">Attractions</a>
   <a href="../php/about.php">About</a>
