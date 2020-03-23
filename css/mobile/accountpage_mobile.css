@@ -1,158 +1,139 @@
 @media only screen and (max-width: 480px) {
-
     @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-body, html{
-    margin: 0;
-    background: rgb(255, 255, 255);
-    color:rgb(0, 0, 0);
-    height: 100%;
-    font-family: 'Oswald', sans-serif;
-}
-
-a {
-    color:rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-a {
-  cursor: pointer;
-}
-
-#main img {
-	padding:15px;
-}
-
-#active {
-    text-decoration: underline;
-}
-
-#main {
-    font-size: 19px;
-    max-width:480px;
-    border:1px;
-    border-radius:7px;
-    margin:0 auto;
-    margin-bottom:20px;
-    height: 100%;
-}
-
-#content {
-	border-top: solid 1px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding:10px 10px 10px 10px;
-    position: relative;
-    text-align: center;
-}
-
-#header {
-  padding-top: 0px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 30px;
-  margin-bottom: 50px;
-}
-
-.logo_wrapper {
-    margin-bottom: 20px;
-}
-.container{
-	max-width: 100%;
-    margin: 0 auto;
-    padding:10px 10px 10px 10px;
-    position: relative;
-}
-
-#footer {
-    border-top: solid 1px;
-    border-bottom: solid 1px;
-    margin-top: 50px;
-    color: black;
-    margin-bottom: 100px;
-}
-
-.error_msg{
-    font-size: small;
-}
-
-.input_box {
-    margin-top: 10px;
-    width: 120px;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    height: 20px;
-    background-color: rgb(221, 221, 221);
-}
-
-.submit_button {
-	box-shadow:inset 0px 5px 17px 0px #a4e271;
-	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-	background-color:#89c403;
-	border-radius:10px;
-	border:1px solid #74b807;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:11px;
-	font-weight:bold;
-	padding:7px 19px;
-	text-decoration:none;
-    text-shadow:0px 1px 0px #528009;
-    margin-bottom: 30px;
-    margin-top: 25px;
-}
-
-.back_button {
-	box-shadow:inset 0px 5px 17px 0px #ff0000;
-	background:linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
-	background-color:#be2600;
-	border-radius:10px;
-	border:1px solid #ca0707;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:11px;
-	font-weight:bold;
-	padding:7px 19px;
-	text-decoration:none;
-    text-shadow:0px 1px 0px #ff0000;
-    margin-bottom: 30px;
-    margin-top: 25px;
-}
-
-.back_button a{
-    color: white;
-}
-
-.input_box_wrapper {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    font-size: medium;
-}
-
-.center {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-label{
-    display: inline-block;
-    width: 120px;
-}
-
-input {
-  display: inline-block;
-  padding: 0 10px;
-}
-
-.banner_img{
-    width:90%;
-    height: 50px;
-}
+    body,
+    html {
+        margin: 0;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        height: 100%;
+        font-family: 'Oswald', sans-serif;
+    }
+    a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    a {
+        cursor: pointer;
+    }
+    #main img {
+        padding: 15px;
+    }
+    #active {
+        text-decoration: underline;
+    }
+    #main {
+        font-size: 19px;
+        max-width: 480px;
+        border: 1px;
+        border-radius: 7px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        height: 100%;
+    }
+    #content {
+        border-top: solid 1px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px 10px 10px 10px;
+        position: relative;
+        text-align: center;
+    }
+    #header {
+        padding-top: 0px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    .logo_wrapper {
+        margin-bottom: 20px;
+    }
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px 10px 10px 10px;
+        position: relative;
+    }
+    #footer {
+        border-top: solid 1px;
+        border-bottom: solid 1px;
+        margin-top: 50px;
+        color: black;
+        margin-bottom: 100px;
+    }
+    .error_msg {
+        font-size: small;
+    }
+    .input_box {
+        margin-top: 10px;
+        width: 120px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        height: 20px;
+        background-color: rgb(221, 221, 221);
+    }
+    .submit_button {
+        box-shadow: inset 0px 5px 17px 0px #a4e271;
+        background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+        background-color: #89c403;
+        border-radius: 10px;
+        border: 1px solid #74b807;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 7px 19px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #528009;
+        margin-bottom: 30px;
+        margin-top: 25px;
+    }
+    .back_button {
+        box-shadow: inset 0px 5px 17px 0px #ff0000;
+        background: linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
+        background-color: #be2600;
+        border-radius: 10px;
+        border: 1px solid #ca0707;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 7px 19px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #ff0000;
+        margin-bottom: 30px;
+        margin-top: 25px;
+    }
+    .back_button a {
+        color: white;
+    }
+    .input_box_wrapper {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+    }
+    .center {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    label {
+        display: inline-block;
+        width: 120px;
+    }
+    input {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    .banner_img {
+        width: 90%;
+        height: 50px;
+    }
 }

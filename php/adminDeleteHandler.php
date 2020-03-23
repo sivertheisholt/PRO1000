@@ -1,6 +1,21 @@
 <?php
+// Initialize the session
 session_start();
 require_once "config.php";
+$user_id = $_SESSION["id"];
+
+//Get admin status
+$getsql = "SELECT admin FROM users where ID ='$user_id'";
+$result = $link->query($getsql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        if($row['admin'] == 0) {
+          header("location: ../php/accountpage.php");
+          exit;
+        }
+    }
+}
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 
     $id = $_SESSION['id'];

@@ -82,6 +82,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,62 +90,64 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
 </head>
+
 <body>
-  <div id="main">
-    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
-    <div id="header">
-      <header><?php echo $username?>'s Account</header>	
-    </div>
-    <div id="content">
-      <h1> Your information </h1>
-    <div class="container">
-      <div class="form_wrapper">
-      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="input_box_wrapper">
-          <label for="firstname">First Name:</label>
-          <input type="text" class="input_box" name="first_name" value="<?php echo $first_name?>">
+    <div id="main">
+        <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
+        <div id="header">
+            <header><?php echo $username?>'s Account</header>
         </div>
-        <div>
-          <span class="error_msg"><?php echo $first_name_err; ?></span>
+        <div id="content">
+            <h1> Your information </h1>
+            <div class="container">
+                <div class="form_wrapper">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="input_box_wrapper">
+                            <label for="firstname">First Name:</label>
+                            <input type="text" class="input_box" name="first_name" value="<?php echo $first_name?>">
+                        </div>
+                        <div>
+                            <span class="error_msg"><?php echo $first_name_err; ?></span>
+                        </div>
+                        <div class="input_box_wrapper">
+                            <label for="lastname">Last Name:</label>
+                            <input type="text" class="input_box" name="last_name" value="<?php echo $last_name?>">
+                        </div>
+                        <div>
+                            <span class="error_msg"><?php echo $last_name_err; ?></span>
+                        </div>
+                        <div class="input_box_wrapper">
+                            <label for="username">Username:</label>
+                            <input type="text" class="input_box" name="username" value="<?php echo $username?>">
+                        </div>
+                        <div>
+                            <span class="error_msg"><?php echo $username_err; ?></span>
+                        </div>
+                        <div class="input_box_wrapper">
+                            <label for="email">E-Mail:</label>
+                            <input type="text" class="input_box" name="email" value="<?php echo $email?>">
+                        </div>
+                        <div>
+                            <span class="error_msg"><?php echo $email_err; ?></span>
+                        </div>
+                        <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
+                        <p class="back_button"><a href="accountpage.php">Back</a></p>
+                    </form>
+                </div>
+                <div id="footer">
+                    <footer>
+                        <p><a href="contact.html"> Contact us!</li> </a></p>
+                    </footer>
+                </div>
+            </div>
         </div>
-        <div class="input_box_wrapper">
-          <label for="lastname">Last Name:</label>
-          <input type="text" class="input_box" name="last_name" value="<?php echo $last_name?>">
+        <!-- Navigation bar -->
+        <div class="navbar">
+            <a href="../php/storymap.php">Home</a>
+            <a href="../php/attractions.php">Attractions</a>
+            <a href="../php/about.php">About</a>
+            <a class="active" href="../php/accountpage.php">Account</a>
         </div>
-        <div>
-          <span class="error_msg"><?php echo $last_name_err; ?></span>
-        </div>
-        <div class="input_box_wrapper">
-          <label for="username">Username:</label>
-          <input type="text" class="input_box" name="username" value="<?php echo $username?>">
-        </div>
-        <div>
-          <span class="error_msg"><?php echo $username_err; ?></span>
-        </div>
-        <div class="input_box_wrapper">
-          <label for="email">E-Mail:</label>
-          <input type="text" class="input_box" name="email" value="<?php echo $email?>">
-        </div>
-        <div>
-          <span class="error_msg"><?php echo $email_err; ?></span>
-        </div>
-          <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
-          <p class="back_button"><a href="accountpage.php">Back</a></p>
-      </form>
-    </div>
-        <div id="footer">
-            <footer>
-                <p><a href="contact.html"> Contact us!</li> </a></p>    
-            </footer>
-          </div>
-      </div>
-    </div>
-    <!-- Navigation bar -->
-    <div class="navbar">
-      <a href="../php/storymap.php">Home</a>
-      <a href="../php/attractions.php">Attractions</a>
-      <a href="../php/about.php">About</a>
-      <a class ="active" href="../php/accountpage.php">Account</a>
-    </div>
-  </body>
+</body>
+
 </html>

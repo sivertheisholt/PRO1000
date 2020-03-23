@@ -1,7 +1,11 @@
-body{
-	margin: 0;
-	padding: 0;
+body, html{
+    margin: 0;
+    background: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
 }
+
 .container{
 	width:100%;
 	height:auto;
@@ -40,12 +44,13 @@ body{
 .content{
 	width:100%;
 	height:auto;
-	background-color: #92a8d1;
 	font-size: 23px;
 	font-family: audiowide;
 	color:#333;
 	line-height: 30px;
-	text-align: center;
+	text-align: left;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 b{
 	font-size: 50px;

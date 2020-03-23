@@ -148,7 +148,7 @@ mysqli_close($link);
             "text": text[0]
           },
           "media": {
-            "url": url[0],
+            "url": '../storage/attractions/' + url[0],
             "caption": caption[0],
             "credit": credit[0]
           }
@@ -164,7 +164,7 @@ mysqli_close($link);
             "text": text[1]
           },
           "media": {
-            "url": url[1],
+            "url": '../storage/attractions/' + url[1],
             "caption": caption[1],
             "credit": credit[1]
           }
@@ -180,7 +180,7 @@ mysqli_close($link);
             "text": text[2]
           },
           "media": {
-            "url": url[2],
+            "url": '../storage/attractions/' + url[2],
             "caption": caption[2],
             "credit": credit[2]
           }
@@ -196,7 +196,7 @@ mysqli_close($link);
             "text": text[3]
           },
           "media": {
-            "url": url[3],
+            "url": '../storage/attractions/' + url[3],
             "caption": caption[3],
             "credit": credit[3]
           }
@@ -212,7 +212,7 @@ mysqli_close($link);
             "text": text[4]
           },
           "media": {
-            "url": url[4],
+            "url": '../storage/attractions/' + url[4],
             "caption": caption[4],
             "credit": credit[4]
           }
@@ -228,7 +228,7 @@ mysqli_close($link);
             "text": text[5]
           },
           "media": {
-            "url": url[5],
+            "url": '../storage/attractions/' + url[5],
             "caption": caption[5],
             "credit": credit[5]
           }
@@ -244,7 +244,7 @@ mysqli_close($link);
             "text": text[6]
           },
           "media": {
-            "url": url[6],
+            "url": '../storage/attractions/' + url[6],
             "caption": caption[6],
             "credit": credit[6]
           }
@@ -260,7 +260,7 @@ mysqli_close($link);
             "text": text[7]
           },
           "media": {
-            "url": url[7],
+            "url": '../storage/attractions/' + url[7],
             "caption": caption[7],
             "credit": credit[7]
           }
@@ -276,7 +276,7 @@ mysqli_close($link);
             "text": text[8]
           },
           "media": {
-            "url": url[8],
+            "url": '../storage/attractions/' + url[8],
             "caption": caption[8],
             "credit": credit[8]
           }
@@ -292,7 +292,7 @@ mysqli_close($link);
             "text": text[9]
           },
           "media": {
-            "url": url[9],
+            "url": '../storage/attractions/' + url[9],
             "caption": caption[9],
             "credit": credit[9]
           }
@@ -308,7 +308,7 @@ mysqli_close($link);
             "text": text[10]
           },
           "media": {
-            "url": url[10],
+            "url": '../storage/attractions/' + url[10],
             "caption": caption[10],
             "credit": credit[10]
           }
@@ -324,7 +324,7 @@ mysqli_close($link);
             "text": text[11]
           },
           "media": {
-            "url": url[11],
+            "url": '../storage/attractions/' + url[11],
             "caption": caption[11],
             "credit": credit[11]
           }
@@ -340,7 +340,7 @@ mysqli_close($link);
             "text": text[12]
           },
           "media": {
-            "url": url[12],
+            "url": '../storage/attractions/' + url[12],
             "caption": caption[12],
             "credit": credit[12]
           }
@@ -356,7 +356,7 @@ mysqli_close($link);
             "text": text[13]
           },
           "media": {
-            "url": url[13],
+            "url": '../storage/attractions/' + url[13],
             "caption": caption[13],
             "credit": credit[13]
           }
@@ -372,7 +372,7 @@ mysqli_close($link);
             "text": text[14]
           },
           "media": {
-            "url": url[14],
+            "url": '../storage/attractions/' + url[14],
             "caption": caption[14],
             "credit": credit[14]
           }
@@ -388,7 +388,7 @@ mysqli_close($link);
             "text": text[15]
           },
           "media": {
-            "url": url[15],
+            "url": '../storage/attractions/' + url[15],
             "caption": caption[15],
             "credit": credit[15]
           }

@@ -118,10 +118,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <button class="button__one">Login</button>
                 <button class="button__two"><a href="../php/register.php">New user</a></button>
+                <button class="button__two"><a href="../php/storymap.php">Continue as guest</a></button>
             </form>
-            <div class="guest_button">
-                <h5>Or continue as a guest by clicking<a href="../php/storymap.php">here!</a></h5>
-            </div>
         </div>
     </div>
     <script src="polyfill.js"></script>
