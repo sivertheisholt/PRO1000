@@ -112,12 +112,12 @@ mysqli_close($link);
 
         <script>
         //Get array from php
-        var headline = < ? php echo $code_headline; ? > ;
-        var image = < ? php echo $code_image; ? > ;
-        var text = < ? php echo $code_text; ? > ;
+        var headline = <?php echo $code_headline; ?> ;
+        var image = <?php echo $code_image; ?> ;
+        var text = <?php echo $code_text; ?> ;
 
         //This is for the multidimentional images array
-        var images = < ? php echo $code_images; ? > ;
+        var images = <?php echo $code_images; ?> ;
 
         create_array(headline, image, text);
         create_image_array(image, images);

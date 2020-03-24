@@ -113,13 +113,13 @@ mysqli_close($link);
     <!--Storymap script-->
     <script>
     //Get array from php
-    var lat = < ? php echo $code_lat; ? > ;
-    var lon = < ? php echo $code_lon; ? > ;
-    var text = < ? php echo $code_text; ? > ;
-    var headline = < ? php echo $code_headline; ? > ;
-    var url = < ? php echo $code_url; ? > ;
-    var caption = < ? php echo $code_caption; ? > ;
-    var credit = < ? php echo $code_credit; ? > ;
+    var lat = <?php echo $code_lat; ?> ;
+    var lon = <?php echo $code_lon; ?> ;
+    var text = <?php echo $code_text; ?> ;
+    var headline = <?php echo $code_headline; ?> ;
+    var url = <?php echo $code_url; ?> ;
+    var caption = <?php echo $code_caption; ?> ;
+    var credit = <?php echo $code_credit; ?> ;
 
     //Storymap data path, contains slides info and storymap configurations
     var storymap_data = {
