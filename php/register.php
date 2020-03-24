@@ -96,9 +96,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
@@ -107,6 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <div class="container">
         <div class="video__wrapper">
@@ -118,21 +120,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="center">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>>
-                    <input type="text" name="username" placeholder="Type username here" class="input_box" value="<?php echo $username; ?>">
+                    <input type="text" name="username" placeholder="Type username here" class="input_box"
+                        value="<?php echo $username; ?>">
                     <span class="error_box"><?php echo $username_err; ?></span>
                 </div>
                 <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>>
-                    <input type="password" name="password" placeholder="Desired password here" class="input_box" value="<?php echo $password; ?>">
+                    <input type="password" name="password" placeholder="Desired password here" class="input_box"
+                        value="<?php echo $password; ?>">
                     <span class="error_box"><?php echo $password_err; ?></span>
                 </div>
                 <div <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>>
-                    <input type="password" name="confirm_password" placeholder="Confirm password" class="input_box" value="<?php echo $confirm_password; ?>">
+                    <input type="password" name="confirm_password" placeholder="Confirm password" class="input_box"
+                        value="<?php echo $confirm_password; ?>">
                     <span class="error_box"><?php echo $confirm_password_err; ?></span>
                 </div>
-                    <button class="button__one">Sign up!</button>
-                    <button class="button__two"><a href="../php/login.php">Back</a></button>
+                <button class="button__one">Sign up!</button>
+                <button class="button__two"><a href="../php/login.php">Back</a></button>
             </form>
         </div>
-    </div>    
+    </div>
 </body>
+
 </html>

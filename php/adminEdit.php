@@ -25,8 +25,7 @@ $headline = "";
 $url = ""; 
 $caption = ""; 
 $credit = ""; 
-$submit = "";
-$delete = "";
+
 //Get all attractions
     $sql = "SELECT storymap_slides_ID, storymap_slides_text_headline FROM attractions";
     $result = $link->query($sql);
@@ -39,9 +38,7 @@ $delete = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 
   $x = (int)$_POST['attractions'];
-  $_SESSION['id'] = $x;
-  $submit = '<input class="submit_button" type="button" onclick="submitForm("adminEditHandler.php")" value="Save" />';
-  $delete = '<input class="delete_button" type="button" onclick="submitForm("adminDeleteHandler.php")" value="Delete" />';
+  $_SESSION['attractionID'] = $x;
 
   //Get attraction details
   $sql = "SELECT storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit  FROM attractions WHERE storymap_slides_ID = $x";
@@ -58,6 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
   }
 }
+mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -91,8 +89,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <?php echo $url ?><br>
             <?php echo $caption ?><br>
             <?php echo $credit ?><br>
-            <?php echo $submit ?>
-            <?php echo $delete ?>
+            <input class="submit_button" type="button" onclick='submitForm("adminEditHandler.php")' value="Save" />
+            <input class="delete_button" type="button" onclick='submitForm("adminDeleteHandler.php")' value="Delete" />
             <p class="back_button"><a href="adminPage.php">Back</a></p>
         </form>
     </div>

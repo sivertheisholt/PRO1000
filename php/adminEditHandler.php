@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){ 
 
-    $id = $_SESSION['id'];
+    $id = $_SESSION['attractionID'];
     $lat = $_POST["lat"];
     $lon = $_POST["lon"];
     $headline = $_POST["headline"];

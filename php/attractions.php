@@ -32,7 +32,7 @@ for ($x = 1; $x <= 16; $x++) {
     $resultimage = $link->query($sql);
     if (!mysqli_num_rows($resultimage)==0) {
       while($row = mysqli_fetch_array($resultimage)){
-        $image[] = $row["storymap_slides_media_url"];
+        $image[] = '../storage/attractions/' . $row["storymap_slides_media_url"];
       }
     }
     $sql = "SELECT storymap_slides_text_text FROM attractions WHERE storymap_slides_ID = $x";
@@ -50,7 +50,7 @@ while ($numberOfAttractions >= $counterMain) {
   $result = $link->query($sql);
   if (!mysqli_num_rows($result)==0) {
     while($row = mysqli_fetch_array($result)){
-      $extraPictures[$counterMain][$counterSub] = $row['storymap_slides_media_url']; //The array is structures as this: $extraPictures[ID of attraction][Picture index]
+      $extraPictures[$counterMain][$counterSub] = '../storage/attractions/' . $row['storymap_slides_media_url']; //The array is structures as this: $extraPictures[ID of attraction][Picture index]
       $counterSub++;
     }
   }
@@ -70,6 +70,7 @@ mysqli_close($link);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>PRO1000</title>
     <meta charset="UTF-8">
@@ -80,43 +81,47 @@ mysqli_close($link);
     <link rel="stylesheet" type="text/css" href="../css/mobile/attractions_mobile.css">
     <script type="text/javascript" src="../script/attractions.js"></script>
 </head>
+
 <body>
-<div id="main">
-<div id="header">
-<header>Barcelona</header>
-</div>
-  <div id="content">
-    <h1>Attractions</h1>
-    <p id = "rec_days"><a id="all">All</a> | <a id="threedays">3 days</a> | <a id="fivedays">5 days</a></p>
-    <div id ="overlay"><div id="overlayText"></div></div>
-<div id="rec_container">
-</div>
+    <div id="main">
+        <div id="header">
+            <header>Barcelona</header>
+        </div>
+        <div id="content">
+            <h1>Attractions</h1>
+            <p id="rec_days"><a id="all">All</a> | <a id="threedays">3 days</a> | <a id="fivedays">5 days</a></p>
+            <div id="overlay">
+                <div id="overlayText"></div>
+            </div>
+            <div id="rec_container">
+            </div>
 
-<div id="footer">
-    <footer>
-        <p id="date"></p>      
-    </footer>
-</div>
-</div>
-<!-- Navigation bar -->
-<div class="navbar">
-  <a href="../php/storymap.php">Home</a>
-  <a class ="active" href="../php/attractions.php">Attractions</a>
-  <a href="../php/about.php">About</a>
-  <a href="../php/accountpage.php">Account</a>
-</div>
+            <div id="footer">
+                <footer>
+                    <p id="date"></p>
+                </footer>
+            </div>
+        </div>
+        <!-- Navigation bar -->
+        <div class="navbar">
+            <a href="../php/storymap.php">Home</a>
+            <a class="active" href="../php/attractions.php">Attractions</a>
+            <a href="../php/about.php">About</a>
+            <a href="../php/accountpage.php">Account</a>
+        </div>
 
-<script>
-  //Get array from php
-  var headline = <?php echo $code_headline; ?>;
-  var image = <?php echo $code_image; ?>;
-  var text = <?php echo $code_text; ?>;
+        <script>
+        //Get array from php
+        var headline = < ? php echo $code_headline; ? > ;
+        var image = < ? php echo $code_image; ? > ;
+        var text = < ? php echo $code_text; ? > ;
 
-  //This is for the multidimentional images array
-  var images = <?php echo $code_images; ?>;
+        //This is for the multidimentional images array
+        var images = < ? php echo $code_images; ? > ;
 
-  create_array(headline, image, text);
-  create_image_array(image, images);
-</script>
+        create_array(headline, image, text);
+        create_image_array(image, images);
+        </script>
 </body>
+
 </html>

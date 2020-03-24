@@ -87,9 +87,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -98,20 +99,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <div class="container">
-    <div class="video__wrapper">
-        <video width="480" height="800" autoplay loop muted>
-            <source src="../storage/mobile/background.mp4" type="video/mp4" />
-        </video>
-    </div>
+        <div class="video__wrapper">
+            <video width="480" height="800" autoplay loop muted>
+                <source src="../storage/mobile/background.mp4" type="video/mp4" />
+            </video>
+        </div>
         <h2>Top attractions in Barcelona</h2>
         <div class="center">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                    <input type="text" name="username" class="input_box" placeholder="Your username here" value="<?php echo $username; ?>">
+                    <input type="text" name="username" class="input_box" placeholder="Your username here"
+                        value="<?php echo $username; ?>">
                     <span class="error_box"><?php echo $username_err; ?></span>
-                </div>    
+                </div>
                 <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                     <input type="password" name="password" class="input_box" placeholder="Your password here">
                     <span class="error_box"><?php echo $password_err; ?></span>
@@ -124,4 +127,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     <script src="polyfill.js"></script>
 </body>
+
 </html>

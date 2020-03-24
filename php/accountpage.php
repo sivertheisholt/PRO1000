@@ -35,6 +35,7 @@ if ($result->num_rows > 0) {
 } else {
   echo "0 results";
 }
+mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +62,6 @@ if ($result->num_rows > 0) {
                 <p><a href="password.php"> Change password </li> </a> </p>
                 <p><a href="favourites.php"> Your favourites </li> </a> </p>
                 <p><a href="information.php"> Your information </li> </a> </p>
-                <p><a href="adminPage.php"> Admin </li> </a> </p>
                 <?php echo $admin?>
                 <p class="back_button"><a href="logout.php">Logout</a></p>
                 <div id="footer">

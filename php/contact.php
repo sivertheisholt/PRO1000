@@ -61,19 +61,15 @@ if ($result->num_rows > 0) {
             <h1> Contact information</h1>
             <div id="overview">
                 <p class="contact"> Mail Adress: </p>
-                    <p class="venstre"> Universitetet i Sørøst-Norge </p>
-                    <p class="venstre"> Postboks 235 </p>
-                    <p class="venstre"> 3603 Kongsberg </p>
+                <p class="venstre"> Universitetet i Sørøst-Norge </p>
+                <p class="venstre"> Postboks 235 </p>
+                <p class="venstre"> 3603 Kongsberg </p>
                 <p class="contact"> IT-support: </p>
-                    <li class="venstre"> E-post:  it-support@usn.no </li>
-                    <li class="venstre"> Telefon: 31 00 82 00 </li>
-                <?php echo $admin?>
+                <li class="venstre"> E-post: it-support@usn.no </li>
+                <li class="venstre"> Telefon: 31 00 82 00 </li>
                 <p class="back_button"><a href="logout.php">Logout</a></p>
                 <p class="back_button"><a href="accountpage.php">Back</a></p>
                 <div id="footer">
-                    <footer>
-                        <p> <a href="contact.php"> Contact us!</li> </a> </p>
-                    </footer>
                 </div>
             </div>
         </div>

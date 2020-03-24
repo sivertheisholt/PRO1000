@@ -84,6 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,39 +93,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
 </head>
+
 <body>
     <div id="main">
-    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
+        <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
         <div id="header">
-            <header><?php echo $username?>'s Account</header>	
+            <header><?php echo $username?>'s Account</header>
         </div>
         <div id="content">
             <h1> Change password</h1>
             <div id="overview">
                 <div class="wrapper">
                     <p>Please fill out this form to reset your password.</p>
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
-                            <div class="new_password <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                                <div class="input_box_wrapper">
-                                    <label>New Password: </label>
-                                    <input type="password" name="new_password" class="input_box" value="<?php echo $new_password; ?>">
-                                </div>
-                                    <span class="error_msg"><?php echo $new_password_err; ?></span>
-                                </div>
-                            <div class="con_password <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                                <div class="input_box_wrapper">
-                                    <label>Confirm Password: </label>
-                                    <input type="password" name="confirm_password" class="input_box">
-                                </div>
-                                    <span class="error_msg"><?php echo $confirm_password_err; ?></span>
-                                </div>
-                                <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
-                                <p class="back_button"><a href="accountpage.php">Back</a></p>
-                        </form>
-                </div>   
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="new_password <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
+                            <div class="input_box_wrapper">
+                                <label>New Password: </label>
+                                <input type="password" name="new_password" class="input_box"
+                                    value="<?php echo $new_password; ?>">
+                            </div>
+                            <span class="error_msg"><?php echo $new_password_err; ?></span>
+                        </div>
+                        <div class="con_password <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                            <div class="input_box_wrapper">
+                                <label>Confirm Password: </label>
+                                <input type="password" name="confirm_password" class="input_box">
+                            </div>
+                            <span class="error_msg"><?php echo $confirm_password_err; ?></span>
+                        </div>
+                        <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
+                        <p class="back_button"><a href="accountpage.php">Back</a></p>
+                    </form>
+                </div>
                 <div id="footer">
                     <footer>
-                        <p><a href="contact.html"> Contact us!</a></p>     
+                        <p><a href="contact.html"> Contact us!</a></p>
                     </footer>
                 </div>
             </div>
@@ -134,7 +137,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <a href="../php/storymap.php">Home</a>
             <a href="../php/attractions.php">Attractions</a>
             <a href="../php/about.php">About</a>
-            <a class ="active" href="../php/accountpage.php">Account</a>
+            <a class="active" href="../php/accountpage.php">Account</a>
         </div>
-    </body>
+</body>
+
 </html>
