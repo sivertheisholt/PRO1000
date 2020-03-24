@@ -43,10 +43,12 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoryMap/Account Page</title>
+    <title>StoryMap/Contact</title>
     <!--CSS Links-->
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/contact_mobile.css">
+
 </head>
 
 <body>
@@ -56,14 +58,18 @@ if ($result->num_rows > 0) {
             <header><?php echo $_SESSION["username"]?>'s Account</header>
         </div>
         <div id="content">
-            <h1> Dashboard</h1>
+            <h1> Contact information</h1>
             <div id="overview">
-                <p><a href="password.php"> Change password </li> </a> </p>
-                <p><a href="favourites.php"> Your favourites </li> </a> </p>
-                <p><a href="information.php"> Your information </li> </a> </p>
-                <p><a href="adminPage.php"> Admin </li> </a> </p>
+                <p class="contact"> Mail Adress: </p>
+                    <p class="venstre"> Universitetet i Sørøst-Norge </p>
+                    <p class="venstre"> Postboks 235 </p>
+                    <p class="venstre"> 3603 Kongsberg </p>
+                <p class="contact"> IT-support: </p>
+                    <li class="venstre"> E-post:  it-support@usn.no </li>
+                    <li class="venstre"> Telefon: 31 00 82 00 </li>
                 <?php echo $admin?>
                 <p class="back_button"><a href="logout.php">Logout</a></p>
+                <p class="back_button"><a href="accountpage.php">Back</a></p>
                 <div id="footer">
                     <footer>
                         <p> <a href="contact.php"> Contact us!</li> </a> </p>

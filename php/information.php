@@ -136,7 +136,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <div id="footer">
                     <footer>
-                        <p><a href="contact.html"> Contact us!</li> </a></p>
+                        <p><a href="contact.php"> Contact us!</li> </a></p>
                     </footer>
                 </div>
             </div>
