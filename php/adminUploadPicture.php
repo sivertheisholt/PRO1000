@@ -73,11 +73,8 @@ mysqli_close($link);
     <div class="attractionsChange">
         <!--Form edit attraction!-->
         <form action="#" method="post">
-            <h1>Choose attraction to replace</h1>
+            <h1>Choose attraction</h1>
             <?php echo $select ?>;
-            </select>
-            <h1>Choose new attraction</h1>
-            <?php echo $select2 ?>;
             </select>
             <input class="submit_button" type="submit">
             <p class="back_button"><a href="adminPage.php">Back</a></p>

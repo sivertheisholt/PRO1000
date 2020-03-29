@@ -52,7 +52,9 @@ if ($result->num_rows > 0) {
             <div id="overview">
                 <p><a href="adminAdd.php">Add Attraction</li> </a> </p>
                 <p><a href="adminEdit.php">Edit/Remove Attractions</li> </a> </p>
+                <p><a href="adminUploadPicture.php">Upload attraction picture</li> </a> </p>
                 <p><a href="adminChange.php">Change top 15 attractions</li> </a> </p>
+                <p><a href="adminUsers.php">Manage users</li> </a> </p>
                 <p class="back_button"><a href="accountpage.php">Back</a></p>
                 <div id="footer">
                     <footer>
