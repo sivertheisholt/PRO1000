@@ -72,10 +72,9 @@ mysqli_close($link);
 
 <body>
     <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
-
     <!--Form edit/delete attraction!-->
     <div class="attractionsEdit">
-        <form action="#" method="post">
+        <form id="chooseList" action="#" method="post">
             <label class="label">Choose attraction</label>
             <?php echo $select ?>;
             <input class="submit_button" type="submit">

@@ -9,33 +9,19 @@
         font-family: 'Oswald', sans-serif;
         font-size: 20px;
     }
-    p {
+    .attractionsChange h1 {
         margin-left: 5px;
         margin-bottom: 5px;
+        display: inline-block;
+        font-size: 20px;
     }
-    .attractionsEdit {
+    .attractionsChange {
         margin-right: 20px;
         margin-left: 20px;
         margin-bottom: 50px;
     }
-    .attractionsEdit select {
+    .attractionsChange select {
         width: 100%;
-    }
-    .label {
-        display: block;
-    }
-    .error_msg {
-        font-size: small;
-    }
-    .input_box {
-        display: block;
-        width: 100%;
-        border-radius: 15px;
-        height: 20px;
-        background-color: rgb(221, 221, 221);
-    }
-    #input_box_text {
-        height: 100px;
     }
     .submit_button {
         box-shadow: inset 0px 5px 17px 0px #a4e271;
@@ -52,24 +38,6 @@
         padding: 7px 19px;
         text-decoration: none;
         text-shadow: 0px 1px 0px #528009;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    .delete_button {
-        box-shadow: inset 0px 5px 17px 0px #ff0000;
-        background: linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
-        background-color: #be2600;
-        border-radius: 10px;
-        border: 1px solid #ca0707;
-        display: inline-block;
-        cursor: pointer;
-        color: #ffffff;
-        font-family: Arial;
-        font-size: 16px;
-        font-weight: bold;
-        padding: 7px 19px;
-        text-decoration: none;
-        text-shadow: 0px 1px 0px #ff0000;
         margin-bottom: 20px;
         margin-top: 20px;
     }

@@ -103,8 +103,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="../css/login_style.css">
-    <link rel="stylesheet" type="text/css" href="../css/login_laptop.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/login_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/login_desktop.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
