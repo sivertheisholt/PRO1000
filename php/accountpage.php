@@ -71,13 +71,14 @@ mysqli_close($link);
                 </div>
             </div>
         </div>
-        <!-- Navigation bar -->
-        <div class="navbar">
-            <a href="../php/storymap.php">Home</a>
-            <a href="../php/attractions.php">Attractions</a>
-            <a href="../php/about.php">About</a>
-            <a class="active" href="../php/accountpage.php">Account</a>
-        </div>
+    </div>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="../php/storymap.php">Home</a>
+        <a href="../php/attractions.php">Attractions</a>
+        <a href="../php/about.php">About</a>
+        <a class="active" href="../php/accountpage.php">Account</a>
+    </div>
 </body>
 
 </html>

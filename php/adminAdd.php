@@ -56,10 +56,12 @@ if (!empty($_POST['action'])) {
 if (isset($_FILES['fileToUpload'])) {
     //Upload picture
     $target_dir = "../storage/attractions/";
-    $target_file = $target_dir . date("Y-m-d") . "_" . date("H-i-s") . "_" . basename($_FILES["fileToUpload"]["name"]);
+    $filename = date("Y-m-d") . "_" . date("H-i-s") . "_" . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . $filename;
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    
 
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 5000000) {
@@ -74,7 +76,6 @@ if (isset($_FILES['fileToUpload'])) {
     if (!$uploadOk == 0) {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $errorMsgPicture = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-            $filename = date("Y-m-d") . "_" . date("H-i-s") . "_" . basename($_FILES["fileToUpload"]["name"]);
         }
     }
 }
