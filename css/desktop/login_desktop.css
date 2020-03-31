@@ -135,8 +135,15 @@ h5 {
   color:rgb(29,29,29);
 }
 
-.guest_button a{
-  color:rgb(0, 47, 255);
+.error_box {
+  display: block;
+  width: 250px;
+  margin: auto;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  background: rgba(209, 34, 34, 0.8);
+  border-radius: 12px;
 }
 
 }
