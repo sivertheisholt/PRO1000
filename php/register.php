@@ -134,8 +134,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         value="<?php echo $confirm_password; ?>">
                     <span class="error_box"><?php echo $confirm_password_err; ?></span>
                 </div>
-                <button class="button__one">Sign up!</button>
-                <button class="button__two"><a href="../php/login.php">Back</a></button>
+                <div class="button__wrapper">
+                    <button class="button__one">Sign up!</button>
+                    <button class="button__two"><a href="../php/login.php">Back</a></button>
+                </div>
             </form>
         </div>
     </div>

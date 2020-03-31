@@ -119,9 +119,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="password" name="password" class="input_box" placeholder="Your password here">
                     <span class="error_box"><?php echo $password_err; ?></span>
                 </div>
-                <button class="button__one">Login</button>
-                <button class="button__two"><a href="../php/register.php">New user</a></button>
-                <button class="button__three"><a href="../php/storymap.php">Or continue as guest</a></button>
+                <div class="button__wrapper">
+                    <button class="button__one">Login</button>
+                    <button class="button__two"><a href="../php/register.php">New user</a></button>
+                    <button class="button__three"><a href="../php/storymap.php">Or continue as guest</a></button>
+                </div>
             </form>
         </div>
     </div>

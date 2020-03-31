@@ -35,22 +35,33 @@ button {
   padding: 6px;
   color: rgb(255, 255, 255);
   height: 45px;
-  width: 440px;
+  width: 340px;
   margin-top: 20px;
   font-size: large;
   cursor: pointer;
 }
 
 .button__one {
-  background-color: rgba(19, 165, 19, 0.5);
+  background-color: rgba(19, 165, 19, 0.8);
   color: white;
   margin-top: 60px;
   border-radius: 12px;
 }
 
 .button__two {
-  background-color:rgba(209, 34, 34, 0.6);
+  background-color:rgba(209, 34, 34, 0.8);
   border-radius: 12px;
+}
+
+.button__three {
+  background-color: rgba(36, 51, 50, 0.8);
+  border-radius: 12px;
+  width: 250px;
+}
+
+.button__wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .input_box {
