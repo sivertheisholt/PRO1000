@@ -44,6 +44,13 @@
         background-color: rgba(209, 34, 34, 0.8);
         border-radius: 12px;
     }
+
+    .button__three {
+        background-color: rgba(36, 51, 50, 0.8);
+        border-radius: 12px;
+        width: 160px;
+    }
+
     .input_box {
         background: rgba(51, 51, 51, 0.8);
         border: none;

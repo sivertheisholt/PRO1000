@@ -121,7 +121,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <button class="button__one">Login</button>
                 <button class="button__two"><a href="../php/register.php">New user</a></button>
-                <button class="button__two"><a href="../php/storymap.php">Continue as guest</a></button>
+                <button class="button__three"><a href="../php/storymap.php">Or continue as guest</a></button>
             </form>
         </div>
     </div>
