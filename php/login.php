@@ -120,9 +120,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <span class="error_box"><?php echo $password_err; ?></span>
                 </div>
                 <div class="button__wrapper">
-                    <button class="button__one">Login</button>
-                    <button class="button__two"><a href="../php/register.php">New user</a></button>
-                    <button class="button__three"><a href="../php/storymap.php">Or continue as guest</a></button>
+                    <div class="button__one">
+                        <button>Login</button>
+                    </div>
+                    <a href="../php/register.php" class="button__two">New user</a>
+                    <a href="../php/storymap.php" class="button__three">Or continue as guest</a>
                 </div>
             </form>
         </div>
