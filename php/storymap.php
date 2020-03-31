@@ -91,12 +91,19 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--CSS Links-->
     <link rel="stylesheet" href="../css/mobile/storymap_mobile.css">
+    <link rel="stylesheet" href="../css/desktop/storymap_desktop.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css" />
 </head>
 <!-- Start of BODY section -->
 
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <script src="../script/fb.js"></script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v6.0"></script>
+
     <!-- Storymap -->
     <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
     <!-- Navigation bar -->
@@ -401,5 +408,20 @@ mysqli_close($link);
     }
     </script>
 </body>
-
+<footer>
+    <div class="footer__wrapper">
+        <div class="footer__text">
+            <p>Share our storymap with your friends!</p>
+        </div>
+        <div class="fb-button">
+            <div class="fb-share-button"
+                data-href="http://localhost/Prosjekt/PRO1000/php/login.php" 
+                data-layout="button" 
+                data-size="small">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2FProsjekt%2FPRO1000%2Fphp%2Fstorymap.php&amp;src=sdkpreparse" 
+                class="fb-xfbml-parse-ignore"></a>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
