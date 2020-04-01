@@ -159,12 +159,17 @@ mysqli_close($link);
     <title>StoryMap/Account Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--CSS Links-->
+    <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/adminUploadPicture_mobile.css">
 </head>
 
 <body>
-    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
+    <!-- Banner -->
+    <div class="logo">
+        <img src="../storage/mobile/storymaplogo.png">
+        <a href="#">Barcelona</a>
+    </div>
     <div class="attractionsUpload">
         <!--Form edit attraction!-->
         <form action="#" method="post">

@@ -8,10 +8,10 @@ $user_id = $_SESSION["id"];
 $getsql = "SELECT admin FROM users where ID ='$user_id'";
 $result = $link->query($getsql);
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        if($row['admin'] == 0) {
-          header("location: ../php/accountpage.php");
-          exit;
+    while ($row = $result->fetch_assoc()) {
+        if ($row['admin'] == 0) {
+            header("location: ../php/accountpage.php");
+            exit;
         }
     }
 }
@@ -23,18 +23,18 @@ $select2 = '<select id="attractions2" name="attractions2">';
 //Get all attractions
 $sql = "SELECT storymap_slides_ID, storymap_slides_text_headline FROM attractions";
 $result = $link->query($sql);
-if(!mysqli_num_rows($result)==0){
-  while($row=mysqli_fetch_array($result)){
-    $select.='<option value="'.$row['storymap_slides_ID'].'">'.$row['storymap_slides_ID'].". ".$row['storymap_slides_text_headline'].'</option>';
-    $select2.='<option value="'.$row['storymap_slides_ID'].'">'.$row['storymap_slides_ID'].". ".$row['storymap_slides_text_headline'].'</option>';
-  }
+if (!mysqli_num_rows($result) == 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $select .= '<option value="' . $row['storymap_slides_ID'] . '">' . $row['storymap_slides_ID'] . ". " . $row['storymap_slides_text_headline'] . '</option>';
+        $select2 .= '<option value="' . $row['storymap_slides_ID'] . '">' . $row['storymap_slides_ID'] . ". " . $row['storymap_slides_text_headline'] . '</option>';
+    }
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Get chosen attraction ID
-    $x = (int)$_POST['attractions'];
-    $x2 = (int)$_POST['attractions2'];
+    $x = (int) $_POST['attractions'];
+    $x2 = (int) $_POST['attractions2'];
 
     //First check for pictures
     $sql = "UPDATE attractionspicture SET storymap_slides_ID=-1 WHERE storymap_slides_ID='$x'";
@@ -64,12 +64,17 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
     <!--CSS Links-->
+    <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/adminChange_mobile.css">
 </head>
 
 <body>
-    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
+    <!-- Banner -->
+    <div class="logo">
+        <img src="../storage/mobile/storymaplogo.png">
+        <a href="#">Barcelona</a>
+    </div>
     <div class="attractionsChange">
         <!--Form edit attraction!-->
         <form action="#" method="post">

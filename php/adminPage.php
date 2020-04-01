@@ -37,31 +37,30 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storymap</title>
     <!--CSS Links-->
+    <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
 </head>
 
 <body>
+    <!-- Banner -->
+    <div class="logo">
+        <img src="../storage/mobile/storymaplogo.png">
+        <a href="#">Barcelona</a>
+    </div>
     <div id="main">
-        <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
         <div id="header">
             <header><?php echo $_SESSION["username"] ?>'s Account</header>
         </div>
-        <div id="content">
-            <h1> Admin Tools </h1>
-            <div id="overview">
-                <p><a href="adminAdd.php">Add attraction</li> </a> </p>
-                <p><a href="adminEdit.php">Edit/Remove attractions</li> </a> </p>
-                <p><a href="adminUploadPicture.php">Upload attraction picture</li> </a> </p>
-                <p><a href="adminChange.php">Change top attractions</li> </a> </p>
-                <p><a href="adminUsers.php">Manage users</li> </a> </p>
-                <p class="back_button"><a href="accountpage.php">Back</a></p>
-                <div id="footer">
-                    <footer>
-                        <p> <a href="contact.html"> Contact us!</li> </a> </p>
-                    </footer>
-                </div>
-            </div>
+        <h1> Admin Tools </h1>
+        <p><a href="adminAdd.php">Add attraction</li> </a> </p>
+        <p><a href="adminEdit.php">Edit/Remove attractions</li> </a> </p>
+        <p><a href="adminUploadPicture.php">Upload attraction picture</li> </a> </p>
+        <p><a href="adminChange.php">Change top attractions</li> </a> </p>
+        <p><a href="adminUsers.php">Manage users</li> </a> </p>
+        <p class="back_button"><a href="accountpage.php">Back</a></p>
+        <div id="contact">
+            <p> <a href="contact.php"> Contact us!</li> </a> </p>
         </div>
     </div>
     <!-- Navigation bar -->

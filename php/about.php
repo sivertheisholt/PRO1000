@@ -11,11 +11,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS Links-->
+    <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" href="../css/mobile/about_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
 </head>
 
 <body>
+    <!-- Banner -->
+    <div class="logo">
+        <img src="../storage/mobile/storymaplogo.png">
+        <a href="#">Barcelona</a>
+    </div>
     <div class="container">
         <div class="about">
             <div class="text">

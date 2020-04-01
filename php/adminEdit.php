@@ -78,12 +78,12 @@ if (!empty($_POST['update'])) {
   $idUpdate = $_SESSION['attractionID'];
   $latUpdate = $_POST["lat"];
   $lonUpdate = $_POST["lon"];
-  $headlineUpdate = str_replace("'",'',$_POST["headline"]);
-  $textUpdate = str_replace("'",'',$_POST["text"]);
-  $urlUpdate = str_replace("'",'',$_POST["url"]);
-  $captionUpdate = str_replace("'",'',$_POST["caption"]) ;
-  $creditUpdate = str_replace("'",'',$_POST["credit"]);
-  
+  $headlineUpdate = str_replace("'", '', $_POST["headline"]);
+  $textUpdate = str_replace("'", '', $_POST["text"]);
+  $urlUpdate = str_replace("'", '', $_POST["url"]);
+  $captionUpdate = str_replace("'", '', $_POST["caption"]);
+  $creditUpdate = str_replace("'", '', $_POST["credit"]);
+
   $sql = "UPDATE attractions SET storymap_slides_location_lat='$latUpdate',
     storymap_slides_location_lon='$lonUpdate',
     storymap_slides_text_headline='$headlineUpdate',
@@ -111,12 +111,17 @@ mysqli_close($link);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StoryMap/Account Page</title>
   <!--CSS Links-->
+  <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
   <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
   <link rel="stylesheet" href="../css/mobile/adminEdit_mobile.css">
 </head>
 
 <body>
-  <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
+  <!-- Banner -->
+  <div class="logo">
+    <img src="../storage/mobile/storymaplogo.png">
+    <a href="#">Barcelona</a>
+  </div>
   <!--Form edit/delete attraction!-->
   <div class="attractionsEdit">
     <?PHP

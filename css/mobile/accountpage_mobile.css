@@ -6,57 +6,36 @@
         background: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         height: 100%;
+        min-height: 100vh;
     }
     a {
         color: rgb(0, 0, 0);
         text-decoration: none;
         cursor: pointer;
     }
-    #main img {
-        padding: 15px;
-    }
-    #active {
-        text-decoration: underline;
-    }
     #main {
         font-size: 19px;
         max-width: 480px;
         border: 1px;
         border-radius: 7px;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        height: 100%;
-    }
-    #content {
-        border-top: solid 1px;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 10px 10px 10px 10px;
+        margin-bottom: 50px;
         position: relative;
         text-align: center;
     }
     #header {
         padding-top: 0px;
-        text-align: center;
         color: rgb(0, 0, 0);
         font-size: 30px;
-        margin-bottom: 50px;
+        height: 70px;
+        line-height: 50px;
     }
-    .logo_wrapper {
-        margin-bottom: 20px;
-    }
-    .container {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 10px 10px 10px 10px;
-        position: relative;
-    }
-    #footer {
-        border-top: solid 1px;
+    #header header {
+        padding: 10px 10px;
         border-bottom: solid 1px;
-        margin-top: 50px;
-        color: black;
-        margin-bottom: 100px;
+    }
+    #contact {
+        border-bottom: solid 1px;
+        border-top: solid 1px;
     }
     .error_msg {
         font-size: small;
@@ -128,9 +107,5 @@
     input {
         display: inline-block;
         padding: 0 10px;
-    }
-    .banner_img {
-        width: 90%;
-        height: 50px;
     }
 }

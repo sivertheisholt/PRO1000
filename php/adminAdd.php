@@ -91,12 +91,17 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
     <!--CSS Links-->
+    <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/adminAdd_mobile.css">
 </head>
 
 <body>
-    <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
+    <!-- Banner -->
+    <div class="logo">
+        <img src="../storage/mobile/storymaplogo.png">
+        <a href="#">Barcelona</a>
+    </div>
     <div class="attractionsAdd">
         <!--Form add attraction!-->
         <!--Error handling for add -->
