@@ -12,6 +12,8 @@
         font-family: 'Raleway', sans-serif;
         letter-spacing: 2px;
         border-bottom: 1px solid grey;
+        padding-bottom: 15px;
+        padding-top: 15px;
     }
     .logo img {
         grid-row: 1;
