@@ -88,10 +88,10 @@ INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (11, "Recinte Modernista de Sant Pau - 4.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
-VALUES (12, "Museu Nacional d'Art de Catalunya - 2.jpg");
+VALUES (12, "Museu Nacional dArt de Catalunya - 2.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
-VALUES (12, "Museu Nacional d'Art de Catalunya - 3.jpg");
+VALUES (12, "Museu Nacional dArt de Catalunya - 3.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (13, "Barcelona Cathedral - 2.jpg");

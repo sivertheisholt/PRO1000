@@ -1,0 +1,69 @@
+@media only screen and (max-width: 480px) {
+    @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+    body,
+    html {
+        margin: 0;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        height: 100%;
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+    }
+    .tripCreate {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+    .tripCreate img {
+        display: block;
+    }
+    td {
+        border: 1px #DDD solid;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .selected {
+        background-color: lightgreen;
+        color: #FFF;
+    }
+    .submit_button {
+        box-shadow: inset 0px 5px 17px 0px #a4e271;
+        background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+        background-color: #89c403;
+        border-radius: 10px;
+        border: 1px solid #74b807;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 7px 19px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #528009;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .back_button {
+        box-shadow: inset 0px 5px 17px 0px #ff0000;
+        background: linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
+        background-color: #be2600;
+        border-radius: 10px;
+        border: 1px solid #ca0707;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 7px 19px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #ff0000;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .back_button a {
+        color: white;
+        text-decoration: none;
+    }
+}

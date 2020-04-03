@@ -42,7 +42,7 @@ if (!empty($_POST['chooseAttraction'])) {
     $sql = "SELECT storymap_slides_media_url FROM attractionspicture WHERE storymap_slides_ID = $x";
     $result = $link->query($sql);
     if (!mysqli_num_rows($result) == 0) {
-        $table .= " <table id='table'> <tr> <th>Attraction</th> </tr> ";
+        $table .= " <table id='table'> <tr> <th></th> </tr> ";
         while ($row = mysqli_fetch_array($result)) {
             $table .= "<tr>   <td style='height: 200px;'><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; height: 200px;'></img></td>     </tr>";
             $errorMsg = "";

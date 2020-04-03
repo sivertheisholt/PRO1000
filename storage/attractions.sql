@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS attractions
     storymap_slides_location_lon NUMERIC
 (9, 7) NOT NULL,
     storymap_slides_text_headline VARCHAR
-(100) NOT NULL,
+(100) NOT NULL ,
     storymap_slides_text_text VARCHAR
 (1000) NOT NULL,
     storymap_slides_media_url VARCHAR
@@ -108,9 +108,9 @@ VALUES(41.413867, 2.174335, "Recinte Modernista de Sant Pau",
 
 INSERT INTO attractions
     (storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit)
-VALUES(41.368553, 2.153574, "Museu Nacional d'Art de Catalunya - MNAC",
+VALUES(41.368553, 2.153574, "Museu Nacional dArt de Catalunya - MNAC",
         "An art museum containing hundreds of pieces from the medieval age to the 19th century.",
-        "Museu Nacional d'Art de Catalunya - 1.jpg",
+        "Museu Nacional dArt de Catalunya - 1.jpg",
         "",
         "");
 

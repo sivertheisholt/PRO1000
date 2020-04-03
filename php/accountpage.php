@@ -91,8 +91,10 @@ mysqli_close($link);
         <div class="dash_wrapper">
             <h1> Dashboard</h1>
                 <p><a href="password.php"> Change password </li> </a> </p>
-                <p><a href="favourites.php"> Your favourites </li> </a> </p>
                 <p><a href="information.php"> Your information </li> </a> </p>
+                <p><a href="favourites.php"> My trips </li> </a> </p>
+                <p><a href="tripCreate.php"> Make trip </li> </a> </p>
+                <p><a href="favourites.php"> Edit trip </li> </a> </p>
                 <?php echo $admin ?>
                 <p class="back_button"><a href="logout.php">Logout</a></p>
         </div>
