@@ -90,9 +90,6 @@ mysqli_close($link);
     <a href="#">Barcelona</a>
   </div>
   <div id="main">
-    <div id="header">
-      <header>Barcelona</header>
-    </div>
     <div id="content">
       <h1>Attractions</h1>
       <p id="rec_days"><a id="all">All</a> | <a id="threedays">3 days</a> | <a id="fivedays">5 days</a></p>

@@ -59,7 +59,6 @@ if ($result->num_rows > 0) {
         <a href="#">Barcelona</a>
     </div>
     <div id="main">
-        <img class="banner_img" src="../storage/mobile/storymapbanner.png"></img>
         <div id="header">
             <header><?php echo $_SESSION["username"] ?>'s Account</header>
         </div>

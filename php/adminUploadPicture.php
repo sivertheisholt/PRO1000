@@ -6,6 +6,10 @@ $user_id = $_SESSION["id"];
 $errorMsg = "";
 
 //Get admin status
+if ($user_id == null) {
+    header("location: ../php/login.php");
+    exit;
+}
 $getsql = "SELECT admin FROM users where ID ='$user_id'";
 $result = $link->query($getsql);
 if ($result->num_rows > 0) {
