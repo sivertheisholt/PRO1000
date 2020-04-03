@@ -6,24 +6,28 @@ $user_id = $_SESSION["id"];
 $errorMsg = "";
 
 //Initialize variables
-$table = " <table id='table'> <tr> <th>Attraction</th> </tr> ";
+$table = " <table id='table'> <tr> <th></th> </tr> ";
 
 
 
 //Get all attractions
-$sql = "SELECT storymap_slides_ID, storymap_slides_text_headline,  storymap_slides_media_url FROM attractions";
+$sql = "SELECT storymap_slides_ID, storymap_slides_text_headline, storymap_slides_media_url FROM attractions";
 $result = $link->query($sql);
 if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
-        $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; height: 200px;'></img></td></tr>";
+        if ($row['storymap_slides_ID'] == 1) {
+        } else {
+            $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; height: 200px;'></img></td></tr>";
+        }
     }
 }
 
 if (!empty($_POST['data'])) {
 
     $tripJS = $_POST['data'];
+    $name = $_POST['name'];
 
-    $sql = "INSERT INTO trips(userID, attractions) VALUES ($user_id, '$tripJS')";
+    $sql = "INSERT INTO trips(userID, attractions, tripname) VALUES ($user_id, '$tripJS', '$name')";
     if ($link->query($sql) === TRUE) {
         print_r("Success!");
     } else {
@@ -42,7 +46,7 @@ mysqli_close($link);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
-    <script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--CSS Links-->
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
@@ -59,6 +63,8 @@ mysqli_close($link);
         <p>Click save when you are done selecting:</p>
         <input class="submit_button" type="button" value="Save" id="save">
         <p class="back_button"><a href="accountpage.php">Back</a></p>
+        <p>Choose name: </p>
+        <p><input type="text" id="textbox_id"></p>
         <p>Choose attractions: </p>
         <div id='response'></div>
 
@@ -107,17 +113,28 @@ mysqli_close($link);
         //Send data to php
         $(document).ready(function() {
             $('#save').click(function() {
-                var attractionPHP = attractions.join();
-                $.ajax({
-                    method: 'post',
-                    data: { data: attractionPHP },
-                    success: function(res) {
-                        console.log(res);
-                        $('#response').css('color', 'red');
-                        $('#response').css('text-align', 'center');
-                        $('#response').text('Trip successfully created!!');
-                    }
-                });
+                var a = document.getElementById('textbox_id').value;
+                console.log(a);
+                if (a == "") {
+                    $('#response').css('color', 'red');
+                    $('#response').css('text-align', 'center');
+                    $('#response').text('You need to enter a name!');
+                } else {
+                    var attractionPHP = attractions.join();
+                    $.ajax({
+                        method: 'post',
+                        data: {
+                            data: attractionPHP,
+                            name: a
+                        },
+                        success: function(res) {
+                            console.log(res);
+                            $('#response').css('color', 'red');
+                            $('#response').css('text-align', 'center');
+                            $('#response').text('Trip successfully created!!');
+                        }
+                    });
+                }
             });
         });
     </script>

@@ -92,7 +92,7 @@ mysqli_close($link);
             <h1> Dashboard</h1>
                 <p><a href="password.php"> Change password </li> </a> </p>
                 <p><a href="information.php"> Your information </li> </a> </p>
-                <p><a href="favourites.php"> My trips </li> </a> </p>
+                <p><a href="tripUser.php"> My trips </li> </a> </p>
                 <p><a href="tripCreate.php"> Make trip </li> </a> </p>
                 <p><a href="favourites.php"> Edit trip </li> </a> </p>
                 <?php echo $admin ?>
