@@ -36,3 +36,9 @@
         border-bottom: 3px solid lightskyblue;
     }
 }
+
+@media only screen and (min-width: 480px) {
+    .navbar {
+        display: none;
+    }
+}

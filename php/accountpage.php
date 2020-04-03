@@ -49,6 +49,9 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/banner_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
 </head>
 
 <body>
@@ -57,18 +60,44 @@ mysqli_close($link);
         <img src="../storage/mobile/storymaplogo.png">
         <a href="#">Barcelona</a>
     </div>
+    <div class="nav_wrapper">
+        <div class="menu-wrap">
+            <input type="checkbox" class="toggler">
+                <div class="hamburger"><div></div></div>
+                    <div class="menu">
+                        <div>
+                            <div>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Attractions</a></li>
+                                    <li><a href="#">Trips</a></li>
+                                    <li><a href="#">Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <div class="logo_desk">
+                        <img src="../storage/mobile/storymapbanner.jpg">
+                        <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+                    </div>
+                </ul>
+            </div>
     <div id="main">
         <div id="header">
             <header><?php echo $_SESSION["username"] ?>'s Account</header>
         </div>
-        <h1> Dashboard</h1>
-        <p><a href="password.php"> Change password </li> </a> </p>
-        <p><a href="favourites.php"> Your favourites </li> </a> </p>
-        <p><a href="information.php"> Your information </li> </a> </p>
-        <?php echo $admin ?>
-        <p class="back_button"><a href="logout.php">Logout</a></p>
+        <div class="dash_wrapper">
+            <h1> Dashboard</h1>
+                <p><a href="password.php"> Change password </li> </a> </p>
+                <p><a href="favourites.php"> Your favourites </li> </a> </p>
+                <p><a href="information.php"> Your information </li> </a> </p>
+                <?php echo $admin ?>
+                <p class="back_button"><a href="logout.php">Logout</a></p>
+        </div>
         <div id="contact">
-            <p> <a href="contact.php"> Contact us!</li> </a> </p>
+            <p> <a href="contact.php"> Contact us!</a> </p>
         </div>
     </div>
     <!-- Navigation bar -->
