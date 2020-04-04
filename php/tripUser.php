@@ -21,7 +21,7 @@ $sql = "SELECT ID, userID, tripname FROM trips";
 $result = $link->query($sql);
 if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
-        $select .= '<option value="' . $row['ID'] . '">' . $row['ID'] . ". " . $row['tripname'] . '</option>';
+        $select .= '<option value="' . $row['ID'] . '">' . $row['tripname'] . '</option>';
     }
 }
 
