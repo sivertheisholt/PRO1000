@@ -1,0 +1,28 @@
+@media only screen and (max-width: 480px) {
+    @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+    body,
+    html {
+        margin: 0;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        height: 100%;
+    }
+    .trips {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        margin-bottom: 50px;
+    }
+    .submit_button_3 {
+        grid-column: 1 / span 1;
+        width: 100%;
+    }
+    .submit_button_5 {
+        grid-column: 2 / span 1;
+        width: 100%;
+    }
+    #map {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+}

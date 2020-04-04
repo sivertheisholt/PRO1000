@@ -104,27 +104,27 @@ mysqli_close($link);
             </select>
             <input class="submit_button" type="submit" name="data">
             <p class="back_button"><a href="accountpage.php">Back</a></p>
+        </form>
 
-            <!-- messages -->
-            <?PHP
-            if (isset($errorMsg) && $errorMsg) {
-                echo "<p style=\"color: red;\">", htmlspecialchars($errorMsg), "</p>\n\n";
-            }
-            ?>
-            <!-- Storymap -->
-    <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
+        <!-- messages -->
+        <?PHP
+        if (isset($errorMsg) && $errorMsg) {
+            echo "<p style=\"color: red;\">", htmlspecialchars($errorMsg), "</p>\n\n";
+        }
+        ?>
+        <!-- Storymap -->
+        <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
     </div>
 
     <!-- Navigation bar -->
     <div class="navbar">
         <a href="../php/storymap.php">Home</a>
         <a href="../php/attractions.php">Attractions</a>
-        <a href="../php/about.php">About</a>
+        <a href="../php/trips.php">Trips</a>
         <a class="active" href="../php/accountpage.php">Account</a>
     </div>
     <!--Storymap external script-->
     <script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
-    <?php echo $startMap ?>
 
     <script>
         //Get array from php
@@ -138,28 +138,41 @@ mysqli_close($link);
 
         var type;
         var slides = [];
+
         for (let i = 0; i < lat.length; i++) {
             if (i == 0) {
                 type = 'overview';
+                slides.push({
+                    type: type,
+                    text: {
+                        headline: headline[i],
+                        text: text[i]
+                    },
+                    media: {
+                        url: '../storage/attractions/' + url[i],
+                        caption: caption[i],
+                        credit: credit[i]
+                    }
+                });
             } else {
                 type = 'slide';
+                slides.push({
+                    type: type,
+                    location: {
+                        lat: lat[i],
+                        lon: lon[i]
+                    },
+                    text: {
+                        headline: headline[i],
+                        text: text[i]
+                    },
+                    media: {
+                        url: '../storage/attractions/' + url[i],
+                        caption: caption[i],
+                        credit: credit[i]
+                    }
+                });
             }
-            slides.push({
-                type: type,
-                location: {
-                    lat: lat[i],
-                    lon: lon[i]
-                },
-                text: {
-                    headline: headline[i],
-                    text: text[i]
-                },
-                media: {
-                    url: '../storage/attractions/' + url[i],
-                    caption: caption[i],
-                    credit: credit[i]
-                }
-            });
         }
         console.log(slides);
         //Storymap data path, contains slides info and storymap configurations

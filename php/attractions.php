@@ -109,7 +109,7 @@ mysqli_close($link);
     <div class="navbar">
       <a href="../php/storymap.php">Home</a>
       <a class="active" href="../php/attractions.php">Attractions</a>
-      <a href="../php/about.php">About</a>
+      <a href="../php/trips.php">Trips</a>
       <a href="../php/accountpage.php">Account</a>
     </div>
 

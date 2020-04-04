@@ -46,7 +46,6 @@ mysqli_close($link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
     <!--CSS Links-->
-    <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
@@ -94,19 +93,20 @@ mysqli_close($link);
                 <p><a href="information.php"> Your information </li> </a> </p>
                 <p><a href="tripUser.php"> My trips </li> </a> </p>
                 <p><a href="tripCreate.php"> Make trip </li> </a> </p>
-                <p><a href="favourites.php"> Edit trip </li> </a> </p>
+                <p><a href="#"> Edit trip </li> </a> </p>
                 <?php echo $admin ?>
                 <p class="back_button"><a href="logout.php">Logout</a></p>
         </div>
         <div id="contact">
-            <p> <a href="contact.php"> Contact us!</a> </p>
+            <a id="contactus" href="contact.php"> Contact us </a>
+            <a id="aboutus" href="about.php">About us</a>
         </div>
     </div>
     <!-- Navigation bar -->
     <div class="navbar">
         <a href="../php/storymap.php">Home</a>
         <a href="../php/attractions.php">Attractions</a>
-        <a href="../php/about.php">About</a>
+        <a href="../php/trips.php">Trips</a>
         <a class="active" href="../php/accountpage.php">Account</a>
     </div>
 </body>

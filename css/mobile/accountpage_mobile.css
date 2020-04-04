@@ -94,6 +94,22 @@
         justify-content: center;
         font-size: medium;
     }
+    #contact {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #contact a {
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #contactus {
+        grid-column: 1;
+        border-right: solid 1px;
+    }
+    #aboutus {
+        grid-column: 2;
+    }
     .center {
         position: fixed;
         top: 50%;

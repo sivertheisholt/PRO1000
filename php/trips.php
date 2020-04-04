@@ -1,8 +1,6 @@
 <?php
 // Initialize the session
 session_start();
-
-//Storymap load info from database
 require_once "../php/config.php";
 
 //Initialize arrays
@@ -13,68 +11,103 @@ $headline = [];
 $url = [];
 $caption = [];
 $credit = [];
+$startMap = "";
 
 //Put data in arrays
 for ($x = 1; $x <= 16; $x++) {
-    $sql = "SELECT storymap_slides_location_lat FROM attractions WHERE storymap_slides_ID = $x";
-    $resultlat = $link->query($sql);
-    if (!mysqli_num_rows($resultlat) == 0) {
-        while ($row = mysqli_fetch_array($resultlat)) {
+    $sql = "SELECT storymap_slides_location_lat, 
+    storymap_slides_location_lon, 
+    storymap_slides_text_headline, 
+    storymap_slides_text_text,
+    storymap_slides_media_url,
+    storymap_slides_media_caption,
+    storymap_slides_media_credit FROM attractions WHERE storymap_slides_ID = $x";
+    $result = $link->query($sql);
+    if (!mysqli_num_rows($result) == 0) {
+        while ($row = mysqli_fetch_array($result)) {
             $lat[] = $row["storymap_slides_location_lat"];
-        }
-    }
-    $sql = "SELECT storymap_slides_location_lon FROM attractions WHERE storymap_slides_ID =$x";
-    $resultlon = $link->query($sql);
-    if (!mysqli_num_rows($resultlon) == 0) {
-        while ($row = mysqli_fetch_array($resultlon)) {
             $lon[] = $row["storymap_slides_location_lon"];
-        }
-    }
-    $sql = "SELECT storymap_slides_text_headline FROM attractions WHERE storymap_slides_ID = $x";
-    $resultheadline = $link->query($sql);
-    if (!mysqli_num_rows($resultheadline) == 0) {
-        while ($row = mysqli_fetch_array($resultheadline)) {
             $headline[] = $row["storymap_slides_text_headline"];
-        }
-    }
-    $sql = "SELECT storymap_slides_text_text FROM attractions WHERE storymap_slides_ID = $x";
-    $resulttext = $link->query($sql);
-    if (!mysqli_num_rows($resulttext) == 0) {
-        while ($row = mysqli_fetch_array($resulttext)) {
             $text[] = $row["storymap_slides_text_text"];
-        }
-    }
-    $sql = "SELECT storymap_slides_media_url FROM attractions WHERE storymap_slides_ID = $x";
-    $resulturl = $link->query($sql);
-    if (!mysqli_num_rows($resulturl) == 0) {
-        while ($row = mysqli_fetch_array($resulturl)) {
             $url[] = $row["storymap_slides_media_url"];
-        }
-    }
-    $sql = "SELECT storymap_slides_media_caption FROM attractions WHERE storymap_slides_ID = $x";
-    $resultcaption = $link->query($sql);
-    if (!mysqli_num_rows($resultcaption) == 0) {
-        while ($row = mysqli_fetch_array($resultcaption)) {
             $caption[] = $row["storymap_slides_media_caption"];
-        }
-    }
-    $sql = "SELECT storymap_slides_media_credit FROM attractions WHERE storymap_slides_ID = $x";
-    $resultcredit = $link->query($sql);
-    if (!mysqli_num_rows($resultcredit) == 0) {
-        while ($row = mysqli_fetch_array($resultcredit)) {
             $credit[] = $row["storymap_slides_media_credit"];
         }
     }
 }
 
-//Encode to json
-$code_lat = json_encode($lat);
-$code_lon = json_encode($lon);
-$code_text = json_encode($text);
-$code_headline = json_encode($headline);
-$code_url = json_encode($url);
-$code_caption = json_encode($caption);
-$code_credit = json_encode($credit);
+if (!empty($_POST['day3'])) {
+
+    $random = range(1, count($lat)-1);
+    shuffle($random);
+    
+
+    for ($i = 0; $i < 4; $i++) {
+        if ($i == 0) {
+            $newLat[] = $lat[$i];
+            $newLon[] = $lon[$i];
+            $newHeadline[] = $headline[$i];
+            $newText[] = $text[$random[$i]];
+            $newUrl[] = $url[$i];
+            $newCaption[] = $caption[$i];
+            $newCredit[] = $credit[$i];
+        } else {
+            $newLat[] = $lat[$random[$i]];
+            $newLon[] = $lon[$random[$i]];
+            $newHeadline[] = $headline[$random[$i]];
+            $newText[] = $text[$random[$i]];
+            $newUrl[] = $url[$random[$i]];
+            $newCaption[] = $caption[$random[$i]];
+            $newCredit[] = $credit[$random[$i]];
+        }
+    }
+
+    $startMap = 'startMap()';
+    //Encode to json
+    $code_lat = json_encode($newLat);
+    $code_lon = json_encode($newLon);
+    $code_text = json_encode($newText);
+    $code_headline = json_encode($newHeadline);
+    $code_url = json_encode($newUrl);
+    $code_caption = json_encode($newCaption);
+    $code_credit = json_encode($newCredit);
+}
+
+if (!empty($_POST['day5'])) {
+
+    $random = range(1, count($lat)-1);
+    shuffle($random);
+
+    for ($i = 0; $i < 6; $i++) {
+        if ($i == 0) {
+            $newLat[] = $lat[$i];
+            $newLon[] = $lon[$i];
+            $newHeadline[] = $headline[$i];
+            $newText[] = $text[$random[$i]];
+            $newUrl[] = $url[$i];
+            $newCaption[] = $caption[$i];
+            $newCredit[] = $credit[$i];
+        } else {
+            $newLat[] = $lat[$random[$i]];
+            $newLon[] = $lon[$random[$i]];
+            $newHeadline[] = $headline[$random[$i]];
+            $newText[] = $text[$random[$i]];
+            $newUrl[] = $url[$random[$i]];
+            $newCaption[] = $caption[$random[$i]];
+            $newCredit[] = $credit[$random[$i]];
+        }
+    }
+
+    $startMap = 'startMap()';
+    //Encode to json
+    $code_lat = json_encode($newLat);
+    $code_lon = json_encode($newLon);
+    $code_text = json_encode($newText);
+    $code_headline = json_encode($newHeadline);
+    $code_url = json_encode($newUrl);
+    $code_caption = json_encode($newCaption);
+    $code_credit = json_encode($newCredit);
+}
 
 
 mysqli_close($link);
@@ -90,9 +123,8 @@ mysqli_close($link);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--CSS Links-->
-    <link rel="stylesheet" href="../css/mobile/storymap_mobile.css">
+    <link rel="stylesheet" href="../css/mobile/trips_mobile.css">
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
-    <link rel="stylesheet" href="../css/desktop/storymap_desktop.css">
     <link rel="stylesheet" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css" />
 </head>
@@ -104,19 +136,19 @@ mysqli_close($link);
         <img src="../storage/mobile/storymaplogo.png">
         <a href="#">Barcelona</a>
     </div>
-    <!-- Load Facebook SDK for JavaScript -->
-    <script src="../script/fb.js"></script>
-    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v6.0"></script>
-
-    <!-- Storymap -->
-    <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
+    <div class="trips">
+        <!-- Storymap -->
+        <form action="#" method="post">
+            <input class="submit_button_3" type="submit" value="3 Days" name="day3">
+            <input class="submit_button_5" type="submit" value="5 Days" name="day5">
+        </form>
+        <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
+    </div>
     <!-- Navigation bar -->
     <div class="navbar" style="font-family: Arial, Helvetica, sans-serif;">
-        <a class="active" href="../php/storymap.php">Home</a>
+        <a href="../php/storymap.php">Home</a>
         <a href="../php/attractions.php">Attractions</a>
-        <a href="../php/trips.php">Trips</a>
+        <a class="active" href="../php/trips.php">Trips</a>
         <a href="../php/accountpage.php">Account</a>
     </div>
 
@@ -136,6 +168,7 @@ mysqli_close($link);
 
         var type;
         var slides = [];
+
         for (let i = 0; i < lat.length; i++) {
             if (i == 0) {
                 type = 'overview';
@@ -190,23 +223,14 @@ mysqli_close($link);
         var storymap_options = {};
 
         //Load storymap
-        var storymap = new VCO.StoryMap('map', storymap_data, storymap_options);
-        window.onresize = function(event) {
-            storymap.updateDisplay(); // this isn't automatic
+        function startMap() {
+            var storymap = new VCO.StoryMap('map', storymap_data, storymap_options);
+            window.onresize = function(event) {
+                storymap.updateDisplay(); // this isn't automatic
+            }
         }
+        <?php echo $startMap ?>
     </script>
 </body>
-<footer>
-    <div class="footer__wrapper">
-        <div class="footer__text">
-            <p>Share our storymap with your friends!</p>
-        </div>
-        <div class="fb-button">
-            <div class="fb-share-button" data-href="http://localhost/Prosjekt/PRO1000/php/login.php" data-layout="button" data-size="small">
-                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2FProsjekt%2FPRO1000%2Fphp%2Fstorymap.php&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a>
-            </div>
-        </div>
-    </div>
-</footer>
 
 </html>
