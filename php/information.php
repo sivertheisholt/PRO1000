@@ -137,8 +137,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="back_button"><a href="accountpage.php">Back</a></p>
       </form>
       <div id="contact">
-        <p> <a href="contact.php"> Contact us!</li> </a> </p>
-      </div>
+            <a id="contactus" href="contact.php"> Contact us </a>
+            <a id="aboutus" href="about.php">About us</a>
+        </div>
     </div>
 
     <!-- Navigation bar -->

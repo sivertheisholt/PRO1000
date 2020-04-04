@@ -128,7 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
         <div id="contact">
-            <p> <a href="contact.php"> Contact us!</li> </a> </p>
+            <a id="contactus" href="contact.php"> Contact us </a>
+            <a id="aboutus" href="about.php">About us</a>
         </div>
         <!-- Navigation bar -->
         <div class="navbar">

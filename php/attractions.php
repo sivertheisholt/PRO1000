@@ -20,7 +20,7 @@ $rowAttractions = mysqli_fetch_array($link->query("SELECT COUNT(*) AS Number FRO
 $numberOfAttractions = $rowAttractions["Number"];
 
 //Put data in arrays
-for ($x = 1; $x <= 16; $x++) {
+for ($x = 1; $x <= $numberOfAttractions; $x++) {
   $sql = "SELECT storymap_slides_text_headline FROM attractions WHERE storymap_slides_ID = $x";
   $resultheadline = $link->query($sql);
   if (!mysqli_num_rows($resultheadline) == 0) {
@@ -92,7 +92,7 @@ mysqli_close($link);
   <div id="main">
     <div id="content">
       <h1>Attractions</h1>
-      <p id="rec_days"><a id="all">All</a> | <a id="threedays">3 days</a> | <a id="fivedays">5 days</a></p>
+      <p id="rec_days"><a id="all">All</a> | <a id="recommended">Recommended</a></p>
       <div id="overlay">
         <div id="overlayText"></div>
       </div>

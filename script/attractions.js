@@ -1,23 +1,5 @@
     window.onload = startup;
 
-    function startup() {
-        //  random();
-        write_rec(15);
-        currentDate();
-        document.getElementById("threedays").onclick = three_days;
-        document.getElementById("fivedays").onclick = five_days;
-        document.getElementById("all").onclick = all;
-        //document.getElementById("overlay").onclick = overlayOff;
-    }
-
-    function currentDate() {
-        var d = new Date();
-        var dato = d.getDate();
-        var month = d.getMonth() + 1;
-        var year = d.getFullYear();
-        date.innerHTML = "Date: " + dato + "." + month + "." + year;
-    }
-
     var locations = [];
 
     function create_array(headline, image, text) {
@@ -29,6 +11,23 @@
             }
             locations.push(temp);
         }
+    }
+
+    function startup() {
+        //  random();
+        write_rec(locations.length);
+        currentDate();
+        document.getElementById("recommended").onclick = recommended;
+        document.getElementById("all").onclick = all;
+        //document.getElementById("overlay").onclick = overlayOff;
+    }
+
+    function currentDate() {
+        var d = new Date();
+        var dato = d.getDate();
+        var month = d.getMonth() + 1;
+        var year = d.getFullYear();
+        date.innerHTML = "Date: " + dato + "." + month + "." + year;
     }
 
     var slider_img = []; //spaghetti
@@ -54,8 +53,8 @@
 
     function random() { //trekker 15 tilfeldige tall uten duplikasjoner //burde være antall objekter/locations ikke 15 idk :shrug:
         numberArray = [];
-        while (numberArray.length < 15) {
-            var r = Math.floor(Math.random() * 15) + 0;
+        while (numberArray.length < locations.length) {
+            var r = Math.floor(Math.random() * locations.length) + 0;
             if (numberArray.indexOf(r) === -1) numberArray.push(r);
         }
         console.log(numberArray);
@@ -73,18 +72,28 @@
         }
     }
 
+    function write_rec2(antall) { //skriver inn recommendations til html
+        rec_container.innerHTML = ""; //blir tømt pga three_days() og five_days()
+        random();
+
+        for (let i = 0; i < antall; i++) {
+            numberArray.sort(function(a, b) { return a - b });
+            console.log(numberArray);
+            number = numberArray[i];
+            image = locations[number]["image"]; //img_0 er den som skal vises i recommendation boksene
+            name = locations[number]["name"];
+            //skriver inn alle boksene, onclick funksjonen med 'number' er viktig for å vite hvilken attraksjon den tilhører
+            rec_container.innerHTML += '<div class="rec_box" onclick="overlayOn(' + number + ')"><img src=\"' + image + '\" class="img"><h1>' + name + '</h1></div>';
+        }
+    }
+
     function all() {
-        write_rec(15);
+        write_rec(locations.length);
     }
 
-    function three_days() {
-        write_rec(3); //skriver inn bare 3 attraksjon, kan evt lage et valgt set, og ha flere atraksjoner, samme med five_days()
+    function recommended() {
+        write_rec2(15)
     }
-
-    function five_days() {
-        write_rec(5);
-    }
-
 
 
     var img_nr = 0;

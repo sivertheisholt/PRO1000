@@ -64,7 +64,8 @@ mysqli_close($link);
         <p><a href="adminUsers.php">Manage users</li> </a> </p>
         <p class="back_button"><a href="accountpage.php">Back</a></p>
         <div id="contact">
-            <p> <a href="contact.php"> Contact us!</li> </a> </p>
+            <a id="contactus" href="contact.php"> Contact us </a>
+            <a id="aboutus" href="about.php">About us</a>
         </div>
     </div>
     <!-- Navigation bar -->

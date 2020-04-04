@@ -8,12 +8,7 @@
         height: 100%;
     }
     .tripUser {
-        margin-right: 20px;
-        margin-left: 20px;
         margin-bottom: 50px;
-    }
-    .tripUser img {
-        display: block;
     }
     .tripUser h1 {
         margin-left: 5px;
