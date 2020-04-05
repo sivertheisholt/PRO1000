@@ -63,7 +63,7 @@
     function write_rec(antall) { //skriver inn recommendations til html
         rec_container.innerHTML = ""; //blir tømt pga three_days() og five_days()
         random();
-        for (let i = 0; i < antall; i++) {
+        for (let i = 0; i < antall - 1; i++) {
             number = numberArray[i];
             image = locations[number]["image"]; //img_0 er den som skal vises i recommendation boksene
             name = locations[number]["name"];
@@ -75,7 +75,6 @@
     function write_rec2(antall) { //skriver inn recommendations til html
         rec_container.innerHTML = ""; //blir tømt pga three_days() og five_days()
         random();
-
         for (let i = 0; i < antall; i++) {
             numberArray.sort(function(a, b) { return a - b });
             console.log(numberArray);
