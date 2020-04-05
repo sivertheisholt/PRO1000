@@ -45,29 +45,31 @@ mysqli_close($link);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoryMap/Account Page</title>
-    <!--CSS Links-->
+    <!--CSS Links Mobile-->
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
-    <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/banner_mobile.css">
-    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
-        <!--Navigation bar desktop-->
+    <!--CSS Links Desktop-->
+    <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
+    <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
     <script src="../script/nav_desktop.js"></script>
+    <!--CSS Links both-->
+    <!--Scripts-->
 </head>
 
 <body>
     <nav class="desktop-nav">
         <div id="btn-toggle-nav" onclick="meny()"></div>
-            <img src="../storage/mobile/storymapbanner.jpg">
-            <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
-            <div id="desktop-links" class="nav-inactive">
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+        <div id="desktop-links" class="nav-inactive">
             <div id="btn-toggle-nav-links" onclick="meny()"></div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Attractions</a></li>
-                <li><a href="#">Trips</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
             </ul>
         </div>
     </nav>
@@ -82,13 +84,13 @@ mysqli_close($link);
         </div>
         <div class="wrapper">
             <h1> Dashboard</h1>
-                <p><a href="password.php"> Change password </li> </a> </p>
-                <p><a href="information.php"> Your information </li> </a> </p>
-                <p><a href="tripUser.php"> My trips </li> </a> </p>
-                <p><a href="tripCreate.php"> Make trip </li> </a> </p>
-                <p><a href="#"> Edit trip </li> </a> </p>
-                <?php echo $admin ?>
-                <p class="back_button"><a href="logout.php">Logout</a></p>
+            <p><a href="password.php"> Change password </li> </a> </p>
+            <p><a href="information.php"> Your information </li> </a> </p>
+            <p><a href="tripUser.php"> My trips </li> </a> </p>
+            <p><a href="tripCreate.php"> Make trip </li> </a> </p>
+            <p><a href="#"> Edit trip </li> </a> </p>
+            <?php echo $admin ?>
+            <p class="back_button"><a href="logout.php">Logout</a></p>
         </div>
         <div id="contact">
             <a id="contactus" href="contact.php"> Contact us </a>

@@ -14,8 +14,9 @@
         z-index: 999;
         display: grid;
         grid-template-columns: 60px auto;
-        position: fixed;
         /* Make it stick, even on scroll */
+        position: fixed;
+        top: 0;
     }
     .desktop-nav ul {
         margin: 0;

@@ -38,11 +38,11 @@ for ($x = 1; $x <= 16; $x++) {
 
 if (!empty($_POST['day3'])) {
 
-    $random = range(1, count($lat)-1);
+    $random = range(1, count($lat) - 1);
     shuffle($random);
-    
 
-    for ($i = 0; $i < 4; $i++) {
+
+    for ($i = 0; $i < 9; $i++) {
         if ($i == 0) {
             $newLat[] = $lat[$i];
             $newLon[] = $lon[$i];
@@ -75,10 +75,10 @@ if (!empty($_POST['day3'])) {
 
 if (!empty($_POST['day5'])) {
 
-    $random = range(1, count($lat)-1);
+    $random = range(1, count($lat) - 1);
     shuffle($random);
 
-    for ($i = 0; $i < 6; $i++) {
+    for ($i = 0; $i < 13; $i++) {
         if ($i == 0) {
             $newLat[] = $lat[$i];
             $newLon[] = $lon[$i];
@@ -117,20 +117,40 @@ mysqli_close($link);
 <!DOCTYPE html>
 <html>
 <!-- Start of HEAD section -->
-
 <head>
     <title>PRO1000</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--CSS Links-->
+    <!--CSS Links Mobile-->
     <link rel="stylesheet" href="../css/mobile/trips_mobile.css">
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" href="../css/mobile/nav_mobile.css">
+    <!--CSS Links Desktop-->
+    <link rel="stylesheet" href="../css/desktop/trips_desktop.css">
+    <!--Navigation bar Desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
+    <!--CSS Links both-->
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css" />
 </head>
 <!-- Start of BODY section -->
 
 <body>
+    <!--Navigation bar desktop-->
+    <nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">

@@ -109,10 +109,10 @@ mysqli_close($link);
         <div id="desktop-links" class="nav-inactive">
             <div id="btn-toggle-nav-links" onclick="meny()"></div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Attractions</a></li>
-                <li><a href="#">Trips</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
             </ul>
         </div>
     </nav>

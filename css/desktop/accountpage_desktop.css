@@ -1,19 +1,18 @@
 @media only screen and (min-width: 480px) {
     @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-    body, html {
+    body,
+    html {
         margin: 0 auto;
         background: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         height: 100%;
         min-height: 100vh;
     }
-
     a {
         color: rgb(0, 0, 0);
         text-decoration: none;
         cursor: pointer;
     }
-
     #main {
         font-size: 19px;
         max-width: 1280px;
@@ -24,39 +23,32 @@
         text-align: center;
         margin: 0 auto;
     }
-
     #header {
         padding-top: 130px;
         color: rgb(0, 0, 0);
         font-size: 30px;
         height: 70px;
         line-height: 50px;
-        width:400px;
+        width: 400px;
         margin: 0 auto;
     }
-
     h1 {
         font-size: 40px;
     }
-
     p {
         font-size: 20px;
     }
-
     #header header {
         padding: 10px 10px;
         border-style: solid;
     }
-
     #contact {
         border-bottom: solid 1px;
         border-top: solid 1px;
     }
-
     .error_msg {
         font-size: small;
     }
-
     .input_box {
         margin-top: 10px;
         width: 230px;
@@ -65,7 +57,6 @@
         height: 30px;
         background-color: rgb(221, 221, 221);
     }
-
     .submit_button {
         box-shadow: inset 0px 5px 17px 0px #a4e271;
         background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
@@ -84,15 +75,12 @@
         margin-bottom: 30px;
         margin-top: 25px;
     }
-
     .wrapper {
         font-size: 30px;
-        margin-top: 150px;
         width: 500px;
         border-style: inset;
-        margin: 150px auto;
+        margin: 50px auto;
     }
-
     .back_button {
         box-shadow: inset 0px 5px 17px 0px #ff0000;
         background: linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
@@ -111,11 +99,9 @@
         margin-bottom: 30px;
         margin-top: 25px;
     }
-
     .back_button a {
         color: white;
     }
-
     .input_box_wrapper {
         display: flex;
         width: 100%;
@@ -123,19 +109,16 @@
         justify-content: center;
         font-size: medium;
     }
-
     .center {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
     label {
         display: inline-block;
         width: 120px;
     }
-    
     input {
         display: inline-block;
         padding: 0 10px;
