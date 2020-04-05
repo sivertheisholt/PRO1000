@@ -93,9 +93,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile/banner_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+        <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
 </head>
 
 <body>
+<nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+            <img src="../storage/mobile/storymapbanner.jpg">
+            <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+            <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Attractions</a></li>
+                <li><a href="#">Trips</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
@@ -105,8 +125,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="header">
             <header><?php echo $username ?>'s Account</header>
         </div>
-        <h1> Change password</h1>
         <div class="wrapper">
+        <h1> Change password</h1>
             <p>Please fill out this form to reset your password.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="new_password <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">

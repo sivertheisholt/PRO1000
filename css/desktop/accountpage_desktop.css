@@ -16,26 +16,36 @@
 
     #main {
         font-size: 19px;
-        max-width: 100%;
+        max-width: 1280px;
         border: 1px;
         border-radius: 7px;
         margin-bottom: 50px;
         position: relative;
         text-align: center;
-        margin-top: 140px;
+        margin: 0 auto;
     }
 
     #header {
-        padding-top: 0px;
+        padding-top: 130px;
         color: rgb(0, 0, 0);
         font-size: 30px;
         height: 70px;
         line-height: 50px;
+        width:400px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
     }
 
     #header header {
         padding: 10px 10px;
-        border-bottom: solid 1px;
+        border-style: solid;
     }
 
     #contact {
@@ -49,10 +59,10 @@
 
     .input_box {
         margin-top: 10px;
-        width: 120px;
+        width: 230px;
         margin-bottom: 10px;
         border-radius: 15px;
-        height: 20px;
+        height: 30px;
         background-color: rgb(221, 221, 221);
     }
 
@@ -68,15 +78,19 @@
         font-family: Arial;
         font-size: 11px;
         font-weight: bold;
-        padding: 7px 19px;
+        padding: 11px 30px;
         text-decoration: none;
         text-shadow: 0px 1px 0px #528009;
         margin-bottom: 30px;
         margin-top: 25px;
     }
 
-    .dash_wrapper {
+    .wrapper {
         font-size: 30px;
+        margin-top: 150px;
+        width: 500px;
+        border-style: inset;
+        margin: 150px auto;
     }
 
     .back_button {
@@ -91,7 +105,7 @@
         font-family: Arial;
         font-size: 11px;
         font-weight: bold;
-        padding: 7px 19px;
+        padding: 11px 30px;
         text-decoration: none;
         text-shadow: 0px 1px 0px #ff0000;
         margin-bottom: 30px;
@@ -125,5 +139,24 @@
     input {
         display: inline-block;
         padding: 0 10px;
+    }
+    #contact {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 400px;
+        margin: 0 auto;
+        border-style: solid;
+    }
+    #contact a {
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #contactus {
+        grid-column: 1;
+        border-right: solid 1px;
+    }
+    #aboutus {
+        grid-column: 2;
     }
 }
