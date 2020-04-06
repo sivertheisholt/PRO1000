@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <nav class="desktop-nav">
         <div id="btn-toggle-nav" onclick="meny()"></div>
             <img src="../storage/mobile/storymapbanner.jpg">
-            <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+            <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
             <div id="desktop-links" class="nav-inactive">
             <div id="btn-toggle-nav-links" onclick="meny()"></div>
             <ul>
@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="error_msg"><?php echo $confirm_password_err; ?></span>
                 </div>
                 <button class="submit_button" name="Submit" type="submit" value="Submit">Submit</button>
-                <p class="back_button"><a href="accountpage.php">Back</a></p>
+                <a href="accountpage.php"><p class="back_button">Back</p></a>
             </form>
         </div>
         <div id="contact">

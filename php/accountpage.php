@@ -51,6 +51,7 @@ mysqli_close($link);
     <link rel="stylesheet" type="text/css" href="../css/mobile/banner_mobile.css">
     <!--CSS Links Desktop-->
     <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
     <script src="../script/nav_desktop.js"></script>
@@ -62,7 +63,7 @@ mysqli_close($link);
     <nav class="desktop-nav">
         <div id="btn-toggle-nav" onclick="meny()"></div>
         <img src="../storage/mobile/storymapbanner.jpg">
-        <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
         <div id="desktop-links" class="nav-inactive">
             <div id="btn-toggle-nav-links" onclick="meny()"></div>
             <ul>

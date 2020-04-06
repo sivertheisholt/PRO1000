@@ -94,6 +94,7 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" href="../css/desktop/storymap_desktop.css">
     <link rel="stylesheet" href="../css/mobile/nav_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css" />
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
@@ -105,7 +106,7 @@ mysqli_close($link);
     <nav class="desktop-nav">
         <div id="btn-toggle-nav" onclick="meny()"></div>
         <img src="../storage/mobile/storymapbanner.jpg">
-        <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
         <div id="desktop-links" class="nav-inactive">
             <div id="btn-toggle-nav-links" onclick="meny()"></div>
             <ul>
