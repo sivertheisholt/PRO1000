@@ -17,7 +17,7 @@ if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
         if ($row['storymap_slides_ID'] == 1) {
         } else {
-            $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; height: 200px;'></img></td></tr>";
+            $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 90%; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
         }
     }
 }
@@ -51,25 +51,51 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/tripCreate_mobile.css">
+    <!-- Desktop -->
+    <link rel="stylesheet" href="../css/desktop/tripCreate_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+
+    <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
+
 </head>
 
 <body>
+    <!-- Banner -->
+    <nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
         <a href="#">Barcelona</a>
     </div>
     <div class="tripCreate">
-        <p>Click save when you are done selecting:</p>
-        <input class="submit_button" type="button" value="Save" id="save">
-        <p class="back_button"><a href="accountpage.php">Back</a></p>
-        <p>Choose name: </p>
-        <p><input type="text" id="textbox_id"></p>
+        <h1>Choose the trips you want to visit and view them in our storymap!</h1>
+        <div class="input_text">
+            <label>Choose name:</label>
+            <input type="text" id="textbox_id">
+        </div>
         <p>Choose attractions: </p>
-        <div id='response'></div>
-
         <?php echo $table ?>
         </table>
+        <div id='response'></div>
+        <div class="button_wrapper">
+            <input class="submit_button" type="button" value="Save" id="save">
+            <p class="back_button"><a href="accountpage.php">Back</a></p>
+        </div>
 
         <!-- messages -->
         <?PHP
@@ -77,8 +103,6 @@ mysqli_close($link);
             echo "<p style=\"color: red;\">", htmlspecialchars($errorMsg), "</p>\n\n";
         }
         ?>
-
-
     </div>
 
     <!-- Navigation bar -->
