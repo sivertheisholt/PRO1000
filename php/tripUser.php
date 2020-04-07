@@ -88,10 +88,28 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/tripUser_mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/tripUser_desktop.css">
+    <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css" />
+    <script src="../script/nav_desktop.js"></script>
 </head>
-
 <body>
+<nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
@@ -102,8 +120,10 @@ mysqli_close($link);
             <h1>Choose trip to see</h1>
             <?php echo $select ?>
             </select>
-            <input class="submit_button" type="submit" name="data">
-            <p class="back_button"><a href="accountpage.php">Back</a></p>
+            <div class="button_wrapper">
+                <input class="submit_button" type="submit" name="data">
+                <a href="accountpage.php"><p class="back_button">Back</a></p>
+            </div>
         </form>
 
         <!-- messages -->
