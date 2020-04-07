@@ -46,6 +46,7 @@ mysqli_close($link);
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
     <!--CSS Links Desktop-->
     <link rel="stylesheet" href="../css/desktop/accountpage_desktop.css" />
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
     <script src="../script/nav_desktop.js"></script>

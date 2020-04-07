@@ -71,9 +71,29 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/adminChange_mobile.css">
+    <!--CSS Links Desktop-->
+    <link rel="stylesheet" type="text/css" href="../css/desktop/adminChange_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
 </head>
 
 <body>
+<nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <a class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</a>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
@@ -89,7 +109,7 @@ mysqli_close($link);
             <?php echo $select2 ?>;
             </select>
             <input class="submit_button" type="submit">
-            <p class="back_button"><a href="adminPage.php">Back</a></p>
+            <a href="adminPage.php"><p class="back_button">Back</p></a>
         </form>
     </div>
 
