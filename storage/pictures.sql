@@ -20,6 +20,8 @@ VALUES (2, "Basilica of the sagrada familia - 2.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (2, "Basilica of the sagrada familia - 3.jpg");
+INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
+VALUES (3, "Casa Batllo - 1.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (3, "Casa Batllo - 2.jpg");
@@ -44,6 +46,9 @@ VALUES (5, "Palace of Catalan Music - 2.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (5, "Palace of Catalan Music - 3.jpg");
+
+INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
+VALUES (6, "Casa Mila -  1.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (6, "Casa Mila -  2.jpg");

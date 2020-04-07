@@ -38,7 +38,7 @@ INSERT INTO attractions
     (storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit)
 VALUES(41.3917, 2.16495, "Casa Batllo",
         "Stunning outside, unimaginable inside!",
-        "Casa Batllo - 1.jpg",
+        "Casa Batllo - 0.jpg",
         "",
         "");
 
@@ -62,7 +62,7 @@ INSERT INTO attractions
     (storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit)
 VALUES(41.395335, 2.161696, "Casa Mila - La Pedrera",
         "Casa Mila, popularly known as La Pedrera, is a most unusual building, constructed between 1906 and 1912 by the architect Antoni Gaudí (1852–1926) and declared UNESCO World Heritage in 1984. Today it is the headquarters of Fundacio Catalunya La Pedrera and houses a cultural centre that is a reference point in Barcelona for the range of activities it organises and the different spaces for exhibitions and other public uses it contains. A visit to La Pedrera, landmark building and container, gives us a better understanding and appreciation of architecture and transports us to the period when Antoni Gaudi lived.",
-        "Casa Mila -  1.jpg",
+        "Casa Mila - 0.jpg",
         "",
         "");
 
