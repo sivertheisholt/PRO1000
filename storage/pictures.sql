@@ -30,9 +30,6 @@ INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (3, "Casa Batllo - 3.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
-VALUES (3, "Casa Batllo - 4.jpg");
-
-INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (4, "Gothic Quarter - 2.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
