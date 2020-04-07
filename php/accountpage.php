@@ -85,6 +85,7 @@ mysqli_close($link);
         </div>
         <div class="wrapper">
             <h1> Dashboard</h1>
+            <p><a href="adminPage.php"> Admin page </li> </a> </p>
             <p><a href="password.php"> Change password </li> </a> </p>
             <p><a href="information.php"> Your information </li> </a> </p>
             <p><a href="tripUser.php"> My trips </li> </a> </p>
