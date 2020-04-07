@@ -169,7 +169,7 @@ mysqli_close($link);
             <input class="input_box" type="text" name="credit">
 
             <input class="submit_button" type="submit" name="action" value="Submit">
-            <p class="back_button"><a href="adminPage.php">Back</a></p>
+            <a href="adminPage.php"><p class="back_button">Back</p></a>
         </form>
 
     </div>

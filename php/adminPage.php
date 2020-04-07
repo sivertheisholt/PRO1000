@@ -79,12 +79,12 @@ mysqli_close($link);
         </div>
         <div class="wrapper">
             <h1> Admin Tools </h1>
-            <p><a href="adminAdd.php">Add attraction</li> </a> </p>
-            <p><a href="adminEdit.php">Edit/Remove attractions</li> </a> </p>
-            <p><a href="adminUploadPicture.php">Upload attraction picture</li> </a> </p>
-            <p><a href="adminChange.php">Change top attractions</li> </a> </p>
-            <p><a href="adminUsers.php">Manage users</li> </a> </p>
-            <p class="back_button"><a href="accountpage.php">Back</a></p>
+            <p><a href="adminAdd.php">Add attraction</a> </p>
+            <p><a href="adminEdit.php">Edit/Remove attractions </a> </p>
+            <p><a href="adminUploadPicture.php">Upload attraction picture</a> </p>
+            <p><a href="adminChange.php">Change top attractions</a> </p>
+            <p><a href="adminUsers.php">Manage users </a> </p>
+            <a href="accountpage.php"><p class="back_button">Back</p></a>
         </div>
         <div id="contact">
             <a id="contactus" href="contact.php"> Contact us </a>
