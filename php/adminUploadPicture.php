@@ -48,7 +48,7 @@ if (!empty($_POST['chooseAttraction'])) {
     if (!mysqli_num_rows($result) == 0) {
         $table .= " <table id='table'> <tr> <th></th> </tr> ";
         while ($row = mysqli_fetch_array($result)) {
-            $table .= "<tr>   <td style='height: 200px;'><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; height: 200px;'></img></td>     </tr>";
+            $table .= "<tr>   <td style='height: 200px;'><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px;'></img></td>     </tr>";
             $errorMsg = "";
         }
     } else {
@@ -166,9 +166,29 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/adminUploadPicture_mobile.css">
+    <!--CSS Links Desktop-->
+    <link rel="stylesheet" href="../css/desktop/adminUploadPicture_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
 </head>
 
 <body>
+<nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
@@ -181,7 +201,7 @@ mysqli_close($link);
             <?php echo $select ?>;
             </select>
             <input class="submit_button" type="submit" name="chooseAttraction">
-            <p class="back_button"><a href="adminPage.php">Back</a></p><br>
+            <a href="adminPage.php"><p class="back_button">Back</p></a><br>
             <input class="submit_button" <?php echo $script ?> type="button" value="Make primary picture" onclick="updateDB()">
             <input class="submit_button" <?php echo $script ?> type="button" value="Delete" onclick="deleteDB()">
         </form>

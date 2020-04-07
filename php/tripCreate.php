@@ -17,7 +17,7 @@ if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
         if ($row['storymap_slides_ID'] == 1) {
         } else {
-            $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 90%; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
+            $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
         }
     }
 }
