@@ -162,8 +162,10 @@ mysqli_close($link);
         <form action="#" method="post">
             <h3>Use our trip generator to plan your visits!</h3>
             <h4>Simply choose how many days your trip will be </h4>
-            <input class="submit_button_3" type="submit" value="3 Days" name="day3">
-            <input class="submit_button_5" type="submit" value="5 Days" name="day5">
+            <div class="button_wrap">
+                <input class="submit_button_3" type="submit" value="3 Days" name="day3">
+                <input class="submit_button_5" type="submit" value="5 Days" name="day5">
+            </div>
         </form>
         <div id="map" style="width: 100%; height: calc(100vh - 50px); z-index: 0;"></div>
     </div>
