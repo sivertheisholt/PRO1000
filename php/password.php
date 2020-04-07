@@ -104,15 +104,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <nav class="desktop-nav">
         <div id="btn-toggle-nav" onclick="meny()"></div>
-            <img src="../storage/mobile/storymapbanner.jpg">
-            <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
-            <div id="desktop-links" class="nav-inactive">
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
+        <div id="desktop-links" class="nav-inactive">
             <div id="btn-toggle-nav-links" onclick="meny()"></div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Attractions</a></li>
-                <li><a href="#">Trips</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
             </ul>
         </div>
     </nav>
