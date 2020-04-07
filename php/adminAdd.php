@@ -98,9 +98,30 @@ mysqli_close($link);
     <link rel="stylesheet" href="../css/mobile/banner_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" href="../css/mobile/adminAdd_mobile.css">
+    <!--CSS Links Desktop-->
+    <link rel="stylesheet" type="text/css" href="../css/desktop/adminAdd_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
 </head>
 
 <body>
+    <!-- Banner -->
+    <nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
