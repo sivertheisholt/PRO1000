@@ -30,6 +30,12 @@ $headline = "";
 $url = "";
 $caption = "";
 $credit = "";
+
+$roadDesc = "";
+$fee = "";
+$visitors = "";
+$notices = "";
+
 $script = "style='visibility:hidden'";
 
 //Get all attractions
@@ -48,7 +54,7 @@ if (!empty($_POST['confirm'])) {
   $_SESSION['attractionID'] = $x;
 
   //Get attraction details
-  $sql = "SELECT storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit  FROM attractions WHERE storymap_slides_ID = $x";
+  $sql = "SELECT storymap_slides_location_lat, storymap_slides_location_lon, storymap_slides_text_headline, storymap_slides_text_text, storymap_slides_media_url, storymap_slides_media_caption, storymap_slides_media_credit, storymap_slides_road_description, storymap_slides_entrance_fee, storymap_slides_visitors, storymap_slides_notices  FROM attractions WHERE storymap_slides_ID = $x";
   $result = $link->query($sql);
   if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
@@ -59,6 +65,10 @@ if (!empty($_POST['confirm'])) {
       $url .= '<label class="label" for="url">Attraction picture: </label> <input class="input_box" type="text" name="url" value="' . $row['storymap_slides_media_url'] . '">';
       $caption .= '<label class="label" for="caption">Attraction caption: </label> <input class="input_box" type="text" name="caption" value="' . $row['storymap_slides_media_caption'] . '">';
       $credit .= '<label class="label" for="credit">Attraction credit: </label> <input class="input_box" type="text" name="credit" value="' . $row['storymap_slides_media_credit'] . '">';
+      $roadDesc .= '<label class="label" for="roadDesc">How to get there: </label> <input class="input_box" type="text" name="roadDesc" value="' . $row['storymap_slides_road_description'] . '">';
+      $fee .= '<label class="label" for="fee">Entrance fee: </label> <input class="input_box" type="text" name="fee" value="' . $row['storymap_slides_entrance_fee'] . '">';
+      $visitors .= '<label class="label" for="visitors">Yearly visitors: </label> <input class="input_box" type="text" name="visitors" value="' . $row['storymap_slides_visitors'] . '">';
+      $notices .= '<label class="label" for="notices">Notices: </label> <input class="input_box" type="text" name="notices" value="' . $row['storymap_slides_notices'] . '">';
     }
   }
   $script = "style='visibility:visible'";
@@ -87,6 +97,10 @@ if (!empty($_POST['update'])) {
   $urlUpdate = str_replace("'", '', $_POST["url"]);
   $captionUpdate = str_replace("'", '', $_POST["caption"]);
   $creditUpdate = str_replace("'", '', $_POST["credit"]);
+  $roadDescUpdate = str_replace("'", '', $_POST["roadDesc"]);
+  $feeUpdate = str_replace("'", '', $_POST["fee"]);
+  $visitorsUpdate = str_replace("'", '', $_POST["visitors"]);
+  $noticesUpdate = str_replace("'", '', $_POST["notices"]);
 
   $sql = "UPDATE attractions SET storymap_slides_location_lat='$latUpdate',
     storymap_slides_location_lon='$lonUpdate',
@@ -94,7 +108,11 @@ if (!empty($_POST['update'])) {
     storymap_slides_text_text='$textUpdate',
     storymap_slides_media_url='$urlUpdate',
     storymap_slides_media_caption='$captionUpdate',
-    storymap_slides_media_credit='$creditUpdate'
+    storymap_slides_media_credit='$creditUpdate',
+    storymap_slides_road_description='$roadDescUpdate',
+    storymap_slides_entrance_fee='$feeUpdate',
+    storymap_slides_visitors='$visitorsUpdate',
+    storymap_slides_notices='$noticesUpdate'
     WHERE storymap_slides_ID = $idUpdate";
 
   if ($link->query($sql) === TRUE) {
@@ -169,6 +187,10 @@ mysqli_close($link);
       <?php echo $url ?><br>
       <?php echo $caption ?><br>
       <?php echo $credit ?><br>
+      <?php echo $roadDesc ?><br>
+      <?php echo $fee ?><br>
+      <?php echo $visitors ?><br>
+      <?php echo $notices ?><br>
       <input id="save" <?php echo $script ?> class="submit_button" type="submit" name="update" value="Save" />
       <input id="delete" <?php echo $script ?> class="delete_button" type="submit" name="delete" value="Delete" />
     </form>

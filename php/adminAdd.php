@@ -31,6 +31,11 @@ $caption = "";
 $credit = "";
 $filename = "";
 
+$roadDesc = "";
+$fee = "";
+$visitors = "";
+$notices = "";
+
 if (!empty($_POST['action'])) {
     //Add attraction
     $lat = $_POST["lat"];
@@ -41,14 +46,24 @@ if (!empty($_POST['action'])) {
     $caption = $_POST["caption"];
     $credit = $_POST["credit"];
 
+    $roadDesc = $_POST["roadDesc"];
+    $fee = $_POST["fee"];
+    $visitors = $_POST["visitors"];
+    $notices = $_POST["notices"];
+
     $sql = "INSERT INTO attractions (storymap_slides_location_lat, 
     storymap_slides_location_lon, 
     storymap_slides_text_headline, 
     storymap_slides_text_text, 
     storymap_slides_media_url, 
     storymap_slides_media_caption, 
-    storymap_slides_media_credit)
-    VALUES ('$lat', '$lon', '$headline', '$text', '$url', '$caption', '$credit')";
+    storymap_slides_media_credit,
+    storymap_slides_road_description,
+    storymap_slides_entrance_fee,
+    storymap_slides_visitors,
+    storymap_slides_notices)
+
+    VALUES ('$lat', '$lon', '$headline', '$text', '$url', '$caption', '$credit', '$roadDesc', '$fee', '$visitors', '$notices')";
 
     if ($link->query($sql) === TRUE) {
         $errorMsg = "New record created successfully";
@@ -166,7 +181,19 @@ mysqli_close($link);
             <input class="input_box" type="text" name="caption"><br>
 
             <label class="label" for="credit">Attraction credit: </label>
-            <input class="input_box" type="text" name="credit">
+            <input class="input_box" type="text" name="credit"><br>
+
+            <label class="label" for="roadDesc">How to get there: </label>
+            <input class="input_box" type="text" name="roadDesc"><br>
+
+            <label class="label" for="fee">Entrance fee: </label>
+            <input class="input_box" type="text" name="fee"><br>
+
+            <label class="label" for="visitors">Yearly visitors: </label>
+            <input class="input_box" type="text" name="visitors"><br>
+
+            <label class="label" for="notices">Notices: </label>
+            <input class="input_box" type="text" name="notices">
 
             <input class="submit_button" type="submit" name="action" value="Submit">
             <a href="adminPage.php"><p class="back_button">Back</p></a>
