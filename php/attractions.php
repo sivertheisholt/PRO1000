@@ -11,6 +11,12 @@ require_once "../php/config.php";
 $headline = [];
 $image = [];
 $text = [];
+
+$roadDesc = [];
+$fee = [];
+$visitors = [];
+$notices = [];
+
 $extraPictures = array();
 $counterMain = 2;
 $counterSub = 0;
@@ -42,6 +48,34 @@ for ($x = 1; $x <= $numberOfAttractions; $x++) {
       $text[] = $row["storymap_slides_text_text"];
     }
   }
+  $sql = "SELECT storymap_slides_road_description FROM attractions WHERE storymap_slides_ID = $x";
+  $resultroadDesc = $link->query($sql);
+  if (!mysqli_num_rows($resultroadDesc) == 0) {
+    while ($row = mysqli_fetch_array($resultroadDesc)) {
+      $roadDesc[] = $row["storymap_slides_road_description"];
+    }
+  }
+  $sql = "SELECT storymap_slides_entrance_fee FROM attractions WHERE storymap_slides_ID = $x";
+  $resultfee = $link->query($sql);
+  if (!mysqli_num_rows($resultfee) == 0) {
+    while ($row = mysqli_fetch_array($resultfee)) {
+      $fee[] = $row["storymap_slides_entrance_fee"];
+    }
+  }
+  $sql = "SELECT storymap_slides_visitors FROM attractions WHERE storymap_slides_ID = $x";
+  $resultvisitors = $link->query($sql);
+  if (!mysqli_num_rows($resultvisitors) == 0) {
+    while ($row = mysqli_fetch_array($resultvisitors)) {
+      $visitors[] = $row["storymap_slides_visitors"];
+    }
+  }
+  $sql = "SELECT storymap_slides_notices FROM attractions WHERE storymap_slides_ID = $x";
+  $resultnotices = $link->query($sql);
+  if (!mysqli_num_rows($resultnotices) == 0) {
+    while ($row = mysqli_fetch_array($resultnotices)) {
+      $notices[] = $row["storymap_slides_notices"];
+    }
+  }
 }
 
 //Get multiple pictures, multidimentional array
@@ -63,6 +97,10 @@ $code_headline = json_encode($headline);
 $code_image = json_encode($image);
 $code_text = json_encode($text);
 $code_images = json_encode($extraPictures);
+$code_roadDesc = json_encode($roadDesc);
+$code_fee = json_encode($fee);
+$code_visitors = json_encode($visitors);
+$code_notices = json_encode($notices);
 
 mysqli_close($link);
 
@@ -141,6 +179,10 @@ mysqli_close($link);
       var headline = <?php echo $code_headline; ?>;
       var image = <?php echo $code_image; ?>;
       var text = <?php echo $code_text; ?>;
+      var roadDesc = <?php echo $code_roadDesc ?>;
+      var fee = <?php echo $code_fee ?>;
+      var visitors = <?php echo $code_visitors ?>;
+      var notices = <?php echo $code_notices ?>;
 
       //This is for the multidimentional images array
       var images = <?php echo $code_images; ?>;

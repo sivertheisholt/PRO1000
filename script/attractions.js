@@ -7,7 +7,11 @@
             var temp = {
                 "name": headline[i],
                 "text": text[i],
-                "image": image[i]
+                "image": image[i],
+                "roadDesc": roadDesc[i],
+                "fee": fee[i],
+                "visitors": visitors[i],
+                "notices": notices[i]
             }
             locations.push(temp);
         }
@@ -99,6 +103,10 @@
     var size = 0;
     var identity = 0;
     var images = new Array();
+    var roadDesc;
+    var fee;
+    var visitors;
+    var notices;
 
     function overlayOn(id) { //id tilsvarer posisjonen i locations arrayet elementet som ble trykket på tilhører
         identity = id;
@@ -106,14 +114,17 @@
         images = slider_img[id]; //
         size = slider_img[id].length; //finner lengden av antall objekter i images array
         console.log(size + "" + images);
-
         name = locations[id]["name"]; //navnet som skrives inn i overlayet
         text = locations[id]["text"]; //tekst som skrives inn i overlayet
+        roadDesc = locations[id]["roadDesc"];
+        fee = locations[id]["fee"];
+        visitors = locations[id]["visitors"];
+        notices = locations[id]["notices"];
         document.getElementById("overlay").style.display = "block"; //gjøre overlay elementet synlig
         //skriver inn all html koden inn i overlayetText elementet
-        overlayText.innerHTML = '<h1 class="img_btn" id="exit" onclick="overlayOff()">X</h1><h1>' + name + '</h1><div id="slider_content"><h1 id="back_btn" class="img_btn" onclick="back()">🠄</h1><h1 id="next_btn" class="img_btn" onclick="next()">🠆</h1><div id="slider"></div></div><p>' + text + '</p>';
+        overlayText.innerHTML = '<h1 class="img_btn" id="exit" onclick="overlayOff()">X</h1><h1>' + name + '</h1><div id="slider_content"><h1 id="back_btn" class="img_btn" onclick="back()">🠄</h1><h1 id="next_btn" class="img_btn" onclick="next()">🠆</h1><div id="slider"></div></div><p>' + text + '</p><p id="info_text"> Address: ' + roadDesc + '</p><p id="info_text">Entrance fee: ' + fee + '</p><p id="info_text">Yearly visitors: ' + visitors + '</p><p id="info_text">Notices: ' + notices + '</p>' ;
         write_image(); //tilkaller write_image() funksjonen
-        disable_scroll();
+        //disable_scroll();
     }
 
     function disable_scroll() {
