@@ -1,3 +1,5 @@
+USE pro1000;
+
 DROP TABLE IF EXISTS attractionsPicture;
 CREATE TABLE IF NOT EXISTS attractionsPicture
 (
