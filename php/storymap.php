@@ -16,52 +16,22 @@ $credit = [];
 
 //Put data in arrays
 for ($x = 1; $x <= 16; $x++) {
-    $sql = "SELECT storymap_slides_location_lat FROM attractions WHERE storymap_slides_ID = $x";
-    $resultlat = $link->query($sql);
-    if (!mysqli_num_rows($resultlat) == 0) {
-        while ($row = mysqli_fetch_array($resultlat)) {
+    $sql = "SELECT storymap_slides_location_lat, 
+    storymap_slides_location_lon, 
+    storymap_slides_text_headline, 
+    storymap_slides_text_text, 
+    storymap_slides_media_url, 
+    storymap_slides_media_caption, 
+    storymap_slides_media_credit FROM attractions WHERE storymap_slides_ID = $x";
+    $result = $link->query($sql);
+    if (!mysqli_num_rows($result) == 0) {
+        while ($row = mysqli_fetch_array($result)) {
             $lat[] = $row["storymap_slides_location_lat"];
-        }
-    }
-    $sql = "SELECT storymap_slides_location_lon FROM attractions WHERE storymap_slides_ID =$x";
-    $resultlon = $link->query($sql);
-    if (!mysqli_num_rows($resultlon) == 0) {
-        while ($row = mysqli_fetch_array($resultlon)) {
             $lon[] = $row["storymap_slides_location_lon"];
-        }
-    }
-    $sql = "SELECT storymap_slides_text_headline FROM attractions WHERE storymap_slides_ID = $x";
-    $resultheadline = $link->query($sql);
-    if (!mysqli_num_rows($resultheadline) == 0) {
-        while ($row = mysqli_fetch_array($resultheadline)) {
             $headline[] = $row["storymap_slides_text_headline"];
-        }
-    }
-    $sql = "SELECT storymap_slides_text_text FROM attractions WHERE storymap_slides_ID = $x";
-    $resulttext = $link->query($sql);
-    if (!mysqli_num_rows($resulttext) == 0) {
-        while ($row = mysqli_fetch_array($resulttext)) {
             $text[] = $row["storymap_slides_text_text"];
-        }
-    }
-    $sql = "SELECT storymap_slides_media_url FROM attractions WHERE storymap_slides_ID = $x";
-    $resulturl = $link->query($sql);
-    if (!mysqli_num_rows($resulturl) == 0) {
-        while ($row = mysqli_fetch_array($resulturl)) {
             $url[] = $row["storymap_slides_media_url"];
-        }
-    }
-    $sql = "SELECT storymap_slides_media_caption FROM attractions WHERE storymap_slides_ID = $x";
-    $resultcaption = $link->query($sql);
-    if (!mysqli_num_rows($resultcaption) == 0) {
-        while ($row = mysqli_fetch_array($resultcaption)) {
             $caption[] = $row["storymap_slides_media_caption"];
-        }
-    }
-    $sql = "SELECT storymap_slides_media_credit FROM attractions WHERE storymap_slides_ID = $x";
-    $resultcredit = $link->query($sql);
-    if (!mysqli_num_rows($resultcredit) == 0) {
-        while ($row = mysqli_fetch_array($resultcredit)) {
             $credit[] = $row["storymap_slides_media_credit"];
         }
     }
