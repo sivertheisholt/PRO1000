@@ -9,20 +9,20 @@
         font-family: 'Oswald', sans-serif;
         font-size: 20px;
     }
-    .tripCreate {
+    .tripEdit {
         margin-right: 20px;
         margin-left: 20px;
         margin-bottom: 50px;
     }
-    .tripCreate img {
+    .tripEdit img {
         display: block;
     }
-    .tripCreate p {
+    .tripEdit p {
         margin: 10px 0 10px 0;
         font-weight: bold;
         text-align: center;
     }
-    .tripCreate h1 {
+    .tripEdit h1 {
         margin-left: 5px;
         margin-bottom: 15px;
         font-size: 18px;
@@ -45,6 +45,11 @@
     .selected {
         background-color: lightgreen;
         color: #FFF;
+    }
+    .tripEdit select {
+        width: 140px;
+        display: block;
+        margin: 0 auto;
     }
     .submit_button {
         box-shadow: inset 0px 5px 17px 0px #a4e271;

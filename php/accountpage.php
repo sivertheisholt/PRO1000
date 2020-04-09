@@ -90,7 +90,7 @@ mysqli_close($link);
             <p><a href="information.php"> Your information </li> </a> </p>
             <p><a href="tripUser.php"> My trips </li> </a> </p>
             <p><a href="tripCreate.php"> Make trip </li> </a> </p>
-            <p><a href="#"> Edit trip </li> </a> </p>
+            <p><a href="tripEdit.php"> Edit trip </li> </a> </p>
             <?php echo $admin ?>
             <p class="back_button"><a href="logout.php">Logout</a></p>
         </div>
