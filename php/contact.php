@@ -49,10 +49,31 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/contact_mobile.css">
+    <!--CSS Links Desktop-->
+    <link rel="stylesheet" type="text/css" href="../css/desktop/accountpage_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/contact_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <!--Navigation bar desktop-->
+    <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
+    <script src="../script/nav_desktop.js"></script>
 
 </head>
 
 <body>
+<nav class="desktop-nav">
+        <div id="btn-toggle-nav" onclick="meny()"></div>
+        <img src="../storage/mobile/storymapbanner.jpg">
+        <p class="logo_text">Enjoy a storymap of Barcelona's most beautiful places</p>
+        <div id="desktop-links" class="nav-inactive">
+            <div id="btn-toggle-nav-links" onclick="meny()"></div>
+            <ul>
+                <li><a href="../php/storymap.php">Home</a></li>
+                <li><a href="../php/attractions.php">Attractions</a></li>
+                <li><a href="../php/trips.php">Trips</a></li>
+                <li><a href="../php/accountpage.php">Account</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Banner -->
     <div class="logo">
         <img src="../storage/mobile/storymaplogo.png">
@@ -65,17 +86,17 @@ if ($result->num_rows > 0) {
         <div id="content">
             <h1> Contact information</h1>
             <div id="overview">
-                <p class="contact"> Mail Adress: </p>
-                <p class="venstre"> Universitetet i Sørøst-Norge </p>
-                <p class="venstre"> Postboks 235 </p>
-                <p class="venstre"> 3603 Kongsberg </p>
-                <p class="contact"> IT-support: </p>
-                <li class="venstre"> E-post: it-support@usn.no </li>
-                <li class="venstre"> Telefon: 31 00 82 00 </li>
-                <p class="back_button"><a href="logout.php">Logout</a></p>
-                <p class="back_button"><a href="accountpage.php">Back</a></p>
-                <div id="footer">
+                <div class="text_wrapper">
+                    <p class="contact"> Address: </p>
+                    <li class="venstre"> Universitetet i Sørøst-Norge </li>
+                    <li class="venstre"> Postboks 235 </li>
+                    <li class="venstre"> 3603 Kongsberg </li>
+                    <p class="contact"> IT-support: </p>
+                    <li class="venstre"> E-post: it-support@usn.no </li>
+                    <li class="venstre"> Telefon: 31 00 82 00 </li>
                 </div>
+                    <a href="logout.php"><p class="back_button">Logout</p></a>
+                    <a href="accountpage.php"><p class="back_button">Back</p></a>
             </div>
         </div>
         <!-- Navigation bar -->

@@ -1,0 +1,28 @@
+@media only screen and (min-width: 480px){
+    p.contact {
+        font-weight: bold;
+        margin-top: 25px; 
+      }
+      
+      p.venstre {
+          text-align: left;
+          margin: 0 auto;
+          margin-left: 50px;
+      }
+      
+      li.venstre {
+          text-align: left;
+          margin: 0 auto;
+          margin-left: 50px;
+          list-style-type: circle;
+          margin-top: 1px;
+      }
+
+      #overview {
+          max-width: 400px;
+          width: 90%;
+          border: solid 1px black;
+          margin: auto;
+      }
+
+}
