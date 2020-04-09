@@ -41,25 +41,22 @@ if (!empty($_POST['day3'])) {
     $random = range(1, count($lat) - 1);
     shuffle($random);
 
+    $newLat[] = $lat[0];
+    $newLon[] = $lon[0];
+    $newHeadline[] = $headline[0];
+    $newText[] = $text[0];
+    $newUrl[] = $url[0];
+    $newCaption[] = $caption[0];
+    $newCredit[] = $credit[0];
 
-    for ($i = 0; $i < 9; $i++) {
-        if ($i == 0) {
-            $newLat[] = $lat[$i];
-            $newLon[] = $lon[$i];
-            $newHeadline[] = $headline[$i];
-            $newText[] = $text[$random[$i]];
-            $newUrl[] = $url[$i];
-            $newCaption[] = $caption[$i];
-            $newCredit[] = $credit[$i];
-        } else {
-            $newLat[] = $lat[$random[$i]];
-            $newLon[] = $lon[$random[$i]];
-            $newHeadline[] = $headline[$random[$i]];
-            $newText[] = $text[$random[$i]];
-            $newUrl[] = $url[$random[$i]];
-            $newCaption[] = $caption[$random[$i]];
-            $newCredit[] = $credit[$random[$i]];
-        }
+    for ($i = 0; $i < 8; $i++) {
+        $newLat[] = $lat[$random[$i]];
+        $newLon[] = $lon[$random[$i]];
+        $newHeadline[] = $headline[$random[$i]];
+        $newText[] = $text[$random[$i]];
+        $newUrl[] = $url[$random[$i]];
+        $newCaption[] = $caption[$random[$i]];
+        $newCredit[] = $credit[$random[$i]];
     }
 
     $startMap = 'startMap()';
@@ -78,24 +75,22 @@ if (!empty($_POST['day5'])) {
     $random = range(1, count($lat) - 1);
     shuffle($random);
 
-    for ($i = 0; $i < 13; $i++) {
-        if ($i == 0) {
-            $newLat[] = $lat[$i];
-            $newLon[] = $lon[$i];
-            $newHeadline[] = $headline[$i];
-            $newText[] = $text[$random[$i]];
-            $newUrl[] = $url[$i];
-            $newCaption[] = $caption[$i];
-            $newCredit[] = $credit[$i];
-        } else {
-            $newLat[] = $lat[$random[$i]];
-            $newLon[] = $lon[$random[$i]];
-            $newHeadline[] = $headline[$random[$i]];
-            $newText[] = $text[$random[$i]];
-            $newUrl[] = $url[$random[$i]];
-            $newCaption[] = $caption[$random[$i]];
-            $newCredit[] = $credit[$random[$i]];
-        }
+    $newLat[] = $lat[0];
+    $newLon[] = $lon[0];
+    $newHeadline[] = $headline[0];
+    $newText[] = $text[0];
+    $newUrl[] = $url[0];
+    $newCaption[] = $caption[0];
+    $newCredit[] = $credit[0];
+
+    for ($i = 0; $i < 12; $i++) {
+        $newLat[] = $lat[$random[$i]];
+        $newLon[] = $lon[$random[$i]];
+        $newHeadline[] = $headline[$random[$i]];
+        $newText[] = $text[$random[$i]];
+        $newUrl[] = $url[$random[$i]];
+        $newCaption[] = $caption[$random[$i]];
+        $newCredit[] = $credit[$random[$i]];
     }
 
     $startMap = 'startMap()';
@@ -117,6 +112,7 @@ mysqli_close($link);
 <!DOCTYPE html>
 <html>
 <!-- Start of HEAD section -->
+
 <head>
     <title>PRO1000</title>
     <meta charset="UTF-8" />
