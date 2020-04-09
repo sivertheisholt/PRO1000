@@ -33,6 +33,18 @@ if (!empty($_POST['save'])) {
     exit();
 }
 
+if (!empty($_POST['deleteId'])) {
+
+    $deleteID = $_POST['tripID'];
+
+    $sql = "DELETE FROM trips WHERE ID = $deleteID";
+    if ($link->query($sql) === TRUE) {
+        $errorMsg = "Trip successfully deleted";
+    } else {
+        $errorMsg = $link->error;
+    }
+}
+
 if (!empty($_POST['selectId'])) {
 
     $table = " <table id='table'> <tr> <th></th> </tr> ";
@@ -40,7 +52,7 @@ if (!empty($_POST['selectId'])) {
     $sqlID = (int) $_POST['tripID'];
     $_SESSION['currentSelected'] = $sqlID;
     $attractionsIds = [];
-    $counter = 0;
+    $found = 0;
 
     //Get attractions from trip
     $sql = "SELECT attractions FROM trips WHERE ID = $sqlID";
@@ -64,24 +76,25 @@ if (!empty($_POST['selectId'])) {
         }
     }
 
-    //Get all attractions
+
+
+
+    //Get all attractions, this is spaghetti...
     $sql = "SELECT storymap_slides_ID, storymap_slides_text_headline, storymap_slides_media_url FROM attractions";
     $result = $link->query($sql);
     if (!mysqli_num_rows($result) == 0) {
         while ($row = mysqli_fetch_array($result)) {
-            if ($row['storymap_slides_ID'] == 1) {
-                //Do nothing, skip overview slide
-            } else {
-                if (sizeof($attractionsIds) > $counter) {
-                    if ((int) $row['storymap_slides_ID'] == (int) $attractionsIds[$counter]) {
-                        $table .= "<tr class='selected'><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
-                        $counter++;
-                    } else {
-                        $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
-                    }
-                } else {
-                    $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
+            for ($i = 0; $i < sizeof($attractionsIds); $i++) {
+                if ($row['storymap_slides_ID'] == $attractionsIds[$i] && $row['storymap_slides_ID'] != 1) {
+                    $found = 1;
                 }
+            }
+            if ($found == 1) {
+                $table .= "<tr class='selected'><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
+                $found = 0;
+            } else if ($row['storymap_slides_ID'] == 1) {
+            } else {
+                $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
             }
         }
     }
@@ -135,10 +148,20 @@ mysqli_close($link);
     </div>
     <div class="tripEdit">
         <form action="#" method="post">
-            <h1>Choose trip to see</h1>
+            <h1>Choose trip to edit</h1>
             <?php echo $select ?>
             </select>
-            <input class="submit_button" type="submit" name="selectId">
+            <div id="editTripButtonSelect">
+                <input class="submit_button" style="text-align: center;" type="submit" name="selectId">
+                <input class="submit_button back_button" style="display: inline-block" type="submit" value="Delete" name="deleteId">
+            </div>
+
+            <!-- messages -->
+            <?PHP
+            if (isset($errorMsg) && $errorMsg) {
+                echo "<p style=\"color: red;\">", htmlspecialchars($errorMsg), "</p>\n\n";
+            }
+            ?>
         </form>
         <?php echo $table ?>
         </table>
@@ -147,13 +170,6 @@ mysqli_close($link);
             <input class="submit_button" type="button" value="Save" id="save">
             <p class="back_button"><a href="accountpage.php">Back</a></p>
         </div>
-
-        <!-- messages -->
-        <?PHP
-        if (isset($errorMsg) && $errorMsg) {
-            echo "<p style=\"color: red;\">", htmlspecialchars($errorMsg), "</p>\n\n";
-        }
-        ?>
     </div>
 
     <!-- Navigation bar -->
@@ -171,36 +187,33 @@ mysqli_close($link);
         $("#table tr").click(function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass('selected')
-                var value = $(this).find('td:first').html();
-                var attraction = value.substring(32, value.indexOf("</p>"));
-                var index = attractions.indexOf(attraction);
-                if (index > -1) {
-                    attractions.splice(index, 1);
-                }
             } else {
                 $(this).addClass('selected');
-                var value = $(this).find('td:first').html();
-                var attraction = value.substring(32, value.indexOf("</p>"));
-                attractions.push(attraction);
             }
         });
 
         //Send data to php
         $(document).ready(function() {
             $('#save').click(function() {
-                    var attractionPHP = attractions.join();
-                    $.ajax({
-                        method: 'post',
-                        data: {
-                            save: attractionPHP
-                        },
-                        success: function(res) {
-                            console.log(res);
-                            $('#response').css('color', 'red');
-                            $('#response').css('text-align', 'center');
-                            $('#response').text('Trip successfully created!!');
-                        }
-                    });
+                var allAttractionsSelected = document.getElementsByClassName('selected');
+                for (var i = 0; i < allAttractionsSelected.length; ++i) {
+                    var value = allAttractionsSelected[i].innerHTML;
+                    var attractionName = value.substring(59, value.indexOf("</p>"));
+                    attractions.push(attractionName);
+                }
+                var attractionPHP = attractions.join();
+                $.ajax({
+                    method: 'post',
+                    data: {
+                        save: attractionPHP
+                    },
+                    success: function(res) {
+                        console.log(res);
+                        $('#response').css('color', 'red');
+                        $('#response').css('text-align', 'center');
+                        $('#response').text('Trip successfully updated!');
+                    }
+                });
             });
         });
     </script>
