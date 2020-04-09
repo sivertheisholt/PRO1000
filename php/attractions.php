@@ -166,30 +166,31 @@ mysqli_close($link);
         </footer>
       </div>
     </div>
-    <!-- Navigation bar -->
-    <div class="navbar">
-      <a href="../php/storymap.php">Home</a>
-      <a class="active" href="../php/attractions.php">Attractions</a>
-      <a href="../php/trips.php">Trips</a>
-      <a href="../php/accountpage.php">Account</a>
-    </div>
+  </div>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <a href="../php/storymap.php">Home</a>
+    <a class="active" href="../php/attractions.php">Attractions</a>
+    <a href="../php/trips.php">Trips</a>
+    <a href="../php/accountpage.php">Account</a>
+  </div>
 
-    <script>
-      //Get array from php
-      var headline = <?php echo $code_headline; ?>;
-      var image = <?php echo $code_image; ?>;
-      var text = <?php echo $code_text; ?>;
-      var roadDesc = <?php echo $code_roadDesc ?>;
-      var fee = <?php echo $code_fee ?>;
-      var visitors = <?php echo $code_visitors ?>;
-      var notices = <?php echo $code_notices ?>;
+  <script>
+    //Get array from php
+    var headline = <?php echo $code_headline; ?>;
+    var image = <?php echo $code_image; ?>;
+    var text = <?php echo $code_text; ?>;
+    var roadDesc = <?php echo $code_roadDesc ?>;
+    var fee = <?php echo $code_fee ?>;
+    var visitors = <?php echo $code_visitors ?>;
+    var notices = <?php echo $code_notices ?>;
 
-      //This is for the multidimentional images array
-      var images = <?php echo $code_images; ?>;
+    //This is for the multidimentional images array
+    var images = <?php echo $code_images; ?>;
 
-      create_array(headline, image, text);
-      create_image_array(image, images);
-    </script>
+    create_array(headline, image, text);
+    create_image_array(image, images);
+  </script>
 </body>
 
 </html>
