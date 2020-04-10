@@ -64,10 +64,10 @@
         console.log(numberArray);
     }
 
-    function write_rec(antall) { //skriver inn recommendations til html
+    function write_rec(antall) { //skriver inn alle til html
         rec_container.innerHTML = ""; //blir tømt pga three_days() og five_days()
         random();
-        for (let i = 0; i < antall - 1; i++) {
+        for (let i = 0; i < antall; i++) {
             number = numberArray[i];
             image = locations[number]["image"]; //img_0 er den som skal vises i recommendation boksene
             name = locations[number]["name"];
@@ -122,7 +122,7 @@
         notices = locations[id]["notices"];
         document.getElementById("overlay").style.display = "block"; //gjøre overlay elementet synlig
         //skriver inn all html koden inn i overlayetText elementet
-        overlayText.innerHTML = '<h1 class="img_btn" id="exit" onclick="overlayOff()">X</h1><h1>' + name + '</h1><div id="slider_content"><h1 id="back_btn" class="img_btn" onclick="back()">🠄</h1><h1 id="next_btn" class="img_btn" onclick="next()">🠆</h1><div id="slider"></div></div><p>' + text + '</p><p id="info_text"> Address: ' + roadDesc + '</p><p id="info_text">Entrance fee: ' + fee + '</p><p id="info_text">Yearly visitors: ' + visitors + '</p><p id="info_text">Notices: ' + notices + '</p>' ;
+        overlayText.innerHTML = '<h1 class="img_btn" id="exit" onclick="overlayOff()">X</h1><h1>' + name + '</h1><div id="slider_content"><h1 id="back_btn" class="img_btn" onclick="back()">🠄</h1><h1 id="next_btn" class="img_btn" onclick="next()">🠆</h1><div id="slider"></div></div><p>' + text + '</p><p id="info_text"> Address: ' + roadDesc + '</p><p id="info_text">Entrance fee: ' + fee + '</p><p id="info_text">Yearly visitors: ' + visitors + '</p><p id="info_text">Notices: ' + notices + '</p>';
         write_image(); //tilkaller write_image() funksjonen
         //disable_scroll();
     }
