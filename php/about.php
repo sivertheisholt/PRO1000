@@ -34,6 +34,7 @@ session_start();
                 <li><a href="../php/attractions.php">Attractions</a></li>
                 <li><a href="../php/trips.php">Trips</a></li>
                 <li><a href="../php/accountpage.php">Account</a></li>
+                <li><a href="../php/about.php">Account</a></li>
             </ul>
         </div>
     </nav>
@@ -50,12 +51,12 @@ session_start();
             </div>
         </div>
         <div class="content">
-            <p><b>L</b> eiusmod fjkdeskofsdklofsdklopfdslpdflpdsflp
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p> We aim to deliver the best platform for our fellow Barcelona travellers. As explorers ourselves, we know how time consuming the research for the trip can be. That's why we created this story map!
+            </p>
+            <p>
+            The story map is a unique service for our users to get the full Barcelona experience. This map will show you all the top attractions in Barcelona, as well as prices, and directions.
+            Simply choose the length of your stay and the attractions you want to visit, and save the trip in your account for easy access on the go!
+            </p>
         </div>
     </div>
     <!-- Navigation bar -->
@@ -64,6 +65,7 @@ session_start();
         <a href="../php/attractions.php">Attractions</a>
         <a href="../php/trips.php">Trips</a>
         <a href="../php/accountpage.php">Account</a>
+        <a href="../php/about.php">About</a>
     </div>
 </body>
 </html>
