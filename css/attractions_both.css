@@ -156,6 +156,10 @@ header {
     position: relative;
 }
 
+#textH1 {
+    margin-top: 60px;
+}
+
 .img_btn {
     background-color: grey;
     border-radius: 50%;
@@ -174,7 +178,8 @@ header {
 
 #exit {
     position: absolute;
-    right: 3%;
+    right: 5%;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 1024px) {

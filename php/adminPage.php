@@ -84,7 +84,6 @@ mysqli_close($link);
             <p><a href="adminEdit.php">Edit/Remove attractions </a> </p>
             <p><a href="adminUploadPicture.php">Upload attraction picture</a> </p>
             <p><a href="adminChange.php">Change top attractions</a> </p>
-            <p><a href="adminUsers.php">Manage users </a> </p>
             <a href="accountpage.php"><p class="back_button">Back</p></a>
         </div>
         <div id="contact">
