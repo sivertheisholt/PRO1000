@@ -145,7 +145,6 @@ mysqli_close($link);
                 <li><a href="../php/attractions.php">Attractions</a></li>
                 <li><a href="../php/trips.php">Trips</a></li>
                 <li><a href="../php/accountpage.php">Account</a></li>
-                <li><a href="../php/about.php">About</a></li>
             </ul>
         </div>
     </nav>
@@ -172,7 +171,6 @@ mysqli_close($link);
         <a href="../php/attractions.php">Attractions</a>
         <a class="active" href="../php/trips.php">Trips</a>
         <a href="../php/accountpage.php">Account</a>
-        <a href="../php/about.php">About</a>
     </div>
 
     <!--Storymap external script-->
