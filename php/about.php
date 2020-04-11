@@ -54,7 +54,7 @@ session_start();
             </p>
             <p>
             The story map is a unique service for our users to get the full Barcelona experience. This map will show you all the top attractions in Barcelona, as well as prices, and directions.
-            Simply choose the length of your stay and the attractions you want to visit, and save the trip in your account for easy access on the go!
+            By creating an account you can simply choose the attractions you want to visit, and save the trip in your account for easy access on the go!
             </p>
         </div>
     </div>
