@@ -10,7 +10,7 @@ $table = "";
 $select = '<select id="tripID" name="tripID">';
 
 //Get all lists
-$sql = "SELECT ID, userID, tripname FROM trips WHERE userID == $user_id";
+$sql = "SELECT ID, userID, tripname FROM trips WHERE userID = $user_id";
 $result = $link->query($sql);
 if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
