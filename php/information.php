@@ -110,6 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="../php/attractions.php">Attractions</a></li>
                 <li><a href="../php/trips.php">Trips</a></li>
                 <li><a href="../php/accountpage.php">Account</a></li>
+                <li><a href="../php/about.php">About us</a></li>
             </ul>
         </div>
     </nav>

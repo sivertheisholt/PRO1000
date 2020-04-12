@@ -38,9 +38,6 @@ INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (4, "Gothic Quarter - 3.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
-VALUES (4, "Gothic Quarter - 4.jpg");
-
-INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
 VALUES (5, "Palace of Catalan Music - 2.jpg");
 
 INSERT INTO attractionsPicture (storymap_slides_ID, storymap_slides_media_url)
