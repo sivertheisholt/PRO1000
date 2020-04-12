@@ -6,7 +6,7 @@ $user_id = $_SESSION["id"];
 $errorMsg = "";
 
 //Initialize variables
-$table = " <table id='table'> <tr> <th></th> </tr> ";
+$table = " <div class='image_wrap'> ";
 
 
 
@@ -17,8 +17,7 @@ if (!mysqli_num_rows($result) == 0) {
     while ($row = mysqli_fetch_array($result)) {
         if ($row['storymap_slides_ID'] == 1) {
         } else {
-            $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
-        }
+            $table .= "<div class='edit' data-name='".$row['storymap_slides_text_headline']."'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='height: 200px; margin-left: auto; margin-right: auto;'></img></div>";        }
     }
 }
 
@@ -54,6 +53,7 @@ mysqli_close($link);
     <!-- Desktop -->
     <link rel="stylesheet" href="../css/desktop/tripCreate_desktop.css">
     <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/attraction_view.css">
 
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
@@ -90,7 +90,6 @@ mysqli_close($link);
         </div>
         <p>Choose attractions: </p>
         <?php echo $table ?>
-        </table>
         <div id='response'></div>
         <div class="button_wrapper">
             <input class="submit_button" type="button" value="Save" id="save">
@@ -117,19 +116,29 @@ mysqli_close($link);
     <script>
         var attractions = ['barcelona'];
 
-        $("#table tr").click(function() {
+        $(".edit").click(function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass('selected')
-                var value = $(this).find('td:first').html();
-                var attraction = value.substring(32, value.indexOf("</p>"));
+                var value = $(this);
+                //var value = document.getElementsByClassName('edit');
+                var attraction = value.attr('data-name');
+                console.log(value);
+                //var attraction = value.substring(33, value.indexOf("</p>"));
+                //var attraction = value.attr('data-name');
+                console.log(attraction);
                 var index = attractions.indexOf(attraction);
                 if (index > -1) {
                     attractions.splice(index, 1);
                 }
             } else {
                 $(this).addClass('selected');
-                var value = $(this).find('td:first').html();
-                var attraction = value.substring(32, value.indexOf("</p>"));
+                var value = $(this);
+                //var value = document.getElementsByClassName('edit');
+                var attraction = value.attr('data-name');
+                console.log(attraction);
+                //var attraction = value.attr('data-name');
+                //var attraction = value.substring(33, value.indexOf("</p>"));
+                console.log(attraction);
                 attractions.push(attraction);
             }
         });

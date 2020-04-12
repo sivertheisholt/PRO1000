@@ -36,6 +36,7 @@
     .input_text input {
         width: 145px;
         height: 15px;
+        background-color: lightgoldenrodyellow;
     }
     td {
         border: 1px #DDD solid;
@@ -87,7 +88,8 @@
         text-decoration: none;
     }
     .button_wrapper {
-        width: 126px;
+        width: 100%;
         margin: auto;
+        text-align: center;
     }
 }

@@ -10,52 +10,46 @@
         font-size: 20px;
     }
 
-    .tripCreate {
-        margin-right: auto;
-        margin-left: auto;
+    .tripEdit {
+        margin-right: 20px;
+        margin-left: 20px;
         margin-bottom: 50px;
-        padding-top: 140px;
-        max-width: 1280px;
+        padding-top: 130px;
     }
 
-    .tripCreate h1 {
-        margin-left: 5px;
-        margin-bottom: 15px;
-        font-size: 26px;
-        text-align: center;
-    }
-
-    .input_text{
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .input_text input {
-        width: 200px;
-        height: 20px;
-        background-color: lightgoldenrodyellow;
-    }
-
-    .tripCreate img {
+    .tripEdit img {
         display: block;
     }
-
-    .tripCreate p {
+    .tripEdit p {
+        margin: 10px 0 10px 0;
         font-weight: bold;
         text-align: center;
     }
+    .tripEdit h1 {
+        margin-left: 5px;
+        margin-bottom: 15px;
+        font-size: 30px;
+        text-align: center;
+    }
 
+    .tripEdit form select {
+        width: 200px;
+        height: 30px;
+    }
     td {
         border: 1px #DDD solid;
         padding: 5px;
         cursor: pointer;
     }
-
     .selected {
         background-color: lightgreen;
         color: #FFF;
     }
-
+    .tripEdit select {
+        width: 140px;
+        display: block;
+        margin: 0 auto;
+    }
     .submit_button {
         box-shadow: inset 0px 5px 17px 0px #a4e271;
         background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
@@ -68,13 +62,12 @@
         font-family: Arial;
         font-size: 16px;
         font-weight: bold;
-        padding: 7px 19px;
+        padding: 7px 18px;
         text-decoration: none;
         text-shadow: 0px 1px 0px #528009;
         margin-bottom: 20px;
         margin-top: 20px;
     }
-
     .back_button {
         box-shadow: inset 0px 5px 17px 0px #ff0000;
         background: linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
@@ -87,21 +80,25 @@
         font-family: Arial;
         font-size: 16px;
         font-weight: bold;
-        padding: 7px 19px;
+        padding: 7px 18px;
         text-decoration: none;
         text-shadow: 0px 1px 0px #ff0000;
         margin-bottom: 20px;
         margin-top: 20px;
     }
-
     .back_button a {
         color: white;
         text-decoration: none;
     }
-
-    .button_wrapper{
+    .button_wrapper {
+        width: 126px;
         margin: auto;
-        width: 100%;
+    }
+    #editTripButtonSelect {
         text-align: center;
+    }
+
+    .tripEdit form {
+        ;
     }
 }

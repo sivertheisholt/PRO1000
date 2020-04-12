@@ -46,11 +46,13 @@ if (!empty($_POST['chooseAttraction'])) {
     $sql = "SELECT storymap_slides_media_url FROM attractionspicture WHERE storymap_slides_ID = $x";
     $result = $link->query($sql);
     if (!mysqli_num_rows($result) == 0) {
-        $table .= " <table id='table'> <tr> <th></th> </tr> ";
+        $table .= " <div class='image_wrap'>";
         while ($row = mysqli_fetch_array($result)) {
-            $table .= "<tr>   <td style='height: 200px;'><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px;'></img></td>     </tr>";
+            //$table .= "<div class='edit' data-name='../storage/attractions/".$row['storymap_slides_media_url']."><img src='" .../storage/attractions/" .$row['storymap_slides_media_url'] . "'" . " alt='' style='height: 200px;'></img></div>";
+            $table .= '<div class="edit" data-name="'.$row['storymap_slides_media_url'].'"><img src="../storage/attractions/'.$row['storymap_slides_media_url'].'" style="height:200px"></div>';
             $errorMsg = "";
         }
+        $table .= " </div>";
     } else {
         $errorMsg = "No pictures";
     }
@@ -169,6 +171,7 @@ mysqli_close($link);
     <!--CSS Links Desktop-->
     <link rel="stylesheet" href="../css/desktop/adminUploadPicture_desktop.css">
     <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/attraction_view.css">
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
     <script src="../script/nav_desktop.js"></script>
@@ -213,7 +216,6 @@ mysqli_close($link);
         }
         ?>
         <?php echo $table ?>
-        </table>
     </div>
 
     <!-- Navigation bar -->
@@ -226,21 +228,28 @@ mysqli_close($link);
 
     <!-- Script to get filename from table and send to php -->
     <script>
-        var getFilename;
-        $("#table tr").click(function() {
+        
+        var getFileName;
+        $(".edit").click(function() {
             $(this).addClass('selected').siblings().removeClass('selected');
-            var value = $(this).find('td:first').html();
-            getFilename = value.substring(33, value.indexOf('alt') - 2);
+            var value = $(this);
+            var getFileName = value.attr('data-name');
+            console.log(value.attr('data-name'));
+            //getFilename = value.substring(33, value.indexOf('alt') - 2);
+           // console.log(getFilename);
         });
 
         //Update database
         function updateDB() {
-            window.location.href = "adminUploadPicture.php?updateFilename=" + getFilename;
+            var src = $(".edit.selected").attr("data-name");
+            window.location.href = "adminUploadPicture.php?updateFilename=" + src;
+            console.log(src);
         }
 
         //Delete database
         function deleteDB() {
-            window.location.href = "adminUploadPicture.php?deleteFilename=" + getFilename;
+            var src = $(".edit.selected").attr("data-name");
+            window.location.href = "adminUploadPicture.php?deleteFilename=" + src;
         }
     </script>
 </body>

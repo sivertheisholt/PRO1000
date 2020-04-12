@@ -47,7 +47,7 @@ if (!empty($_POST['deleteId'])) {
 
 if (!empty($_POST['selectId'])) {
 
-    $table = " <table id='table'> <tr> <th></th> </tr> ";
+    $table = " <div class='image_wrap'> ";
     $attractions = "";
     $sqlID = (int) $_POST['tripID'];
     $_SESSION['currentSelected'] = $sqlID;
@@ -90,11 +90,11 @@ if (!empty($_POST['selectId'])) {
                 }
             }
             if ($found == 1) {
-                $table .= "<tr class='selected'><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
+                $table .= "<div class='edit selected' data-name='".$row['storymap_slides_text_headline']."'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='height: 200px; margin-left: auto; margin-right: auto;'></img></div>";
                 $found = 0;
             } else if ($row['storymap_slides_ID'] == 1) {
             } else {
-                $table .= "<tr><td style='height: 200px;'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='width: 100%; max-width: 400px; height: 200px; margin-left: auto; margin-right: auto;'></img></td></tr>";
+                $table .= "<div class='edit' data-name='".$row['storymap_slides_text_headline']."'> <p style='text-align: center;'>" . $row['storymap_slides_text_headline'] . "</p><img src='" . "../storage/attractions/" . $row['storymap_slides_media_url'] . "'" . " alt='' style='height: 200px; margin-left: auto; margin-right: auto;'></img></div>";
             }
         }
     }
@@ -118,6 +118,8 @@ mysqli_close($link);
     <!-- Desktop -->
     <link rel="stylesheet" href="../css/desktop/tripCreate_desktop.css">
     <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/desktop/tripEdit_desktop.css">
+    <link rel="stylesheet" type="text/css" href="../css/attraction_view.css">
 
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
@@ -184,7 +186,7 @@ mysqli_close($link);
     <script>
         var attractions = ['barcelona'];
 
-        $("#table tr").click(function() {
+        $(".edit").click(function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass('selected')
             } else {
@@ -198,7 +200,9 @@ mysqli_close($link);
                 var allAttractionsSelected = document.getElementsByClassName('selected');
                 for (var i = 0; i < allAttractionsSelected.length; ++i) {
                     var value = allAttractionsSelected[i].innerHTML;
-                    var attractionName = value.substring(59, value.indexOf("</p>"));
+                    //var attractionName = value.substring(59, value.indexOf("</p>"));
+                    var attractionName = allAttractionsSelected[i].getAttribute("data-name");
+                    console.log(attractionName);
                     attractions.push(attractionName);
                 }
                 var attractionPHP = attractions.join();
