@@ -1,10 +1,20 @@
 @media only screen and (max-width: 480px){
     .edit.selected img {
         width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .edit img {
         width: 100%;
+    }
+
+    .image_wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 50px;
+        margin-top: 20px;
     }
 }
 
@@ -24,6 +34,7 @@
     .edit.selected img {
         width: 100%;
         max-width: 400px;
+        padding: 10px;
     }
 
     .edit img {
@@ -48,6 +59,7 @@
     .edit.selected img {
         width: 100%;
         max-width: 500px;
+        padding: 10px;
     }
 
     .edit img {
