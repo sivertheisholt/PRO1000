@@ -124,7 +124,7 @@
         //skriver inn all html koden inn i overlayetText elementet
         overlayText.innerHTML = '<h1 class="img_btn" id="exit" onclick="overlayOff()">X</h1><h1 id="textH1">' + name + '</h1><div id="slider_content"><h1 id="back_btn" class="img_btn" onclick="back()">🠄</h1><h1 id="next_btn" class="img_btn" onclick="next()">🠆</h1><div id="slider"></div></div><p>' + text + '</p><p id="info_text"> Address: ' + roadDesc + '</p><p id="info_text">Entrance fee: ' + fee + '</p><p id="info_text">Yearly visitors: ' + visitors + '</p><p id="info_text">Notices: ' + notices + '</p>';
         write_image(); //tilkaller write_image() funksjonen
-        //disable_scroll();
+        disable_scroll();
     }
 
     function disable_scroll() {
