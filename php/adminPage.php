@@ -45,8 +45,8 @@ mysqli_close($link);
     <link rel="stylesheet" type="text/css" href="../css/mobile/nav_mobile.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile/accountpage_mobile.css">
     <!--CSS Links Desktop-->
+    <link rel="stylesheet" href="../css/desktop/accountpage_desktop.css" />
     <link rel="stylesheet" type="text/css" href="../css/desktop/banner_desktop.css">
-    <link rel="stylesheet" type="text/css" href="../css/desktop/adminPage.css">
     <!--Navigation bar desktop-->
     <link rel="stylesheet" href="../css/desktop/nav_desktop.css" />
     <script src="../script/nav_desktop.js"></script>
@@ -79,15 +79,14 @@ mysqli_close($link);
         <div id="header">
             <header><?php echo $_SESSION["username"] ?>'s Account</header>
         </div>
-        <div class="adminPage">
-            
+        <div class="wrapper">
             <h1> Admin Tools </h1>
             <p><a href="adminAdd.php">Add attraction</a> </p>
             <p><a href="adminEdit.php">Edit/Remove attractions </a> </p>
             <p><a href="adminUploadPicture.php">Upload attraction picture</a> </p>
             <p><a href="adminChange.php">Change top attractions</a> </p>
             <a href="accountpage.php"><p class="back_button">Back</p></a>
-</div>
+        </div>
         <div id="contact">
             <a id="contactus" href="contact.php"> Contact us </a>
             <a id="aboutus" href="about.php">About us</a>
