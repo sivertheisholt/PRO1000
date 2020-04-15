@@ -158,6 +158,10 @@ mysqli_close($link);
                 <input class="submit_button" style="text-align: center;" type="submit" name="selectId">
                 <input class="submit_button back_button" style="display: inline-block" type="submit" value="Delete" name="deleteId">
             </div>
+            <div class="button_wrapper">
+            <input class="submit_button" type="button" value="Save" id="save">
+            <p class="back_button"><a href="accountpage.php">Back</a></p>
+        </div>
 
             <!-- messages -->
             <?PHP

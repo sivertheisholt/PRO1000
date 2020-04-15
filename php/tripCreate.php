@@ -89,6 +89,10 @@ mysqli_close($link);
             <label>Choose name:</label>
             <input type="text" id="textbox_id">
         </div>
+        <div class="button_wrapper">
+            <input class="submit_button" type="button" value="Save" id="save">
+            <p class="back_button"><a href="accountpage.php">Back</a></p>
+        </div>
         <p>Choose attractions: </p>
         <?php echo $table ?>
         <div id='response'></div>

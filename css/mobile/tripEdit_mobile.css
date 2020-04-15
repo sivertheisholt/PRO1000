@@ -82,9 +82,10 @@
         color: white;
         text-decoration: none;
     }
-    .button_wrapper{
-        margin: auto;
+    .button_wrapper {
         width: 100%;
+        margin: auto;
+        text-align: center;
     }
     #editTripButtonSelect {
         text-align: center;
