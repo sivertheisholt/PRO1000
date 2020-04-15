@@ -168,7 +168,7 @@ mysqli_close($link);
             </div>
             <div class="button_wrapper">
             <input class="submit_button" type="button" value="Save" id="save">
-            <p class="back_button"><a href="accountpage.php">Back</a></p>
+            <a href="accountpage.php"><p class="back_button">Back</p></a>
         </div>
 
             <!-- messages -->
@@ -183,7 +183,7 @@ mysqli_close($link);
         <div id='response'></div>
         <div class="button_wrapper">
             <input class="submit_button" type="button" value="Save" id="save">
-            <p class="back_button"><a href="accountpage.php">Back</a></p>
+            <a href="accountpage.php"><p class="back_button">Back</p></a>
         </div>
     </div>
 
