@@ -83,20 +83,34 @@
         margin-bottom: 20px;
         margin-top: 20px;
     }
+
     .back_button a {
         color: white;
         text-decoration: none;
     }
+
     .button_wrapper {
         width: 100%;
         margin: auto;
         text-align: center;
+        grid-column: 1;
     }
+
     #editTripButtonSelect {
         text-align: center;
     }
+
     #saveDiv {
         visibility: hidden;
         display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .button_wrapper {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        grid-column: 2;
     }
 }

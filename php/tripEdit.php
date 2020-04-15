@@ -173,7 +173,10 @@ mysqli_close($link);
             }
             ?>
             <?php echo $table ?>
-            <?php echo $saveButton ?>
+            <div class="button_wrapper">
+                <?php echo $saveButton ?>
+            </div>
+            <div id='response'></div>
         </form>
         
         
