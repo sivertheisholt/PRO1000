@@ -177,9 +177,11 @@ mysqli_close($link);
             <?php echo $table ?>
             <div class="button_wrapper">
                 <?php echo $saveButton ?>
-                <?php echo $backButton ?>
             </div>
-        </form>  
+            <div id='response'></div>
+        </form>
+        
+        
     </div>
 
     <!-- Navigation bar -->
