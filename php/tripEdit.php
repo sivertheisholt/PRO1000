@@ -8,6 +8,7 @@ $errorMsg = "";
 //Initialize variables
 $table = "";
 $select = '<select id="tripID" name="tripID">';
+$saveButton = "";
 
 //Get all lists
 $sql = "SELECT ID, userID, tripname FROM trips WHERE userID = $user_id";
@@ -98,6 +99,7 @@ if (!empty($_POST['selectId'])) {
             }
         }
     }
+    $saveButton = '<input class="submit_button save" type="button" value="Save">';
 }
 
 mysqli_close($link);
@@ -155,11 +157,11 @@ mysqli_close($link);
             <?php echo $select ?>
             </select>
             <div id="editTripButtonSelect">
-                <input class="submit_button" style="text-align: center;" type="submit" name="selectId">
+                <input class="submit_button" style="text-align: center;" type="submit" name="selectId" onclick='showSave()'>
                 <input class="submit_button back_button" style="display: inline-block" type="submit" value="Delete" name="deleteId">
             </div>
             <div class="button_wrapper">
-                <input class="submit_button" type="button" value="Save" id="save">
+            <?php echo $saveButton ?>
                 <a href="accountpage.php"><p class="back_button">Back</p></a>
             </div>
             <div id='response'></div>
@@ -170,8 +172,11 @@ mysqli_close($link);
                 echo "<p style=\"color: red;\">", htmlspecialchars($errorMsg), "</p>\n\n";
             }
             ?>
+            <?php echo $table ?>
+            <?php echo $saveButton ?>
         </form>
-        <?php echo $table ?>
+        
+        
     </div>
 
     <!-- Navigation bar -->
@@ -187,6 +192,11 @@ mysqli_close($link);
 
         var attractions = ['barcelona'];
 
+        function showSave() {
+            console.log("hi");
+            document.getElementById('saveDiv').style.visibility = 'visible';
+        }
+
         $(".edit").click(function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass('selected')
@@ -197,7 +207,7 @@ mysqli_close($link);
 
         //Send data to php
         $(document).ready(function() {
-            $('#save').click(function() {
+            $('.save').click(function() {
                 var allAttractionsSelected = document.getElementsByClassName('selected');
                 for (var i = 0; i < allAttractionsSelected.length; ++i) {
                     var value = allAttractionsSelected[i].innerHTML;
