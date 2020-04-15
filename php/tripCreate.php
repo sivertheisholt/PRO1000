@@ -1,6 +1,15 @@
 <?php
 // Initialize the session
 session_start();
+
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+} else {
+    header("location: ../php/register.php");
+    exit;
+}
+
 require_once "config.php";
 $user_id = $_SESSION["id"];
 $errorMsg = "";
@@ -91,7 +100,7 @@ mysqli_close($link);
         </div>
         <div class="button_wrapper">
             <input class="submit_button" type="button" value="Save" id="save">
-            <p class="back_button"><a href="accountpage.php">Back</a></p>
+            <a href="accountpage.php"><p class="back_button">Back</p></a>
         </div>
         <p>Choose attractions: </p>
         <?php echo $table ?>

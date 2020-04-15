@@ -159,6 +159,11 @@ mysqli_close($link);
         <form action="#" method="post">
             <h3>Use our trip generator to plan your visits!</h3>
             <h4>Simply choose how many days your trip will be </h4>
+            <div class="trip_direction">
+                <h4>Tip!</h4>
+                <h5>If you want to create your own custom storymap, make sure you are logged in to an account
+                and go to your account page, and click on <a href="../php/tripCreate.php">make trip</a>!</h5>
+            </div>
             <div class="button_wrap">
                 <input class="submit_button_3" type="submit" value="3 Days" name="day3">
                 <input class="submit_button_5" type="submit" value="5 Days" name="day5">
