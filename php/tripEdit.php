@@ -9,6 +9,7 @@ $errorMsg = "";
 $table = "";
 $select = '<select id="tripID" name="tripID">';
 $saveButton = "";
+$backButton = "";
 
 //Get all lists
 $sql = "SELECT ID, userID, tripname FROM trips WHERE userID = $user_id";
@@ -100,6 +101,7 @@ if (!empty($_POST['selectId'])) {
         }
     }
     $saveButton = '<input class="submit_button save" type="button" value="Save">';
+    $backButton = '<a href="accountpage.php"><p class="back_button">Back</p></a>';
 }
 
 mysqli_close($link);
@@ -173,10 +175,11 @@ mysqli_close($link);
             }
             ?>
             <?php echo $table ?>
-            <?php echo $saveButton ?>
-        </form>
-        
-        
+            <div class="button_wrapper">
+                <?php echo $saveButton ?>
+                <?php echo $backButton ?>
+            </div>
+        </form>  
     </div>
 
     <!-- Navigation bar -->

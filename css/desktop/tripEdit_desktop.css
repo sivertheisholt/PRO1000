@@ -95,8 +95,4 @@
     #editTripButtonSelect {
         text-align: center;
     }
-    #saveDiv {
-        visibility: hidden;
-        display: inline-block;
-    }
 }
