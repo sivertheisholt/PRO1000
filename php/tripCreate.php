@@ -102,13 +102,9 @@ mysqli_close($link);
             <input class="submit_button" type="button" value="Save" id="save">
             <a href="accountpage.php"><p class="back_button">Back</p></a>
         </div>
+        <div id='response'></div>
         <p>Choose attractions: </p>
         <?php echo $table ?>
-        <div id='response'></div>
-        <div class="button_wrapper">
-            <input class="submit_button" type="button" value="Save" id="save">
-            <p class="back_button"><a href="accountpage.php">Back</a></p>
-        </div>
 
         <!-- messages -->
         <?PHP

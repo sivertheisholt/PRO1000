@@ -36,20 +36,24 @@
         width: 200px;
         height: 30px;
     }
+    
     td {
         border: 1px #DDD solid;
         padding: 5px;
         cursor: pointer;
     }
+
     .selected {
         background-color: lightgreen;
         color: #FFF;
     }
+
     .tripEdit select {
         width: 140px;
         display: block;
         margin: 0 auto;
     }
+
     .submit_button {
         box-shadow: inset 0px 5px 17px 0px #a4e271;
         background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
@@ -68,6 +72,7 @@
         margin-bottom: 20px;
         margin-top: 20px;
     }
+
     .back_button {
         box-shadow: inset 0px 5px 17px 0px #ff0000;
         background: linear-gradient(to bottom, #fc1414 5%, #ce0404 100%);
@@ -86,15 +91,18 @@
         margin-bottom: 20px;
         margin-top: 20px;
     }
+
     .back_button a {
         color: white;
         text-decoration: none;
     }
+
     .button_wrapper {
         width: 100%;
         margin: auto;
         text-align: center;
     }
+
     #editTripButtonSelect {
         text-align: center;
     }

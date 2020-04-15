@@ -2,14 +2,6 @@
 // Initialize the session
 session_start();
 require_once "config.php";
-
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-} else {
-    header("location: ../php/register.php");
-    exit;
-}
-
 $user_id = $_SESSION["id"];
 $errorMsg = "";
 
@@ -167,9 +159,10 @@ mysqli_close($link);
                 <input class="submit_button back_button" style="display: inline-block" type="submit" value="Delete" name="deleteId">
             </div>
             <div class="button_wrapper">
-            <input class="submit_button" type="button" value="Save" id="save">
-            <a href="accountpage.php"><p class="back_button">Back</p></a>
-        </div>
+                <input class="submit_button" type="button" value="Save" id="save">
+                <a href="accountpage.php"><p class="back_button">Back</p></a>
+            </div>
+            <div id='response'></div>
 
             <!-- messages -->
             <?PHP
@@ -179,12 +172,6 @@ mysqli_close($link);
             ?>
         </form>
         <?php echo $table ?>
-        </table>
-        <div id='response'></div>
-        <div class="button_wrapper">
-            <input class="submit_button" type="button" value="Save" id="save">
-            <a href="accountpage.php"><p class="back_button">Back</p></a>
-        </div>
     </div>
 
     <!-- Navigation bar -->
@@ -194,9 +181,10 @@ mysqli_close($link);
         <a href="../php/trips.php">Trips</a>
         <a class="active" href="../php/accountpage.php">Account</a>
     </div>
-
-    <!-- Script to get attractions and send to php -->
     <script>
+
+        //Script to get attractions and send to php
+
         var attractions = ['barcelona'];
 
         $(".edit").click(function() {
