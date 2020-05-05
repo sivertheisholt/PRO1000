@@ -52,7 +52,7 @@ VALUES
         "A nice picture of a cathedral in Barcelona",
         "",
         "",
-        "",
+        "9 million",
         "",
         DEFAULT
     );
@@ -78,11 +78,11 @@ INSERT INTO attractions
     	"Basilica of the Sagrada Familia",
         "The Basilica of the Sagrada Familia is a monumental church devoted to the Holy Family: Jesus, Mary and Joseph. Construction began in 1882, based on plans drawn up by the architect Francisco de Paula del Villar, and Antoni Gaudi was commissioned to continue the project in 1883. The Temple has always been an expiatory church, built only from donations. As Gaudi said: The Expiatory Church of the Sagrada Familia is made by the people and is mirrored in them. It is a work that is in the hands of God and the will of the people. In 2010, Pope Benedict XVI consecrated the site as a minor basilica.",
         "Basilica de Santa Maria del Mar - 1.jpg",
-        "",
+        "Basilica de Santa Maria del Mar",
         "",
         "Plaça Santa Maria, 1, 08003, Barcelona, Spania",
         "20 €",
-        "",
+        "#4 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -111,7 +111,7 @@ INSERT INTO attractions
         "",
         "Passeig de Gràcia, 43, 08007 Barcelona, Spania",
         "25 €",
-        "",
+        "#5 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -140,7 +140,7 @@ VALUES
         "",
         "In the area between La Rambla and Via Laietana, and from the seafront.",
         "No entrance fee",
-        "",
+        "#3 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -169,7 +169,7 @@ VALUES
         "",
         "C/ Palau de la Música, 4-6, 08003 Barcelona, Spain",
         "20 €",
-        "",
+        "#2 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -198,7 +198,7 @@ VALUES
         "",
         "Passeig de Gràcia, 92, 08008 Barcelona, Spain",
         "22-52 €",
-        "",
+        "#7 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -227,7 +227,7 @@ VALUES
         "",
         "La Rambla, 91, 08001 Barcelona, Spain",
         "No entrance fee",
-        "",
+        "#9 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -256,7 +256,7 @@ VALUES
         "",
         "C/Arístides Mallol 12 (main Access 15) and Av. De Joan XVIII ( Boulevard Access 9), 08028 Barcelona, Spain",
         "26-52 €",
-        "",
+        "#10 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -285,7 +285,7 @@ VALUES
         "",
         "Plaça de Santa Maria, 1, 08003 Barcelona, Spain",
         "8.50 €",
-        "",
+        "#4 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -314,7 +314,7 @@ VALUES
         "",
         "Plaça de Carles Buïgas, 1, 08038 Barcelona, Spain",
         "No entrance fee",
-        "",
+        "#8 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -343,7 +343,7 @@ VALUES
         "",
         "Carrer de Sant Antoni Maria Claret, 167, 08025 Barcelona, Spain",
         "15-20 €",
-        "",
+        "#13 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -372,7 +372,7 @@ VALUES
         "",
         "Palau Nacional, Parc de Montjuïc, s/n, 08038 Barcelona, Spain",
         "12 €",
-        "",
+        "#17 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -400,7 +400,7 @@ VALUES
         "",
         "Pla de la Seu, s/n, 08002 Barcelona, Spain",
         "7 €",
-        "",
+        "#29 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -429,7 +429,7 @@ VALUES
         "",
         "Carrer Nou de la Rambla, 3-5, 08001 Barcelona, Spania",
         "5-9 €",
-        "",
+        "#18 of 1,004 things to do in Barcelona",
         "Admission is free thefirst sunday every month"
     );
 
@@ -458,7 +458,7 @@ VALUES
         "",
         "Parc de Montjuïc, Barcelona, Spania",
         "8.90 €",
-        "",
+        "#11 of 1,004 things to do in Barcelona",
         DEFAULT
     );
 
@@ -487,6 +487,6 @@ VALUES
         "",
         "Carrer de les Carolines, 20, 08012 Barcelona, Spania",
         "15.50 €",
-        "",
+        "#15 of 1,004 things to do in Barcelona",
         DEFAULT
     );
